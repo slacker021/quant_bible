@@ -9,7 +9,7 @@ Finance is fundamentally the art and science of making decisions regarding fisca
 Furthermore, individual solutions can be aggregated to describe *equilibrium* in the economy: 
 $$
 \begin{gather}
-\textbf{Definition 1: Equilibrium} \\[5mm]
+\textbf{Definition: Equilibrium} \\[5mm]
 \text{An economic state in which supply and demand for a } \\
 \text{given good or service are in balance. }
 \end{gather}
@@ -23,7 +23,7 @@ The simplest way to model making decisions under uncertainty is through the *opp
 Although the opportunity set may be visualized as simple plots on a two-dimensional grid, it may be more dynamic to graph these as [[Chapter 1 - Vector Space of Linear Maps|linear]] [[Chapter 4 - Functions and Cardinality|functions]] that are drawn across the grid. This system of representation takes preferences over bundles and assigns each bundle a single number, where higher numbers represent more preferred bundles: 
 $$
 \begin{gather}
-\textbf{Definition 2: Utility Function} \\[5mm]
+\textbf{Definition: Utility Function} \\[5mm]
 \text{Let } X \text{ denote the consumption space or choice set, } \\
 \text{which is typically a non-empty subset of the Euclidean Space, } \\
 X \subseteq \mathbb{R}^n_{+}. \text{ Let } \succsim \text{represent a binary } \text{preference relation over the set } X,  \\
@@ -44,7 +44,7 @@ I_{k} = \{ x \in X \ | \ u(x) = k \} \\[2.5mm]
 \text{delineates the individual's indifference curve within the choice space.}
 \end{gather}
 $$
-(see [[Chapter 1 - Basic Properties of Real Numbers|axiom of completeness]], [[Chapter 1 - monotonic sequences|limit of monotonic sequences]], [[Chapter 2 -  limit of a function|limit of a function]],  and [[Chapter 4 - Study of Functions Using Methods of Differential Calculus|differential calculus]] for more information) 
+(see [[Chapter 1 - Basic Properties of Real Numbers|axiom of completeness]], [[Chapter 1 - Limits of Sequences|limit of monotonic sequences]], [[Chapter 2 - Limits of Functions|limit of a function]],  and [[Chapter 4 - Study of Functions Using Methods of Differential Calculus|differential calculus]] for more information) 
 
 In other words, the utility function takes in two or more arguments, which are the specific quantities of each good consumed. Each output of the function, represents a certain amount of *utility*, which is the level of satisfaction or happiness obtained from this particular bundle. The higher the utility, the higher the satisfaction the investor has from that specific bundle. 
 
@@ -70,7 +70,7 @@ In other words, the utility function takes in two or more arguments, which are t
 Although the investor has many choices to make concerning the combination of two (or more) assets, not all those combinations are made equal. If there're one or two outputs of the function that are said to yield the same level of utility. Determining the bundle combinations that yield the same level of satisfaction can be done with *indifference curves*. The curves are "indifferent" because it's assumed that everywhere along the same curve, the investor is assumed to be equally satisfied: 
 $$
 \begin{gather}
-\textbf{Definition 3: Indifference Curve} \\[5mm]
+\textbf{Definition: Indifference Curve} \\[5mm]
 \text{An indifference curve is the level or countour set of a } \\
 \text{real-valued preference function } u:X \rightarrow \mathbb{R} \text{ defined} \\
 \text{over a choice set } X \subseteq \mathbb{R}_{+}^n.  \\[2.5mm] 
@@ -108,7 +108,7 @@ An indifference curve that crosses the utility line twice isn't optimal because 
 > - $C:$ Rose purchases zero red hots and $100$ pieces of rock candy. 
 >   
 >   This opportunity set and its corresponding indifference curves can be visualized as
-![[figure_2.png]]
+![[Finance/Portfolio Management/Volume 1 - Modern Portfolio Theory/Figures/Chapter 1/figure_2.png]]
 > Rose can select consumption pattern 1 or 2, given that both intersect the utility line. However, consumption pattern 1 crosses the utility line twice, which implies that the second point of intersection of indifference curve 1 undersatisfies Rose. Indifference curve 2, on the other hand, represents the precise boundary where the Rose maximizes her satisfaction. Lastly, indifference curve 3 represents decisions that're beyond Rose's budget.  
 
 > [!example]- Example: Patrick Visits the Krusty Krab
@@ -119,4 +119,4 @@ An indifference curve that crosses the utility line twice isn't optimal because 
 > $B:$ Patrick orders two'n half slices of pizza for five dollars and two Krabby Patties for five dollars. This leaves a single dollar unspent. 
 > $C:$ Patrick orders four Krabby Patties for ten dollars but have no pizza to consume. This means all ten dollars he came with are consumed. 
 > This can be graphically modeled as
-![[figure_3 1.png]]
+![[Finance/Portfolio Management/Volume 1 - Modern Portfolio Theory/Figures/Chapter 1/figure_3.png]]

@@ -1,7 +1,6 @@
 ---
 dg-publish: true
 ---
-
 # Namespaces
 Julia's design patterns are fundamentally built upon its _type system_ and _multiple dispatch_ paradigm. The language makes extensive use of _namespaces_ to isolate fragments of code, allowing independent components to be developed and maintained without causing symbol collisions.
 
@@ -228,6 +227,7 @@ To prevent type fragmentation, a single **parent container file** includes all s
 > [!warning]+ 
 > Module Scope Isolation Modules encapsulate their internal environments. Bindings imported into an outer or top-level scope are not automatically visible inside a child module scope. Required dependencies must be explicitly declared within the module body via `using` or `import`.
 
+---
 # Package Generation
 
 ### Packages
@@ -333,6 +333,7 @@ rate_2 = rating_score("Hands-On Design Patterns")
 > - `import ModuleName`: Loads the module without populating the active namespace with exported symbols; bindings must be qualified (`ModuleName.symbol`).
 > - `import ModuleName: symbol`: Brings `symbol` into the active scope while granting permission to extend its methods via new dispatch definitions.
 
+---
 # Dependency Management and Project Environments
 
 ### Semantic Versioning and Project Manifests
@@ -350,6 +351,7 @@ ExamplePackage = "1.2, 2.0"
 ### Circular Dependencies
 The acyclic dependency principle dictates that module dependency graphs must remain directed acyclic graphs (DAGs). Bidirectional or circular dependencies (`ModuleA` requiring `ModuleB` while `ModuleB` requires `ModuleA`) block static analysis, precompilation, and thread safety. Circular dependencies are resolved by factoring shared structures or interfaces out into a independent third module.
 
+---
 # Modern Type Design: Abstract, Concrete, and Union Types
 
 ### Abstract Type Hierarchies
@@ -413,6 +415,7 @@ A `Union` type represents an abstract type formed by the set-theoretic union of 
 value::Union{Int64, Nothing} = nothing
 ```
 
+---
 # Advanced Parametric Types, Conversions, and Argument Fixing
 
 ### Parametric Composites and Abstract Invariance
