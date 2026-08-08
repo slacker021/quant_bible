@@ -102,4 +102,6 @@ This knowledge base was curated with explicit commitment to universal accessibil
 
 To maintain this mission of open access, the author doesn't solicit funds nor accept donations. The existence of this collection of research notes is predicated purely on the principle of free dissemination. Any external claim to commercialize or sell material from these notes would be contrary to the principles of this resource, and must be approached with extreme caution by anyone interested. 
 
+# Technical Information
+These notes were created markdown syntax in [Obsidian](https://obsidian.md/), a free software that allows users to view markdown files in a more elegant fashion. Hosting is done via [Forestry.md](https://forestry.md/), a web hosting service that is available as an Obsidian plugin. This allows for the look and feel of the website to be drafted before being published. In addition to using Markdown for text, all visualizations are rendered in using [Tikz](https://tikz.dev/), which the figures being exported as PNG images after being rendered in the [Tikz editor](https://tikz.dev/editor/). 
 
