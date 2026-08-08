@@ -65,3 +65,6 @@ git config --global alias.st
 git config --global pull.rebase true
 ```
 
+---
+
+# Remote Git
