@@ -1,3 +1,6 @@
+---
+dg-publish: true
+---
 # Checking File Differences
 Checking changes that've been made without committing them can be made using `git diff`. This shows all differences between the current working directory, which are files as they physically exist on the disk, and the staging index. It's a reflection of something that is **work in progress**. 
 

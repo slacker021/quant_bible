@@ -1,3 +1,6 @@
+---
+dg-publish: true
+---
 There are instances when the user may not want to commit whatever unstaged changes they've done, but also do not want to delete theses changes. `git stash` allows users to do just that by stashing whatever transient or uncommitted changes have been done. The stash serves as a temporary storage for uncommitted working changes, taking all unstaged and uncommitted changes into an easily retrievable stack. Its primary utility is enabling context switching, which allows users to focus on other task or checkout to other branches. 
 
 # Mechanics and Workflow
