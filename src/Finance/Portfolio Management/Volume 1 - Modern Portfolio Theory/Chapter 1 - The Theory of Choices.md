@@ -108,7 +108,7 @@ An indifference curve that crosses the utility line twice isn't optimal because 
 > - $C:$ Rose purchases zero red hots and $100$ pieces of rock candy. 
 >   
 >   This opportunity set and its corresponding indifference curves can be visualized as
-![[figure_2.png]]
+![[Finance/Portfolio Management/Volume 1 - Modern Portfolio Theory/Figures/Chapter 1/figure_2.png]]
 > Rose can select consumption pattern 1 or 2, given that both intersect the utility line. However, consumption pattern 1 crosses the utility line twice, which implies that the second point of intersection of indifference curve 1 undersatisfies Rose. Indifference curve 2, on the other hand, represents the precise boundary where the Rose maximizes her satisfaction. Lastly, indifference curve 3 represents decisions that're beyond Rose's budget.  
 
 > [!example]- Example: Patrick Visits the Krusty Krab
@@ -119,4 +119,4 @@ An indifference curve that crosses the utility line twice isn't optimal because 
 > $B:$ Patrick orders two'n half slices of pizza for five dollars and two Krabby Patties for five dollars. This leaves a single dollar unspent. 
 > $C:$ Patrick orders four Krabby Patties for ten dollars but have no pizza to consume. This means all ten dollars he came with are consumed. 
 > This can be graphically modeled as
-![[figure_3 1.png]]
+![[Finance/Portfolio Management/Volume 1 - Modern Portfolio Theory/Figures/Chapter 1/figure_3.png]]
