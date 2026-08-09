@@ -72,7 +72,7 @@ Finance has evolved greatly, from a qualitative artform that was merely consider
 
 ##### Volume 1: Modern Portfolio Theory and Basic Investment Analysis
 [[Chapter 1 - The Theory of Choices]] 
-[[Chapter 2 - Expected Value]]
+[[Chapter 2 - Financial Instruments and Securities]]
 [[Chapter 3 - Financial Markets]]
 
 ---

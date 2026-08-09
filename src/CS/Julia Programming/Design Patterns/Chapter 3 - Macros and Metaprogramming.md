@@ -3,41 +3,20 @@ Metaprogramming is a sophisticated technique for writing code that generates oth
 ## Understanding the Need for Metaprogramming
 
 The primary motivations for utilizing metaprogramming techniques include:
-
 1. **Conciseness and Readability**: It allows complex logic to be expressed through elegant, high-level abstractions, avoiding the “ugly” boilerplate code often associated with lower-level implementations.
-2. **Development Efficiency**: By automating the generation of repetitive code, metaprogramming significantly reduces the manual effort required to maintain large codebases.
+2. **Development Efficiency**: By automating the generation of repetitive code, metaprogramming significantly reduces the manual effort required to  maintain large codebases.
 3. **Performance Optimization**: Because metaprogramming allows code to be “spelled out” during the compilation phase rather than interpreted at runtime (e.g., via iterative looping), it can lead to significant execution speedups.
 
 ---
+# Measuring Performance with the `@time` Macro
+Julia provides a built-in macro, `@time`, designed to measure the execution duration, memory allocations, and garbage collection (GC) time of a given expression. This operates by wrapping the target code with timing logic. At the compilation stage, it inserts calls to capture the start and end times, calculates the difference, and prints the results. `@time` specifically reports [[Chapter 6 - Heapsort|Heap]] allocations, which are typically needed for either mutable objects or for creating/growing variable-sized containers. 
 
-## Measuring Performance with the `@time` Macro
+>[!question]+ Application: Benchmarking
+>Theoretical algorithm analysis relies on the [[Chapter 3 - Characterization of Running Times|characterization of running times]], which doesn't take into account the underlying hardware the algorithm is running on. In actual implementations, factors such as the CPU's clock rate and available memory affect the actual run time. The `@time` macro allows for the actual time it takes for the 
 
-Julia provides a built-in macro, `@time`, designed to measure the execution duration, memory allocations, and garbage collection (GC) time of a given expression.
 
-### How it Works
-
-The macro operates by wrapping the target code with timing logic. At the compilation stage, it inserts calls to capture the start and end times, calculates the difference, and prints the results.
-
-### Quantitative Finance Application
-
-In quantitative research, benchmarking the latency of pricing engines or backtesting loops is critical. Instead of wrapping every calculation in a custom function, the `@time` macro allows for immediate profiling:
-
-```julia
-
-            
-              
-                julia
-              
-              
-                
-                Copy block
-              
-            
-            # Example: Benchmarking the summation of a large vector of simulated returns
-@time sum(rand(10_000_000)) 
-```
-
-_Note: Creating a manual timing function (e.g., `timeit(func)`) requires wrapping the code in a separate function, which is less convenient than the macro’s direct execution._
+>[!info] Remark: Timing Function
+Creating a manual timing function (e.g., `timeit(func)`) requires wrapping the code in a separate function, which is less convenient than the macro’s direct execution.
 
 ---
 
