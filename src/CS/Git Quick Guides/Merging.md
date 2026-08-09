@@ -1,11 +1,13 @@
 `git merge` can be used to take two separate lines of development, which are represented by two distinct branches, and calculates the minimal set of changes necessary to reconcile both histories into a single unified branch history. Git's repository control system can be viewed as a *Direct Acyclic Graph*, where when a user creates a secondary branch from another branch, Git creates snapshot at a specific point in time, allowing development to proceed on an alternate path. `git merge` allows for the secondary branch to be stitched back into its origin branch, ensuring that no changes are lost during transition. 
 
+---
 # The Main Use of Merging
 The primary function of the merge commit is threefold
 1. **Historical Record:** It explicitly documents where and when two branches were intended to meet. The parent pointers of a merge commit point back to the tips of both converging branches, rather than just one. This creates a non-linear graph structure that tells users exactly which independent streams of work contributed to this specific integrated state.
 2. **Non-Destructive Integration:** It provides an audit trail. If something breaks after the merge, users can always point back to the merge commit and examine the inputs from both parent histories. This is paramount for debugging complex systems or analyzing systemic failures in a financial as it shows users which components came from which development path.
 3. **Clarity of Intent:** It signifies a conscious decision in the development lifecycle that declares that these two sets of changes are now considered stable and integrated. 
 
+---
 # Three Common Ways to Merge
 There're many ways to perform commits but below are the most common and standard ways of doing so: 
 

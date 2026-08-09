@@ -6,6 +6,7 @@
 
 The result is a perfectly linear history where it looks as if the work after all the commits that were previously on the target branch had already been implemented. 
 
+---
 # Common Ways of Rebasing
 There are two primary ways of rebasing: The standard rebase for alignment, and the interactive rebase for deep structural cleanup.
 

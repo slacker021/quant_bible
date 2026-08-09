@@ -79,3 +79,15 @@ Once the connection has been made, the user can then push whatever changes they 
 git push
 ```
 
+---
+# Cloning
+An alternative to starting one's own repository is to clone an already-existing repository off the internet. This is first done by first going to the server site hosting the repository and copying the URL or SSH key. Once the URL or SSH key has been copied, the user can then open their CLI and enter the following: 
+```powershell
+git clone https://github.com/USERNAME/REPOSITORY
+```
+Note that this option clones all branches from the repository. This can be verified by using `git branch -a` to list all downloaded remote-tracking branches. Should the user decide that they only need one branch, they can specify it:
+```powershell
+git clone -b <target_branhc> --single-branch <repository_url>
+```
+
+
