@@ -68,3 +68,14 @@ git config --global pull.rebase true
 ---
 
 # Remote Git
+Setting up a remote git repository can be done by first doing to a remote repository hoster, such as *Github*, *Bitbucket*, or *GitLab*. Once there, the user can navigate the GUI to create the empty repository on the server. After the remote repository has been set up, the user can link their local repository to the git repository. This is done by first establishing the remote connection: 
+```powershell
+git remote add origin https://github.com/OWNER/REPOSITORY.git # for connecting to repository
+git remote -v # verify connection
+```
+
+Once the connection has been made, the user can then push whatever changes they made in their local repository to the remote: 
+```powershell
+git push
+```
+
