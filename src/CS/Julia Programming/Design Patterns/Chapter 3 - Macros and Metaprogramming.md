@@ -12,11 +12,17 @@ The primary motivations for utilizing metaprogramming techniques include:
 Julia provides a built-in macro, `@time`, designed to measure the execution duration, memory allocations, and garbage collection (GC) time of a given expression. This operates by wrapping the target code with timing logic. At the compilation stage, it inserts calls to capture the start and end times, calculates the difference, and prints the results. `@time` specifically reports [[Chapter 6 - Heapsort|Heap]] allocations, which are typically needed for either mutable objects or for creating/growing variable-sized containers. 
 
 >[!question]+ Application: Benchmarking
->Theoretical algorithm analysis relies on the [[Chapter 3 - Characterization of Running Times|characterization of running times]], which doesn't take into account the underlying hardware the algorithm is running on. In actual implementations, factors such as the CPU's clock rate and available memory affect the actual run time. The `@time` macro allows for the actual time it takes for the 
+>Theoretical algorithm analysis relies on the [[Chapter 3 - Characterization of Running Times|characterization of running times]], which doesn't take into account the underlying hardware the algorithm is running on. In actual implementations, factors such as the CPU's clock rate and available memory affect the actual run time. The `@time` macro measures the actual amount of time it takes for the piece of code to run on the user's machine. This may help the user discover the strengths and weaknesses of their local machine, as well as how to better utilize it to create even more efficient programs. 
 
 
 >[!info] Remark: Timing Function
 Creating a manual timing function (e.g., `timeit(func)`) requires wrapping the code in a separate function, which is less convenient than the macro’s direct execution.
+
+>[!example] Example: For Loop Addition
+>```julia
+>x::Array{Float64} = rand(1000) # generate array with 1000 random 64-bit floats
+>
+>```
 
 ---
 
