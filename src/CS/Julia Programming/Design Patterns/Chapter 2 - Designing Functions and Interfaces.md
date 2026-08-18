@@ -62,7 +62,7 @@ end
 ```
 These definitions adhere to standard naming conventions within the Julia ecosystem. Word separation is handled using underscores to maintain readability. 
 
->[!info]+ Convention: Mutating Function
+>[!Note]+ Convention: Mutating Function
 >*Mutating functions*—those that modify the internal state of their arguments—are suffixed with an exclamation mark (`!`).
 
 The system relies on *duck typing* by default, where arguments are left untyped to maximize generic reuse. *Type annotations* are not used to guide compilation optimizations, as the compiler automatically infers and generates highly optimized machine code for concrete types. Instead, type annotations are used to restrict method domains and guide multiple dispatch decisions. 

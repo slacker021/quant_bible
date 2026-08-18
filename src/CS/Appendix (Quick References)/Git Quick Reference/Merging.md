@@ -1,7 +1,6 @@
 ---
 dg-publish: true
 ---
-
 `git merge` can be used to take two separate lines of development, which are represented by two distinct branches, and calculates the minimal set of changes necessary to reconcile both histories into a single unified branch history. Git's repository control system can be viewed as a *Direct Acyclic Graph*, where when a user creates a secondary branch from another branch, Git creates snapshot at a specific point in time, allowing development to proceed on an alternate path. `git merge` allows for the secondary branch to be stitched back into its origin branch, ensuring that no changes are lost during transition. 
 
 ---

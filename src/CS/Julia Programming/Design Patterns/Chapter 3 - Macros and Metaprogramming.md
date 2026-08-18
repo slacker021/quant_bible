@@ -1,6 +1,9 @@
+---
+dg-publish:
+---
 Metaprogramming is a sophisticated technique for writing code that generates other code. While it may initially appear esoteric, it is a foundational pillar of the Julia language, allowing for the creation of highly expressive, efficient, and flexible software systems. In practice, metaprogramming is not a daily requirement for the vast majority of applications—often comprising less than 1% of a language’s core implementation—but it is indispensable for designing high-performance libraries and domain-specific languages.
 
-## Understanding the Need for Metaprogramming
+# The Need for Metaprogramming
 
 The primary motivations for utilizing metaprogramming techniques include:
 1. **Conciseness and Readability**: It allows complex logic to be expressed through elegant, high-level abstractions, avoiding the “ugly” boilerplate code often associated with lower-level implementations.
@@ -19,42 +22,75 @@ Julia provides a built-in macro, `@time`, designed to measure the execution dura
 Creating a manual timing function (e.g., `timeit(func)`) requires wrapping the code in a separate function, which is less convenient than the macro’s direct execution.
 
 >[!example] Example: For Loop Addition
+>The following sample code block produces a function that adds all values in an array containing a thousand randomly-generated floats: 
 >```julia
->x::Array{Float64} = rand(1000) # generate array with 1000 random 64-bit floats
->
+>module TimeTest
+>	export get_sum
+>	x::Array{Float64} = rand(1000) # generate array with 1000 random 64-bit floats
+>	
+>	function get_sum()
+>		total = 0.0
+>		for iteration in x
+>			total += iteration
+>		end
+>		return total
+>	end
+>end
 >```
+> Entering `@time get_sum()` into the Julia REPL will display the time performance and memory used to run the command. This outputs something like
+> ```
+> 0.003802 seconds (1.61 k allocations: 44.234 KiB, 98.59% compilation time)
+512.3984302462684
+> ```
 
 ---
+# Loop Unrolling and Optimization
+Loops are very computationally intensive task. While a simple loop isn't that resource-heavy, a file with multiple loops (that are sometimes nested, which is bad design) easily becomes hard on the CPU or GPU. To alleviate this, *loop unrolling* helps to reduce the amount of iterations. Loop unrolling increases a program's speed by eliminating loop control instruction and loop test instructions. 
 
-## Loop Unrolling and Optimization
-
-Loop unrolling is a classic performance optimization where the loop body is repeated multiple times to reduce the overhead of loop control (e.g., incrementing counters and checking exit conditions).
+>[!info]+ Remark: Pros and Cons of Unrolling
+>While unrolling can help reduce the overall load on a machine's processing, it isn't always ideal. Below are the advantages and disadvantages of loop unrolling
+>1. **Advantages**
+>	- Increases program efficiency
+>	- Reduces loop overhead
+>	- If statements in loop aren't dependent on each other, so they can be executed in parallel. 
+>2. **Disadvantages**
+>	- Increased program code size, which can be undesirable. 
+>	- Possible increased usage of register in a single iteration to store temporary variables, which may reduce performance.
+>	- Apart from very small and simple codes, unrolled loops containing branches're even slower than recursion
 
 ### Using the `@unroll` Macro
+While manual unrolling is tedious and scales linearly with the number of iterations, the `Unrolled` package provides a macro to automate this process. This package offers the `@unroll` macro, a syntactic construct that signals to the compiler or runtime environment that an iterative block should be optimized via unrolling rather than relying on standard loop control logic. This forces the compiler to expand operations within that scope into a more direct sequence of calculations, often eliminating intermediate checks and jumps associated with the loop overhead. 
 
-While manual unrolling is tedious and scales linearly with the number of iterations, the `Unrolled` package provides a macro to automate this process.
+>[!example]- Example: Simulating Geometric Brown Motion
+>The movement of an asset's [[Chapter 2 - Financial Instruments and Securities|price]] $S_{t}$ over time can be modeled in discrete steps $\Delta t$. This is modeled using a discretized version of the following [[Chapter 1 - Ito's Formula|Stochastic Differential Equation]]: 
+>$$
+>dSt​=μSt​dt+σSt​dWt​ \tag{1}
+>$$
+>In discrete time, the price evolution from $S_{t - \Delta t}$ to $S_{t}$ is calculated iteratively:
+>$$
+>St​=St−Δt​⋅exp((μ−21​σ2)Δt+σΔt​Z) \tag{2}
+>$$
+>where $\mu$ is the drift (expected return), $𝜎$ is the volatility, $\Delta t$ is the time step size, and $Z$ is the standard normal random variable. 
+>
+>To simulate a one-year price path using millions of tiny steps, say $N = 2,500,000$ steps—corresponding to simulating every six minutes over the year—the simulation requires running that calculation $N$ times sequentially. Without optimization, this loop may look like
+>```julia
+># concetual code structure
+>function simulate_gbm!(S_initial, T, steps; mu, sigma)
+>	prices = [S_initial]
+>	for i in 1:steps-1 # loop runs N times
+>		Z = randn()
+>		dt = T / steps
+>		s_next = prices[i] * exp((mu - 0.5 * sigma^2) * dt + sigma * sqrt(dt) * Z)
+>		push!(prices, s_next)
+>	end
+>	return prices
+>end
+>```
+>
+>```
+>```
 
-```julia
-
-            
-              
-                julia
-              
-              
-                
-                Copy block
-              
-            
-            using Unrolled
-
-@unroll function compute_weights(weights::Vector{Float64})
-    for i in 1:3
-        println("Weight index: ", i)
-    end
-end
-```
-
-To verify that the macro has successfully transformed the loop into discrete instructions, use the `@code_lowered` macro to inspect the compiler’s output.
+Verifying that the loop has been unrolled is done using `@code_unrolled`. 
 
 ---
 
