@@ -1,5 +1,5 @@
 ---
-dg-home: true
+dg-publish: true
 ---
 Let $A$ and $B$ be both subsets of $M$. 
 

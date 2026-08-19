@@ -3,12 +3,14 @@ dg-publish: true
 ---
 In the *functional programming* paradigm of the Julia language, functions and interfaces represent the core architectural constructs that define application behavior. Unlike traditional object-oriented paradigms that encapsulate both state and behavior within classes, Julia separates data definitions from functional operations. Behavior is defined by writing *generic functions* that act upon decoupled, external composite types, using a dynamic multiple dispatch mechanism to determine execution paths at runtime.
 
+---
 # Technical Foundations and Environment Integration
 The system architecture of Julia makes heavy use of *Read-Eval-Print-Loop* (REPL) interface, which is an interactive terminal that can directly execute functions, types, and interfaces. Modern package development in Julia leverages the standard package manager to establish virtual project environments, ensuring reproducible dependency resolution. Interactive prototyping is further enhanced by utilizing source-tracking packages, such as `Revise.jl`
 
 The rest of this chapter'll use an example of a simple space war game to explain the design patterns in use. Furthermore, it is assumed that this simple space war game is all placed in one directory. 
 
-#  Structuring the Domain Model: The Space War Game
+---
+# Structuring the Domain Model: The Space War Game
 To evaluate functional structures and interfaces, the application is modeled on a grid-scale interactive simulation representing a Space War Game. This domain model requires tracking spatial coordinates, physical boundaries, and interactive components. The structural properties of the game entities are represented by the following composite type definitions:
 ```Julia
 # file name is 'location.jl'
@@ -60,7 +62,7 @@ end
 ```
 These definitions adhere to standard naming conventions within the Julia ecosystem. Word separation is handled using underscores to maintain readability. 
 
->[!info]+ Convention: Mutating Function
+>[!Note]+ Convention: Mutating Function
 >*Mutating functions*—those that modify the internal state of their arguments—are suffixed with an exclamation mark (`!`).
 
 The system relies on *duck typing* by default, where arguments are left untyped to maximize generic reuse. *Type annotations* are not used to guide compilation optimizations, as the compiler automatically infers and generates highly optimized machine code for concrete types. Instead, type annotations are used to restrict method domains and guide multiple dispatch decisions. 
@@ -186,6 +188,7 @@ Additionally, argument and property destructuring allow fields to be unpacked di
 (; x, y) = Position(12, 15)
 ```
 
+---
 # First-Class Functions, Closures, and Parameter Fixing
 Functions are first-class citizens in Julia, meaning they can be bound to symbols, passed as arguments, and returned dynamically. For inline transformations, *anonymous functions* provide a convenient syntax:
 ```Julia
@@ -263,15 +266,16 @@ For complex parameter setups, `Fix` structs can be nested or chained using compo
 # Nested argument fixing via piping (since Julia 1.12)
 pipefix(::Val{N}, x) where {N} = Base.Fix{2}(Base.Fix{N}, x)
 
-f_pipe = Base.Fix{2}(dynamics, 2.0) |> # Fix resistance (2nd parameter)
-         pipefix(Val{2}(), 9.8)     |> # Fix gravity (3rd parameter)
-         pipefix(Val{2}(), 0.0)     |> # Fix position (4th parameter)
-         pipefix(Val{2}(), 0.1)     |> # Fix friction (5th parameter)
-         pipefix(Val{2}(), 1.2)     |> # Fix length (6th parameter)
-         pipefix(Val{2}(), 30.0)       # Fix mass (7th parameter)
+f_pipe = Base.Fix{2}(dynamics, 2.0)  # Fix resistance (2nd parameter)
+         pipefix(Val{2}(), 9.8)      # Fix gravity (3rd parameter)
+         pipefix(Val{2}(), 0.0)      # Fix position (4th parameter)
+         pipefix(Val{2}(), 0.1)      # Fix friction (5th parameter)
+         pipefix(Val{2}(), 1.2)      # Fix length (6th parameter)
+         pipefix(Val{2}(), 30.0)     # Fix mass (7th parameter)
 ```
 While anonymous closures remain the most readable choice for complex logic, the `Fix` struct provides performance advantages by reducing the need to compile redundant anonymous functions that are repeatedly instantiated.
 
+---
 # Understanding Multiple Dispatch and Dispatch Dynamics
 Multiple dispatch is the core programming paradigm of Julia. Unlike traditional object-oriented programming (which dispatches based solely on the receiver type of the method call), Julia evaluates the types of _all_ arguments to determine the correct method.
 

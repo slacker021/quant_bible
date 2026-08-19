@@ -3,14 +3,13 @@ dg-publish: true
 dg-home: true
 ---
 # Home
-Welcome to the *Unified Quant Notes Project*! This is a personal project that Zachary Ong originally created for his friends who needed help with their mathematics classes and skills. He had trouble with his mathematics classes during the first half of his undergraduate degree in computer science, bombing and barely passing many of them. 
+Welcome to the *Quant's Bible*! This is a personal project that Zachary Ong originally created for his friends who needed help with their mathematics classes and skills. He had trouble with his mathematics classes during the first half of his undergraduate degree in computer science, bombing and barely passing many of them. 
 
-However, his desire to be a quantitative finance researcher requires him to relearn all the necessary mathematical and computer science skills that he struggled to during his first two years of undergrad. At the same time, much of the knowledge required were scattered throughout various textbooks, websites, forums, and videos all over the internet. This made constantly referring back and forth between references much harder than it had to be. Alas, he realized that no single reference would provide a unified "second brain " that could house everything he needed to know. 
+However, his desire to be a quantitative finance researcher required him to relearn all the necessary mathematical and computer science skills that he struggled to during his first two years of undergrad. At the same time, much of the knowledge required were scattered throughout various textbooks, websites, forums, and videos all over the internet. This made constantly referring back and forth between references much harder than it had to be. Alas, he realized that no single reference would provide a unified "second brain" that could house everything he needed to know. 
 
-Therefore, this collection of notes was formed as a public and ever-expanding knowledgebase dedicated to quantitative finance. The fundamental topics of focus within this knowledgebase are *pure and applied mathematics, mathematical statistics, computer science and Julia programming, as well as finance and econometrics*. This knowledgebase aims to present quantitative finance as a dynamic social science and an independent field of study. Rather than being a disparate collection of facts, equations, and statistics, this knowledgebase aims to construct quantitative finance from the ground-up by viewing it through the language of pure mathematics. Nearly all the notes here are interconnected, allowing readers to go back and forth between different sections as if they were in one universe. 
+Therefore, this collection of notes was formed as a public and ever-expanding knowledgebase dedicated to quantitative finance. The fundamental topics of focus within this knowledgebase are *pure and applied mathematics, mathematical statistics, computer science and Julia programming, as well as finance and econometrics*. This knowledgebase aims to present quantitative finance as a dynamic social science and an independent field of study. Rather than being a disparate collection of facts and tricks, this knowledgebase aims to construct quantitative finance from the ground-up by viewing it through the language of pure mathematics. Nearly all the notes here are interconnected, allowing readers to go back and forth between different sections as if they were in one universe. 
 
 ---
-
 # Who is this For?
 
 ### Quants, Economists, and Actuarial Scientists
