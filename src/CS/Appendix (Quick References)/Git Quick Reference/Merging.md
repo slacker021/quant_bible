@@ -15,7 +15,7 @@ The primary function of the merge commit is threefold
 There're many ways to perform commits but below are the most common and standard ways of doing so: 
 
 >[!warning]+ Warning: Current Branch
->Before using `git merge`, the user must know what branch they are on, which should be the branch that's to be committed to. Once the merge is performed, Git takes all changes from the target branch onto the current branch. 
+>Before using `git merge`, the user must know what branch they are on, which should be the branch that's to be committed against. Once the merge is performed, Git takes all changes from the target branch onto the current branch. 
 ### Standard Integration Merge
 - **Use Case:** This is the default, most robust method.  This involves merging an entire branch’s history into their current branch (e.g., merging `feature/auth` into `develop`).
 - **What it does:** Git identifies a Common Ancestor Point and then fast-forwards or creates a merge commit incorporating all unique commits from the source branch that haven’t been integrated yet.
