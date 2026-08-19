@@ -21,76 +21,61 @@ Julia provides a built-in macro, `@time`, designed to measure the execution dura
 >[!info] Remark: Timing Function
 Creating a manual timing function (e.g., `timeit(func)`) requires wrapping the code in a separate function, which is less convenient than the macro’s direct execution.
 
->[!example] Example: For Loop Addition
->The following sample code block produces a function that adds all values in an array containing a thousand randomly-generated floats: 
->```julia
->module TimeTest
->	export get_sum
->	x::Array{Float64} = rand(1000) # generate array with 1000 random 64-bit floats
->	
->	function get_sum()
->		total = 0.0
->		for iteration in x
->			total += iteration
->		end
->		return total
->	end
->end
->```
-> Entering `@time get_sum()` into the Julia REPL will display the time performance and memory used to run the command. This outputs something like
+>[!example] Example: Speed of GBM simulation
+> The movement of an asset's price $S_{t}$ can be simulated over time by taking many discrete steps $\Delta t$. This is modeled using a discretized version of the following [[Chapter 1 - Ito's Formula|Stochastic Differential Equation]]: 
+> $$
+> d S_{t} = \mu S_{t} dt + \sigma S_{t} d W_{t} \tag{1}
+> $$
+> In discrete time, the price evolution from $S_{t - \Delta t}$ to $S_{t}$ is calculated iteratively as
+> $$
+> S_{t} = S_{t - \Delta t} \cdot \text{exp} \left( \left(\mu - \frac{1}{2} \sigma^{2} \right) \Delta t + \sigma \sqrt{\Delta t } Z \right) \tag{2}
+> $$
+> where $\mu$ is the drift or expected return, $\sigma$ is volatility, and $\Delta t$ is the time step size, and $Z$ is a standard random normal variable. 
+> 
+> One way of implementing this in Julia's Functional programming paradigm is as follows:
+> ```Julia
+> module BrownianMotion
+> 	export simulate_gbm!
+> 	
+> 	function simulate_gbm!(S_initial::A, T::A, μ::A, σ::A, steps::Int64)::Vector{A} where {A<:Float64}
+> 		prices::Vector{A} = [S_initial]
+> 		dt::A = T / Float64(Steps)
+> 		for i in 1:Float64(steps)
+> 			z::A = randn()
+> 			S_next::A = prices[end] * exp((μ - 0.5 * σ^2) * dt + σ * sqrt(dt) * z)
+> 			push!(prices, S_next)
+> 		end
+> 	end
+> end
 > ```
-> 0.003802 seconds (1.61 k allocations: 44.234 KiB, 98.59% compilation time)
-512.3984302462684
+> This can be run in the REPL with the following parameters:
+> ```
+> S₀::Float64 = 100.0; T::Float64 = 1.0; μ::Float64 = 0.05; σ::Float64 = 0.2; steps::Int64 = 2500
+> ```
+> Which could yield the following output:
+> ```
+> 2500-element Vector{Float64}:
+ 100.0
+ 100.2755847118968
+ 100.48739941154705
+   ⋮
+  85.05026828595291
+  84.75490230132971
+  84.67653415718318
+> ```
+> How much time this takes to process can be tested with the `@time` macro, where `@time simulate_gbm!(S₀, T, μ, σ, steps)` can be entered. The following output is yielded:
+> ```
+>  0.000035 seconds (13 allocations: 46.059 KiB)
+2500-element Vector{Float64}:
+ 100.0
+  99.57231194379743
+  99.82686995865562
+   ⋮
+  80.7498146393798
+  81.10022819644011
+  81.02159975515873
 > ```
 
----
-# Loop Unrolling and Optimization
-Loops are very computationally intensive task. While a simple loop isn't that resource-heavy, a file with multiple loops (that are sometimes nested, which is bad design) easily becomes hard on the CPU or GPU. To alleviate this, *loop unrolling* helps to reduce the amount of iterations. Loop unrolling increases a program's speed by eliminating loop control instruction and loop test instructions. 
-
->[!info]+ Remark: Pros and Cons of Unrolling
->While unrolling can help reduce the overall load on a machine's processing, it isn't always ideal. Below are the advantages and disadvantages of loop unrolling
->1. **Advantages**
->	- Increases program efficiency
->	- Reduces loop overhead
->	- If statements in loop aren't dependent on each other, so they can be executed in parallel. 
->2. **Disadvantages**
->	- Increased program code size, which can be undesirable. 
->	- Possible increased usage of register in a single iteration to store temporary variables, which may reduce performance.
->	- Apart from very small and simple codes, unrolled loops containing branches're even slower than recursion
-
-### Using the `@unroll` Macro
-While manual unrolling is tedious and scales linearly with the number of iterations, the `Unrolled` package provides a macro to automate this process. This package offers the `@unroll` macro, a syntactic construct that signals to the compiler or runtime environment that an iterative block should be optimized via unrolling rather than relying on standard loop control logic. This forces the compiler to expand operations within that scope into a more direct sequence of calculations, often eliminating intermediate checks and jumps associated with the loop overhead. 
-
->[!example]- Example: Simulating Geometric Brown Motion
->The movement of an asset's [[Chapter 2 - Financial Instruments and Securities|price]] $S_{t}$ over time can be modeled in discrete steps $\Delta t$. This is modeled using a discretized version of the following [[Chapter 1 - Ito's Formula|Stochastic Differential Equation]]: 
->$$
->dSt​=μSt​dt+σSt​dWt​ \tag{1}
->$$
->In discrete time, the price evolution from $S_{t - \Delta t}$ to $S_{t}$ is calculated iteratively:
->$$
->St​=St−Δt​⋅exp((μ−21​σ2)Δt+σΔt​Z) \tag{2}
->$$
->where $\mu$ is the drift (expected return), $𝜎$ is the volatility, $\Delta t$ is the time step size, and $Z$ is the standard normal random variable. 
->
->To simulate a one-year price path using millions of tiny steps, say $N = 2,500,000$ steps—corresponding to simulating every six minutes over the year—the simulation requires running that calculation $N$ times sequentially. Without optimization, this loop may look like
->```julia
-># concetual code structure
->function simulate_gbm!(S_initial, T, steps; mu, sigma)
->	prices = [S_initial]
->	for i in 1:steps-1 # loop runs N times
->		Z = randn()
->		dt = T / steps
->		s_next = prices[i] * exp((mu - 0.5 * sigma^2) * dt + sigma * sqrt(dt) * Z)
->		push!(prices, s_next)
->	end
->	return prices
->end
->```
->
->```
->```
-
-Verifying that the loop has been unrolled is done using `@code_unrolled`. 
 
 ---
 

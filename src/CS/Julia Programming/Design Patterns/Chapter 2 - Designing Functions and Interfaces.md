@@ -266,12 +266,12 @@ For complex parameter setups, `Fix` structs can be nested or chained using compo
 # Nested argument fixing via piping (since Julia 1.12)
 pipefix(::Val{N}, x) where {N} = Base.Fix{2}(Base.Fix{N}, x)
 
-f_pipe = Base.Fix{2}(dynamics, 2.0) |> # Fix resistance (2nd parameter)
-         pipefix(Val{2}(), 9.8)     |> # Fix gravity (3rd parameter)
-         pipefix(Val{2}(), 0.0)     |> # Fix position (4th parameter)
-         pipefix(Val{2}(), 0.1)     |> # Fix friction (5th parameter)
-         pipefix(Val{2}(), 1.2)     |> # Fix length (6th parameter)
-         pipefix(Val{2}(), 30.0)       # Fix mass (7th parameter)
+f_pipe = Base.Fix{2}(dynamics, 2.0)  # Fix resistance (2nd parameter)
+         pipefix(Val{2}(), 9.8)      # Fix gravity (3rd parameter)
+         pipefix(Val{2}(), 0.0)      # Fix position (4th parameter)
+         pipefix(Val{2}(), 0.1)      # Fix friction (5th parameter)
+         pipefix(Val{2}(), 1.2)      # Fix length (6th parameter)
+         pipefix(Val{2}(), 30.0)     # Fix mass (7th parameter)
 ```
 While anonymous closures remain the most readable choice for complex logic, the `Fix` struct provides performance advantages by reducing the need to compile redundant anonymous functions that are repeatedly instantiated.
 
