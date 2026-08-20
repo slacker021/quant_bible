@@ -8,13 +8,13 @@ The concept of numbers is fundamental, yet achieving a rigorous understanding re
 # Definition of the Set of Real Numbers
 
 $$\begin{gather} \textbf{Definition 1: The Set of Real Numbers} \\[5mm] \text{A set } \mathbb{R} \text{ is called the set of real numbers, and its elements are real numbers,} \\ \text{if it satisfies the axioms of addition and multiplication.} \end{gather}$$
-
+In the realm of real numbers, *addition* and *multiplication* form the two basic operations that can be performed on the numbers. 
 
 ### Axioms of Addition
 $$
 \begin{gather}
-\textbf{Axiom: Rules of Addition} \\[5mm]
-\text{An operation } \\[2.5mm] +:\mathbb{R} \times \mathbb{R}, \\[2.5mm] \text{ which is the operation of addition, is defined, according to each} \\
+\textbf{Axioms of Addition} \\[5mm]
+\text{An operation } \\[2.5mm] +:\mathbb{R} \times \mathbb{R} \rightarrow \mathbb{R}, \\[2.5mm] \text{ which is the operation of addition, is defined, according to each} \\
 \text{ordered pair } (x,y) \text{ of elements } x,y \in \mathbb{R} \text{, which is the sum of  } x \text{ and } y\text{.} \\
 \text{This operation satsfies the following conditions: } \\
 \end{gather}
@@ -35,22 +35,26 @@ $$
 >[!info]+ Remark: Additive and Abelian Group 
 > If an operation is defined on a set $G$ satisfying axioms 1-3, this is described as a *group structure* that's defined on $G$ or that $G$ is a group. If the operation is called addition, the group is an *additive group*. If it's also known that the operation is commutative, that is, condition 4 holds, the group is *commutative* or *Abelian.* Therefore, the four basic rules of addition assert that $\mathbb{R}$ is an additive abelian group. 
 
-### (II) Axioms for Multiplication
+>[!info]+ Remark: Subtraction
+>At first glance, subtraction appears to be its own operation. However, this is merely a facade; Subtraction is a unique case of addition involving the addition of negative numbers. 
+### Axioms of Multiplication
+$$
+\begin{gather}
+\textbf{Axioms of Multiplication} \\[5mm]
+\text{An operation } \\[2.5mm]
+• : \mathbb{R} \times \mathbb{R} \rightarrow \mathbb{R},  \\[2.5mm]
+\text{The operation of multiplication is defined, assigning to each ordered } \\
+\text{pair } (x,y) \text{ of elements } x \text{ and } y \text{ of } \mathbb{R} \text{ a certain element } x \cdot y \in \mathbb{R}, \text{ which is the } \\
+\text{product of } x \text{ and } y\text{. This operation satisfies the following conditions: } \\
+\end{gather}
+$$
+$$
+\begin{align}
 
-An operation of multiplication is defined, $\cdot: \mathbb{R} \times \mathbb{R} \rightarrow \mathbb{R}$, assigning to each ordered pair $(x, y)$ a product $x \cdot y \in \mathbb{R}$. This operation satisfies:
+\end{align}
+$$
 
-1. **Existence of One:** There exists a neutral element $1 \in \mathbb{R} \setminus \{0\}$ such that $x \cdot 1 = 1 \cdot x = x$ for all $x \in \mathbb{R}$.
-    
-2. **Existence of an Inverse:** For every $x \in \mathbb{R} \setminus \{0\}$, there exists an element $x^{-1} \in \mathbb{R}$ such that $x \cdot x^{-1} = x^{-1} \cdot x = 1$.
-    
-3. **Associativity:** $x \cdot (y \cdot z) = (x \cdot y) \cdot z$ for all $x, y, z \in \mathbb{R}$.
-    
-4. **Commutativity:** $x \cdot y = y \cdot x$ for all $x, y \in \mathbb{R}$.
-    
-
-> [!info]- Remark: Multiplicative Group The set $\mathbb{R} \setminus \{0\}$ forms a multiplicative group. The combination of operations satisfying Axioms I and II defines a structure known as a field.
-
-### (I, II) The Connection Between Addition and Multiplication
+### The Connection Between Addition and Multiplication
 
 Multiplication is distributive with respect to addition:
 
