@@ -1,11 +1,11 @@
-
 # The Axiom System and Some General Properties of the Set of Real Numbers
 
-Mathematical theories find application because they allow the transformation of one set of numbers (the initial data) into another set, representing the intermediate or final objective of computations. Consequently, numerical-valued functions hold a distinguished position in mathematics and its applications. These functions, specifically differentiable ones, form the core subject of classical analysis. However, a complete description of these functions' properties necessitates a precise definition of the set of real numbers on which they operate.
+Mathematical theories find application because they allow the transformation of one set of numbers—the initial data or collection of inputs—into another set, representing the intermediate or final objective of computations—which are usually seen as outputs. Thus, numerical-valued functions hold a distinguished position in mathematics and its applications. These functions, specifically differentiable ones, form the core subject of classical real analysis. However, a complete description of these functions' properties necessitates a precise definition of the set of real numbers on which they operate.
 
-The concept of numbers is fundamental, yet achieving a rigorous understanding requires abstraction. We will formalize the real numbers by presenting axioms that establish their independent and foundational properties. The goal is to provide a precise definition suitable for advanced mathematical study, emphasizing the property of completeness (or continuity). This property contains the essential idea of the passage to the limit, which is the foundational nonarithmetical operation of analysis.
+The concept of numbers is fundamental, yet achieving a rigorous understanding requires abstraction. This chapter aims to construct the universe of real numbers that are utilized in basic algebra and arithmetic, but in a more non-ambiguous fashion. Numbers in mathematics are almost like time in physics or letters in some language, because everyone knows what they are and only experts find them hard to understand. Given that real numbers are one of the most basic abstractions in mathematics, a dedicated course could even be provided for this topic. However, this module seeks only to unify and explain what the reader already knows from highschool and their everyday experience with counting. 
 
-## Definition of the Set of Real Numbers
+---
+# Definition of the Set of Real Numbers
 
 $$\begin{gather} \textbf{Definition 1: The Set of Real Numbers} \\ \text{A set } \mathbb{R} \text{ is called the set of real numbers, and its elements are real numbers,} \\ \text{if it satisfies the following system of axioms.} \end{gather}$$
 
