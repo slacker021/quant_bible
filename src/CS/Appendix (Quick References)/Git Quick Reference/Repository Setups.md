@@ -82,6 +82,13 @@ Once the connection has been made, the user can then push whatever changes they 
 git push
 ```
 
+### Making Local Branch Remote
+When setting up a new branch on the local machine, the local branch has no remote version on the remote repository. Attempting to push this new branch leads to a fatal error that tells the user that the current branch has no upstream branch. To set up a remote version of this repository, the user must enter the following while in the local branch that they wanna set up:
+```Powershell
+git push --set-upstream <online_repository> <branch_name_local>
+```
+
+
 ---
 # Cloning
 An alternative to starting one's own repository is to clone an already-existing repository off the internet. This is first done by first going to the server site hosting the repository and copying the URL or SSH key. Once the URL or SSH key has been copied, the user can then open their CLI and enter the following: 
