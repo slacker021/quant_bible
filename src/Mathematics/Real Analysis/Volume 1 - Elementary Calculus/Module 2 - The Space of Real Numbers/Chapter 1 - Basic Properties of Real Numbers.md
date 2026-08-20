@@ -50,47 +50,94 @@ $$
 $$
 $$
 \begin{align}
-
+& \text{1. There's a neutral element or identity element } 1 \in \mathbb{R} \setminus 0 \text{, which is one, such that } \\[2.5mm]
+ & \mathmakebox[5][c]{x \cdot 1 = 1 \cdot x = x} \\[2.5mm]
+& \text{2. For every element } x \in \mathbb{R} \setminus 0 \text{, there's an element } x^{-1} \in \mathbb{R} \text{, which is the inverse } \\[2.5mm] 
+& \text{reciprocal of } x \text{ such that } \\[2.5mm]
+& \mathmakebox[3.75][c]{x \cdot x^{-1} = x^{-1} \cdot x = 1} \\[2.5mm] 
+& \text{3. The operation } • \text{ is associative, that is, the relation } \\[2.5mm]
+& \mathmakebox[3.85][c]{x \cdot (y \cdot z) = (x \cdot y ) \cdot z} \\[2.5mm] 
+& \text{4. The operation } • \text{ is commutative, that is, } \\[2.5mm]
+& \mathmakebox[7.][c]{x \cdot y = y \cdot x} \\[2.5mm]
 \end{align}
 $$
 
-### The Connection Between Addition and Multiplication
+>[!info]+ Remark: Multiplicative Group
+>With respect to the operation of multiplication the set $\mathbb{R} \setminus 0$, as one can verify, is a *multiplicative group*. 
 
-Multiplication is distributive with respect to addition:
+##### The Connection Between Addition and Multiplication
+Multiplication is *distributive* to addition, that is
+$$
+\begin{gather}
+\textbf{Axiom: The Connection Between Addition and} \\
+\textbf{Multiplication} \\[5mm]
+(x + y)z = xz + yz \ \forall x\forall y\forall z \in \mathbb{R}
+\end{gather}
+$$
 
-$$(x + y)z = xz + yz$$
+>[!info]+ Remark: Commutativity of Multiplication
+>By the commutativity of multiplication, this equality continues to hold if the order of the factors is reversed on either side. If two operations satisfying these axioms are defined on a set $G$, then $G$ is a *field*. 
 
-for all $x, y, z \in \mathbb{R}$. Due to commutativity, this also holds if the order of factors is reversed.
+### Order Axioms
+In addition to the basic operations of multiplication and addition, two values or expressions can be compared in terms of their "value." This is involves the use of an *ordering* system, which are more commonly known as *inequalities*. Inequalities are based on the *Order Axioms*:
+$$
+\begin{gather}
+\textbf{Axioms of Ordering: } \\[5mm]
+\text{Between elements of } \mathbb{R} \text{ there's a relation } \leq, \text{ that is, for elements }  \\
+x,y \in \mathbb{R} \text{ one can determine whether } x \leq y \text{ or not. For this to be true, } \\
+\text{the following conditions must hold: }
+\end{gather}
+$$
+$$
+\begin{align}
+\text{1. } & \forall x \in \mathbb{R} (x \leq x) \\
+\text{2. } & (x ≤ y) ∧ (y ≤ x) ⇒ (x = y) \\
+\text{3. } & (x ≤ y) ∧ (y ≤ z) ⇒ (x ≤ z) \\
+\text{4. } & ∀x ∈ R \ ∀y ∈ R (x ≤ y) ∨ (y ≤ x)
+\end{align}
+$$
+This relation $\leq$ on $\mathbb{R}$ is an *inequality*. A set on which a there's a relation between pairs of elements satisfying Axioms 1-2 is *partially ordered*. If in addition Axiom 3 holds, that is, any two elements are comparable, then the set is *linearly ordered.* Therefore, the set of real numbers is linearly ordered by the relation of inequality between elements. 
 
-### (III) Order Axioms
+There're also connections between addition and multiplication, as well as the order on $\mathbb{R}$: 
+$$
+\begin{gather}
+\text{Axiom: } \\[5mm]
+\text{Let } x,y, z \in \mathbb{R}\text{, then } \forall x \forall y \forall z \\
+\end{gather}
+$$
+$$
+\begin{align}
+& (x \leq y) \implies (x + z \leq x=y + z) \\
+& (0 ≤ x) ∧ (0 ≤ y) ⇒ (0 ≤ x · y)
+\end{align}
+$$
 
-There is a relation $\le$ between elements of $\mathbb{R}$, allowing comparison:
+### The Axiom of Completeness (Continuity)
+The final axiom of real numbers deals with *continuity*, which implies the lack of "gaps" or "holes" in the field of real numbers:
+$$
+\begin{gather}
+\textbf{Axiom of Completeness: } \\[5mm]
+\text{If } X \text{ and } Y \text{ are nonempty subsets of } \mathbb{R} \text{ having the property } \\
+\text{such that } x \leq y \  \forall x \forall y\text{, then there's a } c \in \mathbb{R} \text{ such that } x \leq c \leq y \  \forall x \forall y
+\end{gather}
+$$
 
-1. **Reflexivity:** $\forall x \in \mathbb{R} \ (x \le x)$.
-    
-2. **Antisymmetry:** $(x \le y) \wedge (y \le x) \implies (x = y)$.
-    
-3. **Transitivity:** $(x \le y) \wedge (y \le z) \implies (x \le z)$.
-    
-4. **Comparability (Linear Ordering):** $\forall x \in \mathbb{R} \ \forall y \in \mathbb{R} \ (x \le y) \lor (y \le x)$.
-    
+> [!info]+ Remark: Consistency and Categoricity 
+> The list of axioms such that any set on which these axioms hold can be considered a concrete realization or model of the real numbers is now complete. This definition requires no prior knowledge about numbers. However, there's always the question of how is to be determined that these axioms are consistent. After all, these principles are assumed to be true without proof. 
+> 
+> Someone who never learned how to count or measure line segments, or even know the concepts of numbers altogether, would view these axioms as arbitrary. These leads to two questions in relation to any abstract system of axioms: 
+> 1.  Are these axioms consistent? That is, does there exist a set satisfying all the
+conditions just listed? This is the problem of consistency of the axioms.
+> 2. Does the given system of axioms determine the mathematical object
+uniquely? That is, as the logicians would say, is the axiom system categorical?
+>
+>Here, uniqueness must be understood as follows: If two people $A$ and $B$ construct models
+independently, say of number systems RA and RB , satisfying the axioms, then a
+bijective correspondence can be established between the systems RA and RB , say
+f : RA → RB , preserving the arithmetic operations and the order, that is,
 
-> [!info]- Remark: Ordering A set satisfying the first three conditions is partially ordered. The addition of the fourth condition makes $\mathbb{R}$ a linearly ordered set.
-
-### Connection Axioms
-
-- **(I, III) Connection Between Addition and Order:** If $x, y, z \in \mathbb{R}$, then $(x \le y) \implies (x + z \le y + z)$.
-    
-- **(II, III) Connection Between Multiplication and Order:** If $x, y \in \mathbb{R}$, then $(0 \le x) \wedge (0 \le y) \implies (0 \le x \cdot y)$.
-    
-
-### (IV) The Axiom of Completeness (Continuity)
-
-If $X$ and $Y$ are nonempty subsets of $\mathbb{R}$ such that $x \le y$ for every $x \in X$ and every $y \in Y$, then there exists $c \in \mathbb{R}$ such that $x \le c \le y$ for all $x \in X$ and $y \in Y$.
-
-> [!info]- Remark: Consistency and Categoricity This axiomatic system is consistent (a model can be constructed using set theory) and categorical (any two models satisfying these axioms are isomorphic, meaning there exists a bijective correspondence preserving arithmetic operations and order).
-
-## General Algebraic Properties of Real Numbers
+---
+# General Algebraic Properties of Real Numbers
 
 From these axioms, the familiar properties of numbers can be rigorously deduced.
 
