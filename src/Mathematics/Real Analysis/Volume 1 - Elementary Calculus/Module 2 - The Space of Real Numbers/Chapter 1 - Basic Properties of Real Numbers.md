@@ -2,27 +2,38 @@
 
 Mathematical theories find application because they allow the transformation of one set of numbers—the initial data or collection of inputs—into another set, representing the intermediate or final objective of computations—which are usually seen as outputs. Thus, numerical-valued functions hold a distinguished position in mathematics and its applications. These functions, specifically differentiable ones, form the core subject of classical real analysis. However, a complete description of these functions' properties necessitates a precise definition of the set of real numbers on which they operate.
 
-The concept of numbers is fundamental, yet achieving a rigorous understanding requires abstraction. This chapter aims to construct the universe of real numbers that are utilized in basic algebra and arithmetic, but in a more non-ambiguous fashion. Numbers in mathematics are almost like time in physics or letters in some language, because everyone knows what they are and only experts find them hard to understand. Given that real numbers are one of the most basic abstractions in mathematics, a dedicated course could even be provided for this topic. However, this module seeks only to unify and explain what the reader already knows from highschool and their everyday experience with counting. 
+The concept of numbers is fundamental, yet achieving a rigorous understanding requires abstraction. This chapter aims to construct the universe of real numbers that are utilized in basic algebra and arithmetic, but in a more non-ambiguous fashion.  Given that real numbers are one of the most basic abstractions in mathematics, a dedicated course could even be provided for this topic. However, this module seeks only to unify and explain what the reader already knows from highschool and their everyday experience with counting. 
 
 ---
 # Definition of the Set of Real Numbers
 
-$$\begin{gather} \textbf{Definition 1: The Set of Real Numbers} \\ \text{A set } \mathbb{R} \text{ is called the set of real numbers, and its elements are real numbers,} \\ \text{if it satisfies the following system of axioms.} \end{gather}$$
+$$\begin{gather} \textbf{Definition 1: The Set of Real Numbers} \\[5mm] \text{A set } \mathbb{R} \text{ is called the set of real numbers, and its elements are real numbers,} \\ \text{if it satisfies the axioms of addition and multiplication.} \end{gather}$$
 
-### (I) Axioms for Addition
 
-An operation of addition is defined, $+: \mathbb{R} \times \mathbb{R} \rightarrow \mathbb{R}$, assigning to each ordered pair $(x, y)$ of elements in $\mathbb{R}$ a sum $x + y \in \mathbb{R}$. This operation satisfies:
+### Axioms of Addition
+$$
+\begin{gather}
+\textbf{Axiom: Rules of Addition} \\[5mm]
+\text{An operation } \\[2.5mm] +:\mathbb{R} \times \mathbb{R}, \\[2.5mm] \text{ which is the operation of addition, is defined, according to each} \\
+\text{ordered pair } (x,y) \text{ of elements } x,y \in \mathbb{R} \text{, which is the sum of  } x \text{ and } y\text{.} \\
+\text{This operation satsfies the following conditions: } \\
+\end{gather}
+$$
+$$
+\begin{align}
+& \text{1. There's a neutral element or identity element } 0 \text{, which is zero, such that } \\[2.5mm]
+ & \mathmakebox[4][c]{x + 0 = 0 + x = x} \\[2.5mm]
+& \text{2. For every element } x \in \mathbb{R}\text{, there's an element } -x \text{ such that } \\[2.5mm]
+& \mathmakebox[3][c]{x + (-x) = (-x) + x = 0} \\[2.5mm] 
+& \text{3. The operation } + \text{ is associative, that is, the relation } \\[2.5mm]
+& \mathmakebox[3][c]{x + (y + z) = (x + y) + z} \\[2.5mm] 
+& \text{4. The operation } + \text{ is commutative, that is, } \\[2.5mm]
+& \mathmakebox[5.5][c]{x + y = y + x} \\[2.5mm]
+\end{align}
+$$
 
-1. **Existence of Zero:** There exists a neutral element $0$ such that $x + 0 = 0 + x = x$ for all $x \in \mathbb{R}$.
-    
-2. **Existence of a Negative:** For every $x \in \mathbb{R}$, there exists an element $-x \in \mathbb{R}$ such that $x + (-x) = (-x) + x = 0$.
-    
-3. **Associativity:** $x + (y + z) = (x + y) + z$ for all $x, y, z \in \mathbb{R}$.
-    
-4. **Commutativity:** $x + y = y + x$ for all $x, y \in \mathbb{R}$.
-    
-
-> [!info]- Remark: Additive Group Axioms 1 through 4 establish that $\mathbb{R}$ forms an additive Abelian (commutative) group.
+>[!info]+ Remark: Additive and Abelian Group 
+> If an operation is defined on a set $G$ satisfying axioms 1-3, this is described as a *group structure* that's defined on $G$ or that $G$ is a group. If the operation is called addition, the group is an *additive group*. If it's also known that the operation is commutative, that is, condition 4 holds, the group is *commutative* or *Abelian.* Therefore, the four basic rules of addition assert that $\mathbb{R}$ is an additive abelian group. 
 
 ### (II) Axioms for Multiplication
 
