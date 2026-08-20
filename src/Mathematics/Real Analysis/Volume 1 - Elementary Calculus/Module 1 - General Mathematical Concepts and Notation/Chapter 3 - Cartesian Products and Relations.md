@@ -6,7 +6,7 @@ For any two sets $A$ and $B$, a new set can be formed and denoted as $\{A,B \} =
 
 $$
 \begin{gather}
-\textbf{Definition 1: Ordered Pair} \\[5mm]
+\textbf{Definition: Ordered Pair} \\[5mm]
 \text{If } x \in X \text{ and } y \in Y, \text{ the ordered pair } (x,y) \text{ is the set defined by } \\[2.5mm]
 (x,y) := \{\{ x \}, \{ x,y\} \}
 \end{gather}
@@ -21,7 +21,7 @@ This definition enforces algebraic directionality, satisfying the structural con
 
 $$
 \begin{gather}
-\textbf{Theorem 1: Fundamental Contract of Ordered Coordinates} \\[5mm]
+\textbf{Theorem: Fundamental Contract of Ordered Coordinates} \\[5mm]
 (x, y) = (u,v) \iff (x = u) \wedge (y = v)
 \end{gather}
 $$
@@ -31,7 +31,7 @@ Once the internal structure of an individual pair is formalized, the master univ
 
 $$
 \begin{gather}
-\textbf{Definition 2: Cartesian Product} \\[5mm]
+\textbf{Definition: Cartesian Product} \\[5mm]
 \text{Let } X \text{ and } Y \text{ be sets. The Cartesian Product of } X \text{ and } Y \text{ is the set}  \\
 \text{comprising all ordered pairs } (x,y) \text{ such that } x \in X \text{ and } y \in Y. \text{ Symbolically: } \\[5mm]
 X \times Y := \{(x,y) \mid x \in X \wedge y \in Y \} = \{z \mid \exists x \in X, \exists y \in Y \text{ such that } z = (x,y) \}
@@ -44,7 +44,7 @@ To rigorously justify the existence of the Cartesian product without relying on 
 
 $$
 \begin{gather}
-\textbf{Definition 3: Power Set} \\[5mm]
+\textbf{Definition: Power Set} \\[5mm]
 \text{Let } X \text{ be a set. The power set of } X, \text{ denoted as } \mathcal{P}(X) \text{ or } 2^X, \text{ is the set comprising } \\
 \text{all possible subsets of } X. \text{ Symbolically: } \\[2.5mm]
 \mathcal{P}(X) := \{A \mid A \subset X \}
@@ -73,7 +73,7 @@ The establishment of the Cartesian product allows for the formalization of conne
 
 $$
 \begin{gather}
-\textbf{Definition 4: Binary Relation} \\[5mm]
+\textbf{Definition: Binary Relation} \\[5mm]
 \text{Let } X \text{ and } Y \text{ be sets. A binary relation } \mathcal{R} \text{ from } X \text{ to } Y \text{ is defined as any arbitrary } \\
 \text{subset of their Cartesian product. Symbolically: } \\[2.5mm]
 \mathcal{R} \subset X \times Y \\[2.5mm] 
@@ -89,7 +89,7 @@ When analyzing a relation confined to a single set $X$, distinct structural prop
 
 $$
 \begin{gather}
-\textbf{Definition 5: Equivalence Relation} \\[5mm]
+\textbf{Definition: Equivalence Relation} \\[5mm]
 \text{A relation } \mathcal{R} \text{ on a set } X \text{ is an equivalence relation if and only if the following } \\
 \text{three structural conditions are satisfied simultaneously for all } x, y, z \in X: \\[2.5mm]
 \text{1. Reflexivity: } \forall x \in X \, (x \mathcal{R}x)  \\
@@ -102,7 +102,7 @@ Equivalence relations possess the unique property of clustering elements togethe
 
 $$
 \begin{gather}
-\textbf{Definition 6: Equivalence Class} \\[5mm]
+\textbf{Definition: Equivalence Class} \\[5mm]
 \text{For any fixed element } x \in X, \text{ the collection of all elements related to } x \\
 \text{under the equivalence relation } \mathcal{R} \text{ forms a distinct subset denoted as:} \\[2.5mm]
 [x] := \{ y \in X \mid y\mathcal{R}x \}
@@ -113,7 +113,7 @@ While an equivalence relation offers an internal, element-wise mechanism for ide
 
 $$
 \begin{gather}
-\textbf{Definition 7: Partition of a Set} \\[5mm]
+\textbf{Definition: Partition of a Set} \\[5mm]
 \text{Let } X \text{ be a non-empty set. A family } \mathcal{P} \text{ of subsets of } X \text{ is designated a partition of } \\
 X \text{ if and only if the following three conditions are satisfied:} \\[2.5mm]
 \text{1. Non-emptiness: } \forall A \in \mathcal{P} \ (A \neq \emptyset) \\
@@ -127,7 +127,7 @@ The concepts of an equivalence relation and a set-theoretic partition are fundam
 *Ordering Relations* are rules used to compare, rank, or sort elements within a set. There're two types of order relations that are heavily used in real analysis: *Partial Order* and *Total (Linear) Order*. 
 $$
 \begin{gather}
-\textbf{Definition 8: Partial Order} \\[5mm]
+\textbf{Definition: Partial Order} \\[5mm]
 \text{A binary relation } \mathcal{R} \text{ is a partial order if and only if it is: } \\[2.5mm]
 \text{1. Reflexive } (x \mathcal{R} x) \\
 \text{2. Transitivity } ( x \mathcal{R} y \wedge y \mathcal{R} z \implies x \mathcal{R} z ) \\
@@ -147,7 +147,7 @@ $$
 This axiom can be used to construct a new type of order, an order where every single pair of elements in the universe can be explicitly compared with one another: 
 $$
 \begin{gather}
-\textbf{Definition 9: Total (Linear) Order} \\[5mm]
+\textbf{Definition: Total (Linear) Order} \\[5mm]
 \text{This is a stricter partial order that satisfies the  principle of comparability,} \\
 \text{guaranteeing that every single pair of elements in the universe can be explicitly compared. }
 \end{gather}
@@ -160,21 +160,21 @@ $$
 The various definitions from this chapter can be used to construct several useful facts that expand the field of set theory
 $$
 \begin{gather}
-\textbf{Theorem 2:} \\[5mm]
+\textbf{Theorem:} \\[5mm]
 \text{If } X \text{ and } Y \text{ are two sets, then } X \times Y = \emptyset \iff X = \emptyset \lor Y = \emptyset
 \end{gather}
 $$
 (See [[Mathematics/Real Analysis/Volume 1 - Elementary Calculus/Proofs and Derivations/Module 1 - Some General Mathematical Concepts and Notation/Chapter 3/Proof of Theorem 2|proof]])
 $$
 \begin{gather}
-\textbf{Theorem 3:} \\
+\textbf{Theorem:} \\
 \text{If } X \times Y \neq \emptyset, \text{ then } A \times B \subset X \times Y \iff A \subset X \wedge B \subset Y
 \end{gather}
 $$
 (See [[Proof of Theorem 3|proof]])
 $$
 \begin{gather}
-\textbf{Theorem 4:} \\[5mm]
+\textbf{Theorem:} \\[5mm]
 \text{Let } X,Y,Z \text{ be arbitrary sets. Then the following equality holds: } \\[5mm]
 (X \times Y) \cup (Z \times Y) = (X \cup Z) \times Y
 \end{gather}
@@ -182,7 +182,7 @@ $$
 (See [[Proof of Theorem 4|proof]])
 $$
 \begin{gather}
-\textbf{Theorem 5: } \\[5mm]
+\textbf{Theorem: } \\[5mm]
 (X \times Y) \cap (X' \times Y') = (X \cap X') \times (Y \cap Y')
 \end{gather}
 $$
