@@ -5,7 +5,7 @@ dg-publish: true
 This proof is unique because the equivalence of these five statements is established via a circular chain of implications: 
 
 # Part 1: Fact 1 $\implies$ Fact 2
-Assume $f$ is injective. Let $A \subseteq X$ be an arbitrary subset. By [[Mathematics/Real Analysis/Volume 1 - Elementary Calculus/Proofs and Derivations/Module 1 - Some General Mathematical Concepts and Notation/Chapter 4/Proof of Proposition 3|proposition 3]], the containment $A \subseteq f^{-1}(f(A))$ holds for any mapping $f$. To establish the reverse inclusion $f^{-1}(f(A)) \subseteq A$, let $x \in f^{-1}(f(A))$ be an arbitrary element. By definition of the inverse image,
+Assume $f$ is injective. Let $A \subseteq X$ be an arbitrary subset. By [[Proof of Proposition 3 of Useful Facts about Functions|proposition 3]], the containment $A \subseteq f^{-1}(f(A))$ holds for any mapping $f$. To establish the reverse inclusion $f^{-1}(f(A)) \subseteq A$, let $x \in f^{-1}(f(A))$ be an arbitrary element. By definition of the inverse image,
 $$x \in f^{-1}(f(A)) \implies f(x) \in f(A) \tag{1}$$
 By definition of the direct image,
 $$f(x) \in f(A) \implies \exists a \in A \text{ such that } f(x) = f(a) \tag{2}$$
@@ -14,7 +14,7 @@ $$f(x) = f(a) \implies x = a \tag{3}$$
 Since $a \in A$, it follows that $x \in A$. Thus, $f^{-1}(f(A)) \subseteq A$. Combining both inclusions yields 
 $$f^{-1}(f(A)) = A \tag{4}$$
 # Part 2: Fact 2 $\implies$ Fact 3
-Assume $f^{-1}(f(S)) = S$ holds for every subset $S \subseteq X$. Let $A, B \subseteq X$. By [[Mathematics/Real Analysis/Volume 1 - Elementary Calculus/Proofs and Derivations/Module 1 - Some General Mathematical Concepts and Notation/Chapter 4/Proof of Proposition 1|proposition 1]], the inclusion $$f(A \cap B) \subseteq f(A) \cap f(B) \tag{5}$$ holds for any mapping $f$. To establish the reverse inclusion
+Assume $f^{-1}(f(S)) = S$ holds for every subset $S \subseteq X$. Let $A, B \subseteq X$. By [[Proof of Proposition 1 of Useful Facts about Functions|proposition 1]], the inclusion $$f(A \cap B) \subseteq f(A) \cap f(B) \tag{5}$$ holds for any mapping $f$. To establish the reverse inclusion
 $$f(A) \cap f(B) \subseteq f(A \cap B) \tag{6}$$let $y \in f(A) \cap f(B)$ be an arbitrary element. By definition of set intersection, 
 $$y \in f(A) \text{ and } y \in f(B) \tag{7}$$
 By definition of direct images, there exist elements $a \in A$ and $b \in B$ such that 

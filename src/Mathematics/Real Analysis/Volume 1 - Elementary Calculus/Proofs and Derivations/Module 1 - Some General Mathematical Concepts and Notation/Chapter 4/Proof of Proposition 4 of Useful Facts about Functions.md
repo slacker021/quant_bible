@@ -4,7 +4,7 @@ dg-publish: true
 # Part 1: Surjectivity Characterization
 
 ### LHS ($\implies$)
-Assume that $f: X \to Y$ is surjective and let $B' \subseteq Y$ be an arbitrary subset. From [[Mathematics/Real Analysis/Volume 1 - Elementary Calculus/Proofs and Derivations/Module 1 - Some General Mathematical Concepts and Notation/Chapter 4/Proof of Proposition 3|proposition 3]], the containment $f(f^{-1}(B')) \subseteq B'$ holds for any mapping $f$. To establish the reverse inclusion $B' \subseteq f(f^{-1}(B'))$, let $y \in B'$ be an arbitrary element. Since $f$ is surjective, there exists at least one element $x \in X$ such that $f(x) = y$. Because $f(x) = y \in B'$, by definition of the inverse image,
+Assume that $f: X \to Y$ is surjective and let $B' \subseteq Y$ be an arbitrary subset. From [[Proof of Proposition 3 of Useful Facts about Functions|proposition 3]], the containment $f(f^{-1}(B')) \subseteq B'$ holds for any mapping $f$. To establish the reverse inclusion $B' \subseteq f(f^{-1}(B'))$, let $y \in B'$ be an arbitrary element. Since $f$ is surjective, there exists at least one element $x \in X$ such that $f(x) = y$. Because $f(x) = y \in B'$, by definition of the inverse image,
 $$
 x \in f^{-1}(B') \tag{1}
 $$

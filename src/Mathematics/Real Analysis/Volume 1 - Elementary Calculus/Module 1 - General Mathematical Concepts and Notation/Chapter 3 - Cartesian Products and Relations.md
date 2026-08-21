@@ -25,7 +25,7 @@ $$
 (x, y) = (u,v) \iff (x = u) \wedge (y = v)
 \end{gather}
 $$
-(see [[Mathematics/Real Analysis/Volume 1 - Elementary Calculus/Proofs and Derivations/Module 1 - Some General Mathematical Concepts and Notation/Chapter 3/Proof of Theorem 1|proof]])
+(see [[Proof of the Fundamental Contract of Ordered Coordinates|proof]])
 
 Once the internal structure of an individual pair is formalized, the master universal set comprising all possible coordinate pairs can be constructed: 
 
@@ -164,14 +164,14 @@ $$
 \text{If } X \text{ and } Y \text{ are two sets, then } X \times Y = \emptyset \iff X = \emptyset \lor Y = \emptyset
 \end{gather}
 $$
-(See [[Mathematics/Real Analysis/Volume 1 - Elementary Calculus/Proofs and Derivations/Module 1 - Some General Mathematical Concepts and Notation/Chapter 3/Proof of Theorem 2|proof]])
+(See [[Proof of the First Useful Property of Cartesian Products|proof]])
 $$
 \begin{gather}
 \textbf{Theorem:} \\
 \text{If } X \times Y \neq \emptyset, \text{ then } A \times B \subset X \times Y \iff A \subset X \wedge B \subset Y
 \end{gather}
 $$
-(See [[Proof of Theorem 3|proof]])
+(See [[Proof of the Second Useful Property of Cartesian Products|proof]])
 $$
 \begin{gather}
 \textbf{Theorem:} \\[5mm]
@@ -179,11 +179,11 @@ $$
 (X \times Y) \cup (Z \times Y) = (X \cup Z) \times Y
 \end{gather}
 $$
-(See [[Proof of Theorem 4|proof]])
+(See [[Proof of the Third Useful Property of Cartesian Products|proof]])
 $$
 \begin{gather}
 \textbf{Theorem: } \\[5mm]
 (X \times Y) \cap (X' \times Y') = (X \cap X') \times (Y \cap Y')
 \end{gather}
 $$
-(See [[Proof of Theorem 5|proof]])
+(See [[Proof of the Fourth Useful Property of Cartesian Products|proof]])

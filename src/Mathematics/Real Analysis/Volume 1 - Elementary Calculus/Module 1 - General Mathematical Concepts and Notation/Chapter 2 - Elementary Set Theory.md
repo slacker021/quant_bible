@@ -170,25 +170,25 @@ C_{M}(A \cup B) = C_{M}(A) \cap C_{M}(B) \\
 C_{M}(A \cap B) = C_{M}(A) \cup C_{M}(B)
 \end{gather}
 $$
-(see [[Mathematics/Real Analysis/Volume 1 - Elementary Calculus/Proofs and Derivations/Module 1 - Some General Mathematical Concepts and Notation/Chapter 2/Proof of Proposition 2|proof]])
+(see [[Proof of de Morgan's Laws of Set Complements|proof]])
 Another useful law refers to the *distributive nature of set operations:*
 $$
 \begin{gather}
-\textbf{Proposition: Distributive Laws of Intersection and Union: } \\[5mm]
+\textbf{Proposition: Distributive Laws of Intersection and Union } \\[5mm]
 \text{For any subsets } A,B,C \subset M:  \\[2.5mm]
 A \cap (B \cup C) = (A \cap B) \cup (A \cup C) \\
 A \cup (B \cap C) = (A \cup B) \cap (A \cup C)
 \end{gather}
 $$
-(see [[Mathematics/Real Analysis/Volume 1 - Elementary Calculus/Proofs and Derivations/Module 1 - Some General Mathematical Concepts and Notation/Chapter 2/Proof of Proposition 3|proof]])
+(see [[Proof of the Distributive Laws of Intersection and Union|proof]])
 Last but not the least, the complement in particular has a unique set of rules:
 $$
 \begin{gather}
-\textbf{Lemma: Elementary Lemma of Set Complementation}  \\[5mm]
+\textbf{Elementary Lemma of Set Complementation: }  \\[5mm]
 \text{For any subsets } A,B,C \subset M:  \\[2.5mm]
 (A \subset C) \wedge (B \subset C) \iff (A \cup B) \subset C \\
 (A \subset B) \iff (C_{M}B \subset C_{M}A) \\
 C_{M}(C_{M}A) = A
 \end{gather}
 $$
-(see [[Mathematics/Real Analysis/Volume 1 - Elementary Calculus/Proofs and Derivations/Module 1 - Some General Mathematical Concepts and Notation/Chapter 2/Proof of Lemma 1|proof]])
+(see [[Proof of Elementary Lemma of Set Complementation|proof]])

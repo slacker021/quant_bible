@@ -77,7 +77,7 @@ f^{-1} := \{ (y, x) \in Y \times X \mid (x, y) \in f \}
 \end{gather}
 $$
 
-Because the source mapping $f$ is surjective, the domain of $f^{-1}$ is guaranteed to be the entirety of $Y$. Because $f$ is injective, the relation $f^{-1}$ satisfies the uniqueness constraint of Definition 1, establishing $f^{-1}$ as a valid function mapping $Y \to X$ such that $f^{-1}(y) = x \iff f(x) = y$. The inverse of a function is also known as its *preimage*. (see [[Proof of Definition 6]] for further explanation)
+Because the source mapping $f$ is surjective, the domain of $f^{-1}$ is guaranteed to be the entirety of $Y$. Because $f$ is injective, the relation $f^{-1}$ satisfies the uniqueness constraint of Definition 1, establishing $f^{-1}$ as a valid function mapping $Y \to X$ such that $f^{-1}(y) = x \iff f(x) = y$. The inverse of a function is also known as its *preimage*. (see [[Proof of Inverse Mapping Existence]] for further explanation)
 
 > [!info]+ Remark 3
 > A clever way to think about the inverse of a function $f$ is that it "undoes" what the original function does.
@@ -119,7 +119,7 @@ $$
 h \circ (g \circ f) = (h \circ g) \circ f
 \end{gather}
 $$
-(See [[Mathematics/Real Analysis/Volume 1 - Elementary Calculus/Proofs and Derivations/Module 1 - Some General Mathematical Concepts and Notation/Chapter 4/Proof of Theorem 1|proof]])
+(See [[Proof of the Associative Property of Composite Functions|proof]])
 
 ---
 # Set Cardinality and Cantor's Framework
@@ -149,9 +149,9 @@ Using the natural numbers $\mathbb{N} := \{1,2,3, \dots \}$ as a reference, sets
 
 An important implication is *Cantor's Theorem*, which establishes that there's no maximum cardinal number; The cardinality of any power set is strictly greater than the cardinality of its parent set: 
 $$
-\begin{gather} \textbf{Theorem: Cantor's Theorem} \\[5mm] \text{For any arbitrary set } X, \text{ the cardinality of } X \text{ is strictly less than the} \\ \text{cardinality of its power set } \mathcal{P}(X). \text{ Symbolically: } |X| < |\mathcal{P}(X)| \end{gather}
+\begin{gather} \textbf{Cantor's Theorem: } \\[5mm] \text{For any arbitrary set } X, \text{ the cardinality of } X \text{ is strictly less than the} \\ \text{cardinality of its power set } \mathcal{P}(X). \text{ Symbolically: } |X| < |\mathcal{P}(X)| \end{gather}
 $$
-(see [[Mathematics/Real Analysis/Volume 1 - Elementary Calculus/Proofs and Derivations/Module 1 - Some General Mathematical Concepts and Notation/Chapter 4/Proof of Theorem 2|proof]])
+(see [[Proof of Cantor's Theorem|proof]])
 
 # Useful Facts about Functions
 The various theorems and definitions can be used to derive the following useful facts for determining the properties of functions in various contexts. 
@@ -165,7 +165,7 @@ $$
 \text{4. } f(A \cup B) = f(A) \cup f(B)
 \end{gather}
 $$
-(see [[Mathematics/Real Analysis/Volume 1 - Elementary Calculus/Proofs and Derivations/Module 1 - Some General Mathematical Concepts and Notation/Chapter 4/Proof of Proposition 1|proof]])
+(see [[Proof of Proposition 1 of Useful Facts about Functions|proof]])
 $$
 \begin{gather} 
 \textbf{Lemma: } \\[5mm]
@@ -175,7 +175,7 @@ $$
 \text{3. } f^{-1} (A' \cup B') = f^{-1}(A') \cup f^{-1}(B')
 \end{gather}
 $$
-(see [[Mathematics/Real Analysis/Volume 1 - Elementary Calculus/Proofs and Derivations/Module 1 - Some General Mathematical Concepts and Notation/Chapter 4/Proof of Lemma 1|proof]])
+(see [[Proof of Lemma of Useful Facts about Functions|proof]])
 $$
 \begin{gather}
 \textbf{Proposition: } \\[5mm]
@@ -184,7 +184,7 @@ $$
 \text{2. } f^{-1} (C_{Y}A') = C_{X}f^{-1}(A')
 \end{gather}
 $$
-(see [[Mathematics/Real Analysis/Volume 1 - Elementary Calculus/Proofs and Derivations/Module 1 - Some General Mathematical Concepts and Notation/Chapter 4/Proof of Proposition 2|proof]])
+(see [[Proof of Proposition 2 of Useful Facts about Functions|proof]])
 $$
 \begin{gather}
 \textbf{Proposition: } \\[5mm]
@@ -193,7 +193,7 @@ $$
 \text{2. } f(f^{-1}(B')) \subset B'   
 \end{gather}
 $$
-(see [[Mathematics/Real Analysis/Volume 1 - Elementary Calculus/Proofs and Derivations/Module 1 - Some General Mathematical Concepts and Notation/Chapter 4/Proof of Proposition 3|proof]])
+(see [[Proof of Proposition 3 of Useful Facts about Functions|proof]])
 $$
 \begin{gather}
 \textbf{Proposition: } \\[5mm]
@@ -201,7 +201,7 @@ $$
 \text{2. Bijective if and only if } f^{-1}(f(A)) = A \wedge f(f^{-1}(B')) = B' 
 \end{gather}
 $$
-(see [[Proof of Proposition 4|proof]])
+(see [[Proof of Proposition 4 of Useful Facts about Functions|proof]])
 $$
 \begin{gather}
 \textbf{Proposition: } \\[5mm]
@@ -213,6 +213,6 @@ $$
 \text{5. }  f(A \ \backslash \ B) = f(A) \ \backslash  \ f(B) \text{ whenever } B \subset A \subset X
 \end{gather}
 $$
-(see [[Proof of Proposition 5|proof]])
+(see [[Proof of Proposition 5 of Useful Facts about Functions|proof]])
 
 
