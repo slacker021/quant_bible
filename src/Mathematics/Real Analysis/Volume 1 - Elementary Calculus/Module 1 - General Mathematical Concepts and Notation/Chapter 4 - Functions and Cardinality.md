@@ -12,7 +12,7 @@ f:X \rightarrow Y, \text{ is a binary relation } f \subset X \times Y \text{ tha
 \end{gather}
 $$
 
-> [!info]+ Remark 1
+> [!danger]+ Intuition: Functions as a Machine 
 > It helps to think of a function as a "machine" or transformation that takes in an input and leads to an output. The input is transformed through a series of instructions that gets it to its destination. For any given coordinate $(x,y) \in f$, the unique element $y$ is designated as the value of the function $f$ at the argument $x$, denoted by the functional notation $y = f(x)$. 
 
 In the case of the function $f:X \rightarrow Y$, it has two sets, where one is mapped to the other: 
@@ -44,7 +44,7 @@ $$
 \end{gather}
 $$
 
->[!info]+ Remark 1
+>[!danger]+ Intuition: Injective Functions 
 >In other words, an injective function maps every distinct input to a unique output. In an injection, no two different inputs produce the same output. 
 
 $$
@@ -56,7 +56,7 @@ $$
 \end{gather}
 $$
 
-> [!info]+ Remark 2
+> [!info]+ Remark: Surjections
 > Additionally, a surjective function has every element in its codomain mapped to at least one element in the domain. 
 
 $$
@@ -79,10 +79,10 @@ $$
 
 Because the source mapping $f$ is surjective, the domain of $f^{-1}$ is guaranteed to be the entirety of $Y$. Because $f$ is injective, the relation $f^{-1}$ satisfies the uniqueness constraint of Definition 1, establishing $f^{-1}$ as a valid function mapping $Y \to X$ such that $f^{-1}(y) = x \iff f(x) = y$. The inverse of a function is also known as its *preimage*. (see [[Proof of Inverse Mapping Existence]] for further explanation)
 
-> [!info]+ Remark 3
+> [!danger]+ Intuition: Inverse Functions 
 > A clever way to think about the inverse of a function $f$ is that it "undoes" what the original function does.
 
-> [!example]- Example 1: Different Types of Functions
+> [!example]- Example: Different Types of Functions
 > The following below are examples of functional relations. Furthermore, some of these can be classified into injective, surjective, or bijective functions:
 >1. The formulae $l = 2 \pi r$ and $V = \frac{4}{3} \pi r^3$ establish functional relationships between the circumference $l$ of a circle and its radius $r$, as well as the volume $V$ of a ball and its radius $r$. Both formulae provide a particular function $f:\mathbb{R}_{+} \rightarrow \mathbb{R}_{+}$ defined on the set of positive real numbers in the same set. In functional notation, these take the form of $c(r) = 2 \pi r$, which is the circle's circumference, and $V(r) = \frac{4}{3}\pi r^3$, which is the circle's volume. The circumference function $c(r)$ and volume $v(r)$ function are both bijective mappings because each input for both functions has a unique output, as well as each function's range being equal to their codomains. 
 >2. Let $c:X \rightarrow \mathbb{R}$ be the function that assigns each coordinate system $x \in X$ the value of $c(x)$ the speed of light in *vacuo* measured using those coordinates. The function $c:X \rightarrow \mathbb{R}$ is constant, where for any value $x \in X$, it has the value $c$. This is a fundamental experimental fact, where the speed of light is a constant 299,792,458 meters per second. As a function, it's neither injective nor surjective because the only element in the range is the constant speed while its codomain is the set of real numbers, and each element in its domain is mapped to only one element in its domain. 
