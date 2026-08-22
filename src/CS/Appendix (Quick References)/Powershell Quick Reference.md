@@ -89,22 +89,22 @@ dir  "D:\Office\Project" -directory
 
 This command will create the text file `myfile.txt` in the `Project` folder:
 ```powershell
-New-Item -Path "D:\Office \Project\myfile.txt" -ItemType File
+New-Item -Path "D:\Office\Project\myfile.txt" -ItemType File
 ```
 
 This command will copy `myfile.txt` from the `Project` folder to the `startup` folder:
 ```powershell
-Copy-Item -Path "D:\Office \Project\myfile.txt" -Destination "D:\Office \Project\startup\myfile.txt"
+Copy-Item -Path "D:\Office\Project\myfile.txt" -Destination "D:\Office \Project\startup\myfile.txt"
 ```
 
 This command will delete `myfile.txt` from the `Project` folder:
 ```powershell
-Remove-Item -Path "D:\Office \Project\myfile.txt"
+Remove-Item -Path "D:\Office\Project\myfile.txt"
 ```
 
 The command below will delete the `Project` folder, including all its contents:
 ```powershell
-Remove-Item -Path "D:\Office \Project" -Recurse
+Remove-Item -Path "D:\Office\Project" -Recurse
 ```
 
 ### Checking Folder Contents and Searching: `Get-ChildItem`, `Select-String`
