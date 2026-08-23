@@ -1,5 +1,5 @@
 ---
-dg-publish:
+dg-publish: true
 ---
 # The Axiom System and Some General Properties of the Set of Real Numbers
 
@@ -38,7 +38,7 @@ $$
 >[!info]+ Remark: Additive and Abelian Group 
 > If an operation is defined on a set $G$ satisfying axioms 1-3, this is described as a *group structure* that's defined on $G$ or that $G$ is a group. If the operation is called addition, the group is an *additive group*. If it's also known that the operation is commutative, that is, condition 4 holds, the group is *commutative* or *Abelian.* Therefore, the four basic rules of addition assert that $\mathbb{R}$ is an additive abelian group. 
 
->[!info]+ Remark: Subtraction
+>[!danger]+ Intuition: Subtraction
 >At first glance, subtraction appears to be its own operation. However, this is merely a facade; Subtraction is a unique case of addition involving the addition of negative numbers. 
 ### Axioms of Multiplication
 $$
@@ -68,6 +68,8 @@ $$
 >[!info]+ Remark: Multiplicative Group
 >With respect to the operation of multiplication the set $\mathbb{R} \setminus 0$, as one can verify, is a *multiplicative group*. 
 
+>[!danger]+ Intuition: Division
+>Similar to the case of subtraction, division is merely a unique case of multiplication. To divide a number $x$ is to simply multiply it by $1/y$. This is a repeated form of subtraction. 
 ##### The Connection Between Addition and Multiplication
 Multiplication is *distributive* to addition, that is
 $$
@@ -157,7 +159,20 @@ $$\begin{gather} \textbf{Proposition: Consequences of Order with Addition and Mu
 
 ---
 # The Completeness Axiom and Bounds
-$$\begin{gather} \textbf{Definition: Bounded Sets} \\[5mm] \text{A set } X \subset \mathbb{R} \text{ is bounded above (respectively, bounded below) if there} \\ \text{exists a number } c \in \mathbb{R} \text{ such that } x \le c \text{ (respectively, } c \le x \text{) for all } x \in X. \\ \text{The number } c \text{ is called an upper bound (majorant) or lower bound (minorant).} \\ \text{A set bounded both above and below is called bounded.} \end{gather}$$$$\begin{gather} \textbf{Definition: Maximal and Minimal Elements} \\[5mm] \text{An element } a \in X \text{ is the largest or maximal element (} \max X \text{) if } x \le a \text{ for all } x \in X: \\[2.5mm] (a = \max X) := (a \in X) \wedge \forall x \in X (x \le a). \\[2.5mm] \text{Similarly, for the minimal element (} \min X \text{):} \\[2.5mm] (a = \min X) := (a \in X) \wedge \forall x \in X (a \le x). \end{gather}$$
+While the set of real numbers appears vast and infinite, it's nonetheless possible to construct subsets of it that are *uncountably finite*. This is the principle of *bounding*: 
+$$
+\begin{gather}  
+\textbf{Definition: Bounded Sets} \\[5mm]
+ \text{A set } X \subset \mathbb{R} \text{ is bounded above (respectively, bounded below) if there} \\ \text{exists a number } c \in \mathbb{R} \text{ such that } x \le c \text{ (respectively, } c \le x \text{) for all } x \in X. \\ \text{The number } c \text{ is called an upper bound (majorant) or lower bound (minorant).} \\ \text{A set bounded both above and below is called bounded.} 
+\end{gather}
+$$
+Intuitively, the concept of bounded sets implies that some of them have a "largest" or "lowest" element that bounds the list on the "top" or "bottom." This calls for the description of a *minimal* or *maximal* element that bounds said subset:
+$$
+\begin{gather}  
+\textbf{Definition: Maximal and Minimal Elements} \\[5mm] 
+\text{An element } a \in X \text{ is the largest or maximal element (} \max X \text{) if } x \le a \text{ for all } x \in X: \\[2.5mm] (a = \max X) := (a \in X) \wedge \forall x \in X (x \le a). \\[2.5mm] \text{Similarly, for the minimal element (} \min X \text{):} \\[2.5mm] (a = \min X) := (a \in X) \wedge \forall x \in X (a \le x). 
+\end{gather}
+$$
 
 >[!info]+ Remark: Maximal and Minimal Elements
 >Not every bounded set has a maximal or minimal element. For example, $X = \{x \in \mathbb{R} \mid 0 \le x < 1\}$ has no maximum. While it has a minimum of $0$, it has no maximum because there are an infinite amount of real numbers between 0 (including 0, which is the minimum) and 1 (which is not a maximum because it isn't included in the list). By definition, $x < 1$ means that the value must be less than one but not one. 
