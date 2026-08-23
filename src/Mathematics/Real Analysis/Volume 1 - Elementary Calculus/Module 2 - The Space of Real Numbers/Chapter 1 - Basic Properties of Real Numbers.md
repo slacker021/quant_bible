@@ -1,3 +1,4 @@
+---
 dg-publish: true
 ---
 # The Axiom System and Some General Properties of the Set of Real Numbers
