@@ -103,3 +103,5 @@ To maintain this mission of open access, the author doesn't solicit funds nor ac
 
 # Technical Information
 These notes were created markdown syntax in [Obsidian](https://obsidian.md/), a free software that allows users to view markdown files in a more elegant fashion. Hosting is done via [Forestry.md](https://forestry.md/), a web hosting service that is available as an Obsidian plugin. This allows for the look and feel of the website to be drafted before being published. In addition to using Markdown for text, all visualizations are rendered in using [Tikz](https://tikz.dev/), which the figures being exported as PNG images after being rendered in the [Tikz editor](https://tikz.dev/editor/). To help preserve and backup information in this knowledge base, this collection of notes is stored in a [public Github repository](https://github.com/slacker021/zachs_online_quant_notes.git). 
+
+These notes can be found in the [Obsidian Garden Gallery](https://vaults.obsidian-community.com/), which is a curated showcase of the best public sites bult with Obsidian. Check out other awesome Obsidian vaults in the gallery!
