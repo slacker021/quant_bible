@@ -24,9 +24,9 @@ Because the corrupted `.dll` is throwing a system-level error, the cleanest appr
 > [!example]+ Windows-Specific Example
 > The following is a way to execute this on Windows 11 via powershell: 
 > ```Powershell
-> Remove-Item -Recurse -Force "C:\Users\ongza\.julia\compiled\v1.12\DataStructures"
+> Remove-Item -Recurse -Force "C:\Users\...\.julia\compiled\v1.1x\PrecompiledPackage"
 > ```
-> The file has to be removed recursively, and by force, due to it being nested deep within the compilation folder. In this case, the compiled package that has to be deleted is the [[Data Structures|DataStructures]] package. 
+> The file has to be removed recursively, and by force, due to it being nested deep within the compilation folder.
 
 ###### Method 2: Using GUI-Based File Management
 1. Navigate to the directory in the file explorer. 

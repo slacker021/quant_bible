@@ -174,8 +174,7 @@ where this sample function can later be used:
 ListAndCountFiles -directory "C:\Temp"
 ```
 
-
-
+---
 # Rename Files and Folders
 
 ### Standard Renaming
@@ -229,7 +228,6 @@ Move-Item -Path "C:\Source\oldname.txt" -Destination "C:\Destination\newname.txt
 ```
 
 ---
-
 # Removals
 
 ### Removing Directories
