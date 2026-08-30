@@ -1,3 +1,6 @@
+---
+dg-publish: true
+---
 # Creating Environments
 While Julia has a default environment, it's possible to create separate environments. This is done by first activating the REPL, whether it be through a dedicated terminal window or the user's text editor's CLI. Once the REPL is activated, the user can activate the package manager `Pkg` by pressing the `]` key on the keyboard. The user can then create a new environment, by entering `activate <new_environment_name>` while using the Pkg mode. 
 

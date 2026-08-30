@@ -1,4 +1,6 @@
-
+---
+dg-publish: true
+---
 # Precompilation Cache 
 If the *precompilation cache*, which is where compiled Julia code is stored as machine code, an interrupted cache or system glitch can corrupt the precompiled code. This usually results in a *Bad Image* Error, which happens when the *system loader* (`ntdll.dll`) attempts to map a *Dynamic Link Library* (`.dll`) into the *memory space* of `julia.exe`, but the file's binary structure violated the *Expected Portable Executable* (PE) specification. 
 
