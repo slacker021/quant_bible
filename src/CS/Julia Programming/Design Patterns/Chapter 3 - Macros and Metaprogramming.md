@@ -21,8 +21,8 @@ Julia provides a built-in macro, `@time`, designed to measure the execution dura
 >[!info] Remark: Timing Function
 Creating a manual timing function (e.g., `timeit(func)`) requires wrapping the code in a separate function, which is less convenient than the macro’s direct execution.
 
->[!example]- Example: Speed of GBM simulation
-> The movement of an asset's price $S_{t}$ can be simulated over time by taking many discrete steps $\Delta t$. This is modeled using a discretized version of the following [[Chapter 1 - Ito's Formula|Stochastic Differential Equation]]: 
+>[!example]- Example: Simulating Geometric Brownian Motion
+> The movement of an asset's price $S_{t}$ can be simulated over time by taking many discrete steps $ \delta t$. This is modeled using a discretized version of the following [[Chapter 1 - Ito's Formula|Stochastic Differential Equation]]: 
 > $$
 > d S_{t} = \mu S_{t} dt + \sigma S_{t} d W_{t} \tag{1}
 > $$
@@ -49,31 +49,31 @@ Creating a manual timing function (e.g., `timeit(func)`) requires wrapping the c
 > end
 > ```
 > This can be run in the REPL with the following parameters:
-> ```
+> ```text
 > S₀::Float64 = 100.0; T::Float64 = 1.0; μ::Float64 = 0.05; σ::Float64 = 0.2; steps::Int64 = 2500
 > ```
 > Which could yield the following output:
-> ```
+> ```text
 > 2500-element Vector{Float64}:
- 100.0
- 100.2755847118968
- 100.48739941154705
-   ⋮
-  85.05026828595291
-  84.75490230132971
-  84.67653415718318
+> 100.0
+> 100.2755847118968
+> 100.48739941154705
+>  ⋮
+> 85.05026828595291
+> 84.75490230132971
+> 84.67653415718318
 > ```
 > How much time this takes to process can be tested with the `@time` macro, where `@time simulate_gbm!(S₀, T, μ, σ, steps)` can be entered. The following output is yielded:
-> ```
+> ```text
 >  0.000035 seconds (13 allocations: 46.059 KiB)
-2500-element Vector{Float64}:
- 100.0
-  99.57231194379743
-  99.82686995865562
-   ⋮
-  80.7498146393798
-  81.10022819644011
-  81.02159975515873
+> 2500-element Vector{Float64}:
+> 100.0
+> 99.57231194379743
+> 99.82686995865562
+>  ⋮
+> 80.7498146393798
+> 81.10022819644011
+> 81.02159975515873
 > ```
 
 
