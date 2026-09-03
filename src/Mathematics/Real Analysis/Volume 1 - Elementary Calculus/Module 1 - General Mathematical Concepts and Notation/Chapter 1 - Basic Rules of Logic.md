@@ -65,7 +65,7 @@ When it comes to showing that a lemma, proposition, or theorem is true when its 
 ### Direct Proof
 The proof of a proposition usually involves constructing a chain of arguments $A \implies C_{1} \implies \dots \implies C_{n} \implies  B$, where each element of the argument is either an axiom or proposition that has already been shown to be true. In the context of direct proofs, an important rule to take note of is the *classical rule of inference:* If $A$ is true and $A \implies B$ is true, then $B$ is also true. 
 ### Proof by Contradiction
-There are cases where directly proving something is true is difficult. Another way to show that something is true is to assume that the premise is false, and show how a proposition is impossible or absurd, as seen in the proof table of the implication. 
+There are cases where directly proving something is true is difficult. Another way to show that something is true is to assume that the proposition is false and reach a contradiction with the false proposition. 
 ### Proof by the Contrapositive
 An alternative to directly proving something is to assume to negate both the premise and conclusion, where they are then swapped in the implication. Thus, the contrapositive of $A \implies B$ is $\neg B \implies \neg A.$ This works because both the implication and its contrapositive are logically equivalent. 
 ### Useful Relations

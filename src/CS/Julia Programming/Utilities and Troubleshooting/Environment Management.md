@@ -52,3 +52,10 @@ The `"."` tells Julia to activate the environment currently defined in the worki
 >   1. It removes the entry from the current directory's `project.toml` file, which serves as a record of the package. 
 >   2. It removes the specific version of that package from the environment's metadata. 
 > It's important to note that it doesn't necessarily delete the compiled binaries from the computer's central cache, which is managed by Julia to save the user time from having to re-download them every time.
+
+>[!warning]+ Accessing the Correct Environment
+>Whenever the user opens the REPL and switches to Pkg mode, the session always begins with the default environment. To switch to an already-existing environment, the user can switch to the environment of the current directory (if it's already been initialized as an environment) with the same commands used to initialize the current directory as an environment: 
+>```Julia
+>julia> using Pkg
+>julia> Pkg.activate(".")
+>```

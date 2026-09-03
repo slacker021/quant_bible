@@ -20,7 +20,7 @@ This collection of notes aims to present quantitative finance as a dynamic socia
 # Who is this For?
 
 ### Quants, Economists, and Actuarial Scientists
-First and foremost, this collection of notes was designed for those looking to become independent, academic, or industry researchers in quantitative finance. While much of modern quantitative finance has become abstracted by new discoveries in mathematics, economics, and finance—as well as more powerful software packages capable of performing the most complex tasks with ease and precision—the quintessential quant researcher still demands mathematical maturity. This offers quants, actuarial scientists, and economists an uncompromised approach to topics in finance that were traditionally considered to be qualitative.
+First and foremost, this collection of notes was designed for those looking to become independent, academic, or industry researchers in quantitative finance. While much of modern quantitative finance has become abstracted by new discoveries in mathematics, economics, and finance—as well as more powerful software packages, such as *Formal Verification Systems*, *Numerical Software*, *Computer Algebra Systems*, and *Generative Artificial Intelligence*, capable of performing the most complex tasks with ease and precision—the quintessential quant researcher still demands mathematical maturity. This offers quants, actuarial scientists, and economists an uncompromised approach to topics in finance that were traditionally considered to be qualitative.
 
 ### Managerial Sciences
 Researchers specializing in the managerial sciences, especially those with strong interests in data science, will appreciate the unique approach to finance that these notes offer. While business has traditionally been known to be a qualtitative artform that uses intuition and corporate know-how, the rise of big data and AI in the managerial sciences calls for the integration of quantitative skills in corporate finance. However, those who may not be very familiar with quantitative jargon may also read the intuitive explanations offered in the notes. 
@@ -80,7 +80,7 @@ Certain parts of this knowledgebase have employed the use of generative artifici
 - While the base notes are generated using a LLM, the output is heavily scrutinized and modified to ensure that they fit the author's standards of pedagogy and readability. 
 The models used for assisting in developing these notes are 
 - **Proprietary Models:** *Gemini 3*
-- **Open-Source:** Gemma 4 4B, Gemma 4 12B, and Gemma 4 26B
+- **Open-Source:** *Gemma 4 4B, Gemma 4 12B, and Gemma 4 26B*
 
 ### Financial Advice and Career Assistance
 This knowledge base is intended solely for learning, conceptual development, and education demonstration. While the content synthesizes sophisticated principles from diverse disciplines, it must not be interpreted or utilized as personalized financial advice, investment counsel, or a professional mandate. Financial markets are complex systems fraught with inherent risks that no theoretical model can predict nor eliminate. Therefore, all participation in investments based on this material is undertaken solely on the reader's own discretion and risk. Furthermore, any financial data that is based in reality reflects outdated market conditions.
