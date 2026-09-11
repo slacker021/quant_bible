@@ -94,6 +94,8 @@ To maintain this mission of open access, the author doesn't solicit funds nor ac
 
 To accept donations and sponsorships would jeopardize the integrity of these notes as open-access material. The author cannot be bought out nor can he be coerced into designing the notes to cater to a specific crowd of people whose vision may not align with his. Everything in these notes are curated and designed with the preferences of the author. 
 
+More information about the philosophy of pedagogy found in these notes can be found [[Philosophy of the Quant's Bible|here]]. 
+
 # Technical Information
 These notes were created markdown syntax in [Obsidian](https://obsidian.md/), a free software that allows users to view markdown files in a more elegant fashion. Hosting is done via [Forestry.md](https://forestry.md/), a web hosting service that is available as an Obsidian plugin. This allows for the look and feel of the website to be drafted before being published. In addition to using Markdown for text, all visualizations are rendered in using [Tikz](https://tikz.dev/), which the figures being exported as PNG images after being rendered in the [Tikz editor](https://tikz.dev/editor/). To help preserve and backup information in this knowledge base, this collection of notes is stored in a [public Github repository](https://github.com/slacker021/zachs_online_quant_notes.git). 
 
