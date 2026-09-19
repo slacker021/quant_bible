@@ -1,7 +1,6 @@
 ---
 dg-publish:
 ---
-# The Most Important Classes of Real Numbers and Computational Aspects of Operations with Real Numbers
 Having established the axiomatic foundation of the real numbers, it's time to turn to identifying several fundamental subsets within $\mathbb{R}$. While there's many real numbers that one could think of, these subsets form the most critical classes of real numbers that formulate the theoretical and fundamental foundations of computation-based mathematics. Furthermore, these subsets provide useful tools that enable the discovery of interesting properties that can be used to prove important statements. 
 
 ---
@@ -40,57 +39,234 @@ $$\begin{gather} \textbf{Proposition: Properties of Natural Numbers} \\ \text{1.
 ---
 # Rational and Irrational Numbers
 
-$$\begin{gather} \textbf{Definition 3: The Integers} \\ \text{The set of integers, denoted } \mathbb{Z}, \text{ is the union of the set of natural numbers,} \\ \text{the set of their negatives, and zero.} \end{gather}$$
-
-Addition and multiplication of integers yield integers. Thus, $\mathbb{Z}$ is an additive Abelian group, but it is not a multiplicative group because reciprocals of integers (other than $1$ and $-1$) do not belong to $\mathbb{Z}$.
+### Prelude to Rational Numbers: Integers
+The notion of natural numbers can be extended to include the neutral element $0$ along with negative versions of said natural numbers. This leads to the formation of the set of *integers*:
+$$\begin{gather} \textbf{Definition: The Integers} \\ \text{The set of integers, denoted } \mathbb{Z}, \text{ is the union of the set of natural numbers,} \\ \text{the set of their negatives, and zero.} \end{gather}$$
+Like with natural numbers, operations involving integers yield integers:
+$$
+\begin{gather}
+\textbf{Proposition: Adding and Multiplying Integers:} \\[5mm]
+\text{The addition and multiplication of integers does not lead to a sum or } \\
+\text{product that isn't an integer. }
+\end{gather}
+$$
+(see [[Proof that Integer Operations Yield Integers|proof]])
+The proposition above easily leads to the next realization:
+$$
+\begin{gather}
+\textbf{Proposition: When Integers are Abelian} \\[5mm]
+\mathbb{Z} \text{ is an abelian group with respect to addition. With respect to multiplication, } \mathbb{Z} \\
+\text{isn't a group, nor is } \mathbb{Z}\setminus 0, \text{ since the reciprocals of the integers aren't in } \mathbb{Z}  \\
+\text{except for the reciprocals of } 1 \text{ and } -1. 
+\end{gather}
+$$
+(see [[Proof of When Integers are Abelian|proof]])
 
 > [!info]+ Remark: Divisibility 
-> If $m, n \in \mathbb{Z}$ and $k = m \cdot n^{-1} \in \mathbb{Z}$, we say $m$ is a multiple of $n$, or $n$ divides $m$.
+> If $m, n \in \mathbb{Z}$ and $k = m \cdot n^{-1} \in \mathbb{Z}$, it is stated that $m$ is a *multiple* of $n$, or $n$ divides $m$. The latter statement can also be written as $m|n$. In other words, $n$ divides $m$ if and only if the product is an integer.
 
-$$\begin{gather} \textbf{Theorem 2: Fundamental Theorem of Arithmetic} \\ \text{Each natural number admits a representation as a product } n = p_1 \cdots p_k, \\ \text{where } p_i \text{ are prime numbers. This representation is unique except for the order of factors.} \end{gather}$$$$\begin{gather} \textbf{Definition 4: The Rational Numbers} \\ \text{Numbers of the form } m \cdot n^{-1} \text{ (or } m/n \text{), where } m, n \in \mathbb{Z} \text{ and } n \ne 0, \\ \text{are called rational. The set of rational numbers is denoted } \mathbb{Q}. \end{gather}$$
+A special case of natural numbers is said to emerge from the natural numbers:
+$$
+\begin{gather}
+\textbf{Definition: Prime Numbers} \\[5mm]
+\text{A number } p \in \mathbb{N}, \text{ where } p \ne 1, \text{ is prime if it has no divisors in } \mathbb{N} \text{ except } 1 \text{ and } p. 
+\end{gather}
+$$
+The prime numbers are used to construct a very important rule in elementary arithmetic:
+$$\begin{gather} \textbf{Theorem: Fundamental Theorem of Arithmetic} \\ \text{Each natural number admits a representation as a product } n = p_1 \cdots p_k, \\ \text{where } p_i \text{ are prime numbers. This representation is unique except for the order of factors.} \end{gather}$$
+(see [[Proof of the Fundamental Theorem of Arithmetic|proof]])
 
-Any rational number can be represented by proportional pairs $(m_1, n_1)$ and $(m_2, n_2)$ where $m_1n_2 = m_2n_1$.
+>[!info]+ Remark: Relatively Prime
+>Numbers $m,n \in \mathbb{Z}$ are said to be relatively prime if they've no common divisor except $1$ and $-1$. 
 
-$$\begin{gather} \textbf{Definition 5: The Irrational Numbers} \\ \text{Real numbers that are not rational are called irrational.} \end{gather}$$$$\begin{gather} \textbf{Proposition 2: Existence of Irrational Numbers} \\ \text{There exists a real number } s > 0 \text{ such that } s^2 = 2, \text{ and } s \notin \mathbb{Q} \text{ (denoted } \sqrt{2} \text{).} \end{gather}$$
+$$
+\begin{gather}
+\text{Euclid's Lemma: } \\[5mm]
+\text{It follows from the fundamental theorem of arithmetic that if the product } \\
+m \cdot n \text{ of relatively prime numbers } m \text{ and } n \text{ is divisible by a prime } p, \text{ then one of } \\
+\text{ the two numbers is also divisible by } p.
+\end{gather}
+$$
+(see [[Proof of the Fundamental Theorem of Arithmetic|proof]])
 
-(see [proof](Proof%20of%20the%20Properties%20of%20Natural%20Numbers.md "null"))
+### Rational Numbers
+With the notion of integers being well-defined, there may be instances where multiplying two integers, where one is in the form of a whole number while the other is in the form of $n_{1}/n_{2}$, yields a number that doesn't fit into the previous sets of numbers defined. Such a phenomenon requires the formation of another set of numbers: 
+$$\begin{gather} \textbf{Definition: The Rational Numbers} \\[5mm] \text{Numbers of the form } m \cdot n^{-1} \text{ (or } m/n \text{), where } m, n \in \mathbb{Z} \text{ and } n \ne 0, \\ \text{are called rational. The set of rational numbers is denoted } \mathbb{Q}. \end{gather}$$
+Any rational number can be represented by proportional pairs $(m_1, n_1)$ and $(m_2, n_2)$ where $m_1n_2 = m_2n_1$. Thus, the ordered pair $(m,n)$ of integers defines the rational number $q = m \cdot n^{-1}$ if $n \ne 0$. 
+
+>[!info]+ Remark: Quotient
+>The number $q = m \cdot n^{-1}$ can also be written as the *quotient* of $m$ and $n$, that is, as a so-called *rational fraction* $m/n$. 
+
+##### Operations Involving Rational Numbers
+One of the most fundamental rules involving rational numbers follows immediately from the definition of a rational number and the axioms for the real numbers. In particular, the value of a fraction is unchanged when both the *numerator*, which is the integer component at the top of the rational expression, and the *denominator*, which is the integer component at the bottom of the rational expression, are multiplied by the same non-zero integer $k$. Therefore, the fractions $mk/nk$ and $m/n$ represent the same rational number. In fact, since $(nk)(k^{-1}n^{-1}) = 1$, that is $(n \cdot k)^{-1} = k^{-1} \cdot n^{-1}$, the result is $(mk)(nk)^{-1} = (mk)(k^{-1}n^{-1}) = m \cdot n^{-1}$. 
+
+Thus, the different ordered pairs $(m, n)$ and $(mk, nk)$ define the same rational number. Consequently, after suitable reductions, any rational number can be presented as an ordered pair of relatively prime integers. 
+
+On the other hand, if the pairs $(m_{1}, n_{1})$ and $(m_{2}, n_{2})$ define the same rational number, that is $m_{1} \cdot n_{1}^{-1} = m_{2}n_{2}^{-1}$, then $m_{1}n_{2} = m_{2}n_{1}$, and if, for example, $m_{1}$ and $n_{1}$ are relatively prime, it follows from the corollary of the fundamental theorem of arithmetic mentioned above that $n_{2} \cdot n_{1}^{-1} = m_{2} \cdot m_{1}^{-1} = k \in \mathbb{Z}$. 
+
+It has now been demonstrated that two ordered pairs $(m_{1},n_{1})$ and $(m_{2},n_{2})$ define the same rational number if and only they're proportional. That is, there's an integer $k \in \mathbb{Z}$ such that, for example, $m_{2} = km_{1}$ and $n_{2} = kn_{1}$.
+
+---
+# Irrational Numbers
+The last type of real number is something that cannot be represented as an integer or rational number. In fact, attempting to represent this sorta number as a fraction leads to the number going on forever, which means that it cannot be represented in integer or rational terms. Instead, these numbers can only be represented in their "exact" form: 
+$$\begin{gather} \textbf{Definition: The Irrational Numbers} \\[5mm] \text{Real numbers that are not rational are called irrational.} \end{gather}$$
+The classical example of an irrational number is $\sqrt{ 2 }$. In the case of these notes, this is the first number that demonstrates the existence of irrational numbers within the wider realm of real numbers:
+$$\begin{gather} \textbf{Proposition: Existence of Irrational Numbers} \\[5mm]\text{There exists a real number } s > 0 \text{ such that } s^2 = 2, \text{ and } s \notin \mathbb{Q} \text{ (denoted } \sqrt{2} \text{).} \end{gather}$$
+(see [[Proof that the Square Root of 2 is Irrational|proof]])
 
 > [!info]+ Remark: Algebraic vs. Transcendental 
-> Real numbers are _algebraic_ if they are roots of polynomial equations with rational coefficients. Otherwise, they are _transcendental_ (e.g., $\pi$).
+> Real numbers are _algebraic_ if they are roots of polynomial equations with rational coefficients, which can be represented as 
+> $$a_{0}x^{n} + \dots + a_{n - 1}x + a_{n} = 0 \tag{2}$$
+ Otherwise, they are _transcendental_.
 
-## The Principle of Archimedes
+---
+# The Principle of Archimedes
+The *Principle of Archimedes* links order and completeness, with it being important in both its theoretical aspects and application of numbers in measurements and computations. 
 
-The Principle of Archimedes links order and completeness. We first note properties of sets bounded above/below in $\mathbb{N}$ and $\mathbb{Z}$.
+>[!remark]+ Remark: The Principle of Archimedes
+>In other axiomatic systems for the real numbers, the principle of Archimedes is considered a fundamental principle frequently included in the list of axioms. In these notes, this principle shall be proven using the axiom of completeness. 
 
-$$\begin{gather} \textbf{Proposition 3: Bounds in } \mathbb{N} \text{ and } \mathbb{Z} \\ \text{1. Any nonempty subset of } \mathbb{N} \text{ bounded above contains a maximal element.} \\ \text{2. The set } \mathbb{N} \text{ is not bounded above.} \\ \text{3. Any nonempty subset of } \mathbb{Z} \text{ bounded above contains a maximal element.} \\ \text{4. Any nonempty subset of } \mathbb{Z} \text{ bounded below contains a minimal element.} \\ \text{5. The set } \mathbb{Z} \text{ is unbounded above and below.} \end{gather}$$
+Before the principle of Archimedes is to be proven, several important facts must be proven first: 
+$$\begin{gather} \textbf{Proposition: Bounds in } \mathbb{N} \text{ and } \mathbb{Z} \\[5mm] \text{1. Any nonempty subset of } \mathbb{N} \text{ bounded above contains a maximal element.} \\ \text{2. The set } \mathbb{N} \text{ is not bounded above.} \\ \text{3. Any nonempty subset of } \mathbb{Z} \text{ bounded above contains a maximal element.} \\ \text{4. Any nonempty subset of } \mathbb{Z} \text{ bounded below contains a minimal element.} \\ \text{5. The set } \mathbb{Z} \text{ is unbounded above and below.} \end{gather}$$
+(see [[Proof of the Bounds in the Natural Numbers and Integers|proof]])
+These facts can then be used to demonstrate that the Archimedes' principle holds true:
 
-(see [proof](Proof%20of%20the%20Properties%20of%20Natural%20Numbers.md "null"))
+$$\begin{gather} \textbf{Theorem: The Principle of Archimedes} \\[5mm] \text{For any fixed positive number } h \text{ and any real number } x, \\ \text{there exists a unique integer } k \text{ such that } (k - 1)h \le x < kh. \end{gather}$$
+(see [[Proof of the Principle of Archimedes|Proof]])
 
-$$\begin{gather} \textbf{Theorem 3: The Principle of Archimedes} \\ \text{For any fixed positive number } h \text{ and any real number } x, \\ \text{there exists a unique integer } k \text{ such that } (k - 1)h \le x < kh. \end{gather}$$
+And now, some corollaries: 
+$$\begin{gather} \textbf{Proposition: Corollaries to Archimedes' Principle} \\[5mm]\text{1. For any } \epsilon > 0, \text{ there exists } n \in \mathbb{N} \text{ such that } 0 < 1/n < \epsilon. \\ \text{2. If } x \ge 0 \text{ and } x < 1/n \text{ for all } n \in \mathbb{N}, \text{ then } x = 0. \\ \text{3. Between any real numbers } a < b, \text{ there is a rational } r \in \mathbb{Q} \text{ such that } a < r < b. \\ \text{4. For any } x \in \mathbb{R}, \text{ there exists a unique } k \in \mathbb{Z} \text{ such that } k \le x < k + 1. \\ \text{This } k \text{ is the integer part } [x], \text{ and } \{x\} := x - [x] \text{ is the fractional part.} \end{gather}$$
 
-(see [proof](Proof%20of%20the%20Properties%20of%20Natural%20Numbers.md "null"))
+(see [[Proof of Archimedian Corollaries|proof]])
 
-$$\begin{gather} \textbf{Proposition 4: Corollaries to Archimedes' Principle} \\ \text{1. For any } \epsilon > 0, \text{ there exists } n \in \mathbb{N} \text{ such that } 0 < 1/n < \epsilon. \\ \text{2. If } x \ge 0 \text{ and } x < 1/n \text{ for all } n \in \mathbb{N}, \text{ then } x = 0. \\ \text{3. Between any real numbers } a < b, \text{ there is a rational } r \in \mathbb{Q} \text{ such that } a < r < b. \\ \text{4. For any } x \in \mathbb{R}, \text{ there exists a unique } k \in \mathbb{Z} \text{ such that } k \le x < k + 1. \\ \text{This } k \text{ is the integer part } [x], \text{ and } \{x\} := x - [x] \text{ is the fractional part.} \end{gather}$$
+---
+# Geometric Interpretation and Computations
 
-(see [proof](Proof%20of%20the%20Properties%20of%20Natural%20Numbers.md "null"))
+The set $\mathbb{R}$ can be modeled geometrically as a continuous line where each point corresponds to a coordinate. This form of interpretation is often more intuitive and descriptive than relying purely on symbolics. By the axioms of Geometry, there's a one-to-one correspondence $f:\mathbb{L} \rightarrow \mathbb{R}$ between the points of a line $\mathbb{L}$ and the set $\mathbb{R}$ of real numbers. Furthermore, this correspondence is connected with the rigid motions of the line. To be specific, if $T$ is a parallel translation of the line $\mathbb{L}$along itself, there's a number $t \in \mathbb{R}$—which depends only on T—such that $f(T(x)) = f(x) + t$ for each point $x \in \mathbb{L}$. 
 
-## Geometric Interpretation and Computations
+The number $f(x)$ corresponding to a point $x \in \mathbb{L}$ is the *coordinate* of $x$. In view of the one-to-one nature of the mapping $f:\mathbb{L} \rightarrow \mathbb{R}$, the coordinate of a point is often called simply a point. Given the correspondence $f:\mathbb{L} \rightarrow \mathbb{R}$, the line $\mathbb{L}$ is the *coordinate axis*, *number axis*, or the *real line*, and its points are called points of the real line. As 
 
-The set $\mathbb{R}$ can be modeled geometrically as a continuous line where each point corresponds to a coordinate.
+As noted above, the bijective mapping $f:\mathbb{L} \rightarrow \mathbb{R}$ that defines coordinates on $\mathbb{L}$ has the property that under a parallel translation $T$ the coordinates of the images of points of the line $\mathbb{L}$ differ from the coordinates of the points themselves by a number $t \in \mathbb{R}$, the same for every point. For this reason, $f$ is determined completely by specifying the point that's to have coordinate $0$ and the point $1$. The *closed interval* determined by the ray with origin at $0$ containing $1$ is the *positive direction* and a motion in that direction (from $0$ to $1$) is the motion from left to right. In accordance with this convention, $1$ lies to the right of $0$ and $0$ to the left of $1$. 
+Under a parallel translation $T$ that moves the origin $x_{0}$ to the point $x_{1} = T(x_{0})$ with coordinate $1$, the coordinates of the images of all pints are one unit larger than those of their [[Chapter 4 - Functions and Cardinality|pre-images]], and therefore, the point $x_{2} = T(x_{1})$ can be located with coordinate $2$, the point $x_{3} = T(x_{2})$ with coordinate $3$, ..., and the point $x_{n+1} = T(x_{n})$ with coordinate $n + 1$, as well as the point $x_{-1} = T^{-1}(x_{0})$ with coordinate $-1, \dots,$ the point $x_{{-n-1}} = T^{-1}(x_{-n})$ with coordinate $-n-1$. In this way, all the points with integer coordinates $m \in \mathbb{Z}$ are obtained. 
 
-$$\begin{gather} \textbf{Definition 6: Intervals} \\ \text{Open: } ]a, b[ := \{x \in \mathbb{R} \mid a < x < b\} \\ \text{Closed: } [a, b] := \{x \in \mathbb{R} \mid a \le x \le b\} \\ \text{Half-open: } ]a, b] := \{x \in \mathbb{R} \mid a < x \le b\}, \ [a, b[ := \{x \in \mathbb{R} \mid a \le x < b\} \\ \text{The length of interval } I \text{ with endpoints } a, b \text{ is } \vert{}I\vert{} = b - a. \end{gather}$$$$\begin{gather} \textbf{Definition 7: Neighborhood} \\ \text{An open interval containing a point } x \in \mathbb{R} \text{ is a neighborhood of } x. \\ \text{A } \delta\text{-neighborhood of } x \text{ is } ]x - \delta, x + \delta[ \text{ (where } \delta > 0\text{).} \end{gather}$$$$\begin{gather} \textbf{Definition 8: Distance and Absolute Value} \\ \text{The absolute value } \vert{}x\vert{} \text{ is } x \text{ if } x \ge 0, \text{ and } -x \text{ if } x < 0. \\ \text{The distance between } x, y \in \mathbb{R} \text{ is } \vert{}x - y\vert{}. \end{gather}$$$$\begin{gather} \textbf{Proposition 5: The Triangle Inequality} \\ \vert{}x + y\vert{} \le \vert{}x\vert{} + \vert{}y\vert{} \\ \text{Equality holds if and only if } x \text{ and } y \text{ are both nonnegative or both nonpositive.} \end{gather}$$
+Knowing how to double, triple, ... the unit interval, the *Thales' Theorem* can be used to partition this interval into $n$ congruent subintervals: 
+$$
+\begin{gather}
+\textbf{Thales' Theorem: } \\[5mm]
+\text{If a line is drawn parallel to one side of a triangle to intersect the other two} \\
+\text{sides in distinct point, the other two sides are divided in the same ratio. }
+\end{gather}
+$$
+(see [[Proof of Thales' Theorem]])
+By taking the subinterval having an endpoint at the origin, it is revealed that the coordinate of its other end, which is denoted by $x$, satisfies the equation $n \cdot x = 1$, that is $x = \frac{1}{n}$. From this, all points with rational coordinates $\frac{m}{n} \in \mathbb{Q}$ are found. 
 
-(see [proof](Proof%20of%20the%20Properties%20of%20Natural%20Numbers.md "null"))
+But there still remains points of $\mathbb{L}$, since it's been established that there're intervals incommensurable with the unit interval. Each such point, like every other point of the
+line, divides the line into two rays, on each of which there are points with integer
+or rational coordinates. (This is a consequence of the original geometric principle
+of Archimedes.) Thus a point produces a partition, or, as it is called, a *cut* of $\mathbb{Q}$ into two nonempty sets $X$ and $Y$ corresponding to the rational points—points with rational coordinates—on the left and right-hand rays. By the axiom of completeness, there's a number $c$ that separates $X$ and $Y$, that is $x \le c \le y$ for all $x \in X$ and all $y \in Y$. Since $X \cup Y = \mathbb{Q}$, it follows that the supremum of $X$ is equal to $s$, which is equal to $i$, which is equal to the infimum of $Y$. For otherwise, $s < i$ and there'd be a rational number between $s$ and $i$ lying neither in $X$ nor in $Y$. Thus, $s = i = c$. This uniquely determined number $c$ is assigned to the corresponding point of line. 
+
+The assignment of coordinates to points of the line just described provides a visualizable model for both the order relation in real numbers—hence it being a *linear ordering*—and for the axiom of completeness of continuity in the real numbers, which in geometry is interpreted as there being no "holes" or "gaps" in the line $\mathbb{L}$, which would separate it into two pieces having no points in common. 
+
+It's with this geometric interpretation that the following notation and terminology for the number sets is listed below: 
+$$\begin{gather} \textbf{Definition: Intervals} \\[5mm] \text{Open: } ]a, b[ := \{x \in \mathbb{R} \mid a < x < b\} \\ \text{Closed: } [a, b] := \{x \in \mathbb{R} \mid a \le x \le b\} \\ \text{Half-open: } ]a, b] := \{x \in \mathbb{R} \mid a < x \le b\}, \ [a, b[ := \{x \in \mathbb{R} \mid a \le x < b\} \\ \text{The length of interval } I \text{ with endpoints } a, b \text{ is } \vert{}I\vert{} = b - a. \end{gather}$$
+*Open*, *closed*, and *half-open* intervals are called *numerical intervals* or simply *intervals*. The number determining an interval are called its *endpoints*.  The quantity $b-a$ can be described as the *length* of the interval. 
+
+In accordance with the use of the symbols $+\infty$ (read as "positive infinity") and $-\infty$ (read as "negative infinity") it is customary to denote the fact that the numerical set $X$ is not bounded above (respectively below), by writing $\text{sup } X = +\infty$ and $\text{inf } X = -\infty$. 
+
+An open interval can also have a specific point placed inside it:
+$$\begin{gather} \textbf{Definition: Neighborhood} \\[5mm] \text{An open interval containing a point } x \in \mathbb{R} \text{ is a neighborhood of } x. \\ \text{A } \delta\text{-neighborhood of } x \text{ is } ]x - \delta, x + \delta[ \text{ (where } \delta > 0\text{).} \end{gather}$$
+In particular, when $\delta > 0$, the open interval $]x - \delta, x + \delta[$ is the $\delta$-neighborhood of $x$ and has a length of $2\delta$. The distance between points $x, y \in \mathbb{R}$ is measured by the length of the interval having them as endpoints. The number $\frac{a+b}{2}$ is often called the *midpoint* or *center* of the interval with endpoints $a$ and $b$, since it is equidistant from the endpoints of the interval. In particular, a point $x \in \mathbb{R}$ is the center of its $\delta$-neighborhood $]x - \delta, x + \delta[$ and all points of the $\delta$-neighborhood lie at a distance from $x$ less than $\delta$. 
+
+So as not to investigate which of the points is "left" and "right", that is, whether $x < y$ or $y < x$ and whether the length is $y - x$ or $x - y$, the useful functions below may be used:
+$$\begin{gather} \textbf{Definition: Absolute Value and Distance} \\[5mm] \text{The absolute value } \vert{}x\vert{} \text{ is } x \text{ if } x \ge 0, \text{ and } -x \text{ if } x < 0. \\ \text{The distance between } x, y \in \mathbb{R} \text{ is } \vert{}x - y\vert{}. \end{gather}$$
+The distance is nonnegative and equals zero only when the points x and y are
+the same. The distance from $x$ to $y$ is the same as the distance from $y$ to $x$, since $|x - y| = |y - x|$. Finally, if $z \in \mathbb{R}$, then $|x - y| \le |x-z|+|z-y|$. That is, the so-called *triangle-inequality* holds. 
+
+The triangle inequality follows from a property of the absolute value that is also
+called the triangle inequality (since it can be obtained from the preceding triangle
+inequality by setting $z = 0$ and replacing $y$ by $-y$: 
+$$\begin{gather} \textbf{Proposition: The Triangle Inequality} \\[5mm] \vert{}x + y\vert{} \le \vert{}x\vert{} + \vert{}y\vert{} \\ \text{Equality holds if and only if } x \text{ and } y \text{ are both nonnegative or both nonpositive.} \end{gather}$$
+(see [[Proof of the Triangle Inequality|proof]])
 
 ### Errors in Computations
+In measuring a real physical quantity, a number is obtained such that it changes when the measurement is repeated, especially if one changes either the method of making the measurement or the instrument used. Thus the result of measurement is usually an approximate value of the quantity being sought. The quality or precision of a measurement is characterized, for example, by the magnitude of the possible discrepancy between the true value of the quantity and the value obtained for it by measurement. When this is done, it may happen that the exact value of the measurement can never be acquired. Taking a more constructive position, however, involves getting the desired quantity with a preassigned precision. Taking this position is tantamount to identifying the number with a sequence of more and more precise approximations by numbers obtained from measurement. But every measurement is a finite set of comparisons with some standard or with a part of the standard commensurable with it, so that the result of the measurement will necessarily be expressed in terms of natural numbers, integers, or, more generally, rational numbers. Hence theoretically the whole set of real numbers can be described in terms of sequences of rational numbers by constructing, after due analysis, a mathematical
+copy or, better expressed, a model of what people do with numbers who have no
+notion of their axiomatic description. The latter add and multiply the approximate
+values rather than the values being measured, which are unknown to them (To be
+sure, they do not always know how to say what relation the result of these operations
+has to the result that would be obtained if the computations were carried out with
+the exact values. ). 
 
-$$\begin{gather} \textbf{Definition 9: Errors} \\ \text{If } x \text{ is exact and } \tilde{x} \text{ is an approximation:} \\ \text{Absolute error: } \Delta(\tilde{x}) := \vert{}x - \tilde{x}\vert{} \\ \text{Relative error: } \delta(\tilde{x}) := \Delta(\tilde{x}) / \vert{}\tilde{x}\vert{} \text{ (for } \tilde{x} \ne 0\text{)} \end{gather}$$$$\begin{gather} \textbf{Proposition 6: Propagation of Errors} \\ \Delta(\tilde{x} + \tilde{y}) \le \Delta(\tilde{x}) + \Delta(\tilde{y}) \\ \Delta(\tilde{x} \cdot \tilde{y}) \le \vert{}\tilde{x}\vert{}\Delta(\tilde{y}) + \vert{}\tilde{y}\vert{}\Delta(\tilde{x}) + \Delta(\tilde{x})\Delta(\tilde{y}) \\ \Delta\left(\frac{\tilde{x}}{\tilde{y}}\right) \le \frac{\vert{}\tilde{x}\vert{}\Delta(\tilde{y}) + \vert{}\tilde{y}\vert{}\Delta(\tilde{x})}{\tilde{y}^2 (1 - \delta(\tilde{y}))} \text{ (provided } \delta(\tilde{y}) < 1\text{)} \end{gather}$$
+Having identified a number with a sequence of approximations to it, one should, for example, add the sequences of approximate values when one wishes to add two numbers.  The new sequence thus obtained must be regarded as a new number, called the sum of the first two. But is it a number? The subtlety of the question resides in the fact that not every randomly constructed sequence is the sequence of arbitrarily precise approximations to some quantity. That is, one still has to learn how to determine from the sequence itself whether it represents some number or not.
+Another question that arises in the attempt to make a mathematical copy of operations with approximate numbers is that different sequences may be approximating sequences for the same quantity. The relation between sequences of approximations defining a number and the numbers themselves is approximately the same as that between a point on a map and an arrow on the map indicating the point. The arrow determines the point, but the point determines only the tip of the arrow, and does not exclude the use of a different arrow that may happen to be more convenient.
 
-(see [proof](Proof%20of%20the%20Properties%20of%20Natural%20Numbers.md "null"))
+The reason this is important is because there's the theoretical possibility that more than one natural model of the real numbers may exist. In the real world, it's prudent to show the necessity of approximate computations. These approximate computations are both natural and necessary. These estimates are simple but important, which are precisely detailed as follows: 
+$$\begin{gather} \textbf{Definition: Errors} \\[5mm] \text{If } x \text{ is exact and } \tilde{x} \text{ is an approximation:} \\ \text{Absolute error: } \Delta(\tilde{x}) := \vert{}x - \tilde{x}\vert{} \\ \text{Relative error: } \delta(\tilde{x}) := \Delta(\tilde{x}) / \vert{}\tilde{x}\vert{} \text{ (for } \tilde{x} \ne 0\text{)} \end{gather}$$
+Since the value $x$ is unknow, the values of $\Delta(\tilde{x})$ and $\delta(\tilde{x})$ are also unknown. However, the upper bounds $\Delta(\tilde{x}) < \tilde{x}$ $\delta(\tilde{x}) < \tilde{x}$ for these quantities are usually known. In this case, the absolute or relative error doesn't exceed $\Delta$ or $\delta$ respectively. In practice, the only measures dealt with are the estimates for the errors, so that the quantities $\Delta$ and $\delta$ themselves are the *absolute* and *relative errors*. 
 
-### Positional Computation System
+>[!info]+ Remark: Error Notation
+>The notation $x = \tilde{x} \pm \Delta$ means that $\tilde{x} - \Delta \le x \le \tilde{x} + \Delta$. 
 
-$$\begin{gather} \textbf{Lemma 3: Base representation} \\ \text{For a fixed base } q > 1 \text{ and any } x > 0, \text{ there exists a unique integer } k \text{ such that } q^{k-1} \le x < q^k. \end{gather}$$
+>[!example]- Example: Real-Life Quantities
+>Several real-world quantities are measured in the form of $x = \tilde{x} \pm \Delta$ because there's always uncertainty when attempting to measure those values. No single method of measuring these real-world values is perfect, and almost all equations used to describe some phenomenon in the real world produce merely approximations. Furthermore, it's usually eneconomical to make measurements to extremely high degrees of precision (unless it's really needed). 
+>Below are examples of real-world mathematical constants: 
+>- The Gravitational constant $G = (6.672598 ± 0.00085) \cdot 10^{-11} \text{ N } \cdot \text{m}^2/\text{kg}^2$. 
+>- The speed of light in a vacuum is $c = 299 792 458 \text{ m/s}$, which is the exact speed. 
+>- Planck's constant of $h = (6.6260755 ± 0.0000040) \cdot 10^{-34} \text{ J} \cdot \text{s}$
+>- Charge of an electron being $e = (1.60217733 ± 0.00000049) \cdot 10^{-19} \text{ C}$
+>- Rest mass of an electron is $m_{e} = (9.1093897 ± 0.0000054) \cdot 10^{-31} \text{ kg}$
+>  
+>  The main indicator of the precision of a measurement is the relative error in approximation, usually represented in percent form. In the examples given above, the relative error are:
+>- Gravitational constant: $13 \cdot 10^{-5}$
+>- Speed of light: Zero
+>- Planck's constant: $31 \cdot 10^{-7}$
+>- Charge of an electron: $31 \cdot 10^{-8}$
+>- Rest mess of an electron: $6 \cdot 10^{-7}$
+
+
+Errors that arise in arithmetic operations with approximate quantities be estimated with the following proposition that is a direct result of the definition given to error propagation: 
+$$\begin{gather} \textbf{Proposition: Propagation of Errors} \\[5mm] \Delta(\tilde{x} + \tilde{y}) \le \Delta(\tilde{x}) + \Delta(\tilde{y}) \\ \Delta(\tilde{x} \cdot \tilde{y}) \le \vert{}\tilde{x}\vert{}\Delta(\tilde{y}) + \vert{}\tilde{y}\vert{}\Delta(\tilde{x}) + \Delta(\tilde{x})\Delta(\tilde{y}) \\ \Delta\left(\frac{\tilde{x}}{\tilde{y}}\right) \le \frac{\vert{}\tilde{x}\vert{}\Delta(\tilde{y}) + \vert{}\tilde{y}\vert{}\Delta(\tilde{x})}{\tilde{y}^2 (1 - \delta(\tilde{y}))} \text{ (provided } \delta(\tilde{y}) < 1\text{)} \end{gather}$$
+
+(see [[Proof of Error Propagation Methods|proof]])
+
+>[!info]+ Remark: Estimates for the Relative Errors
+>These estimates for the absolute errors imply the following estimates for the relative errors:
+>$$
+>\begin{gather}
+> \delta(\tilde{x} + \tilde{y}) \le \frac{\Delta(\tilde{x}) + \Delta(\tilde{y})}{|\tilde{x} + \tilde{y}|}  \\
+> \delta(\tilde{x} \cdot \tilde{y}) \le \delta(\tilde{x}) + \delta(\tilde{y}) + \delta(\tilde{y}) \cdot \delta(\tilde{y}) \\
+> \delta \left(\frac{\tilde{x}}{\tilde{y}} \right) \le \frac{\delta(\tilde{x}) + \delta(\tilde{y})}{1 - \delta(\tilde{y})}
+\tag{3}
+\end{gather}
+>$$
+>In practice, when working with sufficiently good approximations, there are $\delta(\tilde{y}) \approx 0$, $\delta(\tilde{x}) \cdot \delta(\tilde{y}) \approx 0$, and $1 - \delta(\tilde{y}) \approx 1$, so that one of the following can be used, even if they're not necessarily formally correct: 
+>$$
+>\begin{gather}
+> 
+>\Delta(\tilde{x} \cdot \tilde{y}) \le |\tilde{x}|\Delta(\tilde{y}) + |\tilde{y}|\Delta(\tilde{x})  \\
+> \Delta \left( \frac{\tilde{x}}{\tilde{y}} \right) \le \frac{|\tilde{x}| \Delta(\tilde{y}) + \tilde{y} \Delta(\tilde{x})}{\tilde{y}^2} \\
+> \delta(\tilde{x} \cdot \tilde{y} ) \le \delta(\tilde{x}) + \delta(\tilde{y})  \\
+> \delta \left(\frac{\tilde{x}}{\tilde{y}} \right) \le \delta(\tilde{x}) + \delta(\tilde{y}) \tag{4}
+\end{gather}
+>$$
+>The second and third formulae of step 3 show that it's necessary to avoid dividing by a number near zero and also to avoid using rather crude approximations in which $\tilde{y}$ or $1 - \delta(\tilde{y})$ is small in absolute value terms. Meanwhile, the first formula in the third step warns against adding approximate quantities if they're close to each other in absolute value terms but opposite in sign, since then $|\tilde{x} + \tilde{y}|$ is close to zero. In all these cases, there errors may increase sharply. 
+
+>[!question]- Application: Measuring Height
+>Jimbo measures his height using some device, and level of *precision* of said device is $\pm 0.5 \text{ cm}$. Suppose a sheet of paper was placed under his feet before the second measurement. The resulting measurements are
+> - Height 1 $H_{1} = (200 \pm 0.05) \text{ cm}$ 
+>- Height 2 $H_{2} = (199.8 \pm 0.05) \text{ cm}$
+>  It doesn't make sense to try to find the thickness of the paper by getting the difference between $H_{2}$ and $H_{1}$, from which it would follow only that the thickness of the paper
+>  is not larger than $0.08 \text{cm}$. That would of course be a crude reflection (if indeed one
+>  could even call it a “reflection”) of the true situation.
+>  
+>  However, it's worthwhile to consider another more useful computational effect through which comparatively precise measurements can be carried out with crude devices. For example, if the device just used for measuring your height was used to measure the thickness of $1000$ sheets of the same paper, and the result was $(20 \pm 0.05) \text{ cm}$, then the thickness of one sheet of paper is $(0.02 \pm 0.0005) \text{mm}$. That is, with an absolute error not larger than $0.005 \text{mm}$, the thickness of one sheet is $0.2 \text{mm}$. Therefore, the relative error in this measurement is at most $0.025$. This idea can be developed and has been proposed, for example, as a way of detecting a weak periodic signal amid the larger random static usually called white noise.
+
+
+---
+# Positional Computation System
+While the most common number system is that of *decimal*, which consists of digits $0$ to $9$, it's possible to construct other number base representations with different amounts of digits—where each digit describes
+
+$$\begin{gather} \textbf{Lemma: Base representation} \\[5mm] \text{For a fixed base } q > 1 \text{ and any } x > 0, \text{ there exists a unique integer } k \text{ such that } q^{k-1} \le x < q^k. \end{gather}$$
 
 (see [proof](Proof%20of%20the%20Properties%20of%20Natural%20Numbers.md "null"))
 
