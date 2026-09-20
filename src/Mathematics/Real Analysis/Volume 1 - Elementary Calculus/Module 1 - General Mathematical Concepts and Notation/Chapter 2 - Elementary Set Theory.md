@@ -89,7 +89,7 @@ $$
 \text{If } X \text{ is any set and } \emptyset \text{ is an empty set, then } \emptyset \text{ is a subset of } X. 
 \end{gather}
 $$
-(See [[Mathematics/Real Analysis/Volume 1 - Elementary Calculus/Proofs and Derivations/Module 1 - Some General Mathematical Concepts and Notation/Chapter 2/Proof of Proposition 1|proof]]) In addition to **proposition 1**, **axioms 1 and 2** that the object that results from set operations is also a set. 
+(See [[Proof of Proposition 1|proof]]) In addition to **proposition 1**, **axioms 1 and 2** that the object that results from set operations is also a set. 
 $$
 \begin{gather}
 \textbf{Axiom: Union of a Set} \\[5mm]

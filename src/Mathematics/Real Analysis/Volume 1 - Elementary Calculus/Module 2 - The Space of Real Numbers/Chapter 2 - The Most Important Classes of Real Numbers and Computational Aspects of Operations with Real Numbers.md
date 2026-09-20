@@ -1,5 +1,5 @@
 ---
-dg-publish:
+dg-publish: true
 ---
 Having established the axiomatic foundation of the real numbers, it's time to turn to identifying several fundamental subsets within $\mathbb{R}$. While there's many real numbers that one could think of, these subsets form the most critical classes of real numbers that formulate the theoretical and fundamental foundations of computation-based mathematics. Furthermore, these subsets provide useful tools that enable the discovery of interesting properties that can be used to prove important statements. 
 
@@ -263,11 +263,223 @@ $$\begin{gather} \textbf{Proposition: Propagation of Errors} \\[5mm] \Delta(\til
 
 
 ---
-# Positional Computation System
-While the most common number system is that of *decimal*, which consists of digits $0$ to $9$, it's possible to construct other number base representations with different amounts of digits—where each digit describes
+# Application: Positional Computation System
+While the most common number system is that of *decimal*, which consists of digits $0$ to $9$, it's possible to construct other number base representations with different amounts of digits—where each digit has a specific numerical value it represents. This ties in with the fact with any real number can be represented as a rational approximation. This can easily be done with the the following lemma, which is the primary method for the *positional computation system*: 
 
 $$\begin{gather} \textbf{Lemma: Base representation} \\[5mm] \text{For a fixed base } q > 1 \text{ and any } x > 0, \text{ there exists a unique integer } k \text{ such that } q^{k-1} \le x < q^k. \end{gather}$$
+(see [[Proof of the Positional Computational System|proof]])
+This lemma is used in the following construction, where $q > 1$ is fixed and an arbitrary positive number $x \in \mathbb{R}$ is taken. By the lemma of base representation, a unique number $p \in \mathbb{Z}$ is found such that 
+$$
+q^p \le x < q^{p + 1}. \tag{5}
+$$
+$$
+\begin{gather}
+\textbf{Definition: Order of } x \\[5mm]
+\text{The number } p \text{ satisfying step 5 is the order of } x \text{ in the base } q  \\
+\text{or (when q is fixed) simply the order of } x.  
+\end{gather}
+$$
+By the principle of Archimedes, a unique natural number $\alpha_{p} \in \mathbb{N}$ can be found such that 
+$$
+\alpha_{p}q^{p} \le x < \alpha_{p}q^p + q^p. \tag{6}
+$$
+Taking step 5 into account, it can be asserted at $\alpha_{p} \in \{1, \dots, q - 1 \}$. It follows from the relation of step 6 and the principle of Archimedes that there's a unique number $\alpha_{p-1} \in \{1, \dots, q - 1 \}$ such that 
+$$
+\alpha_{p}q^p + \alpha_{p-1}q^{p-1} \le x < \alpha_{p}q^p +  \alpha_{p-1}q^{p-1} + q^{p-1}. \tag{7} 
+$$
+If $n$ such steps were made, the following relation can be obtained: 
+$$
+\begin{gather}
+\alpha_{p}q^{p} + \alpha_{p-1}q^{p-1} + \dots + \alpha_{p-n}q^{p-n} \le x <  \\
+\alpha_{p}q^p + \alpha_{p-1}q^{p-1} + \dots + \alpha_{p-n}q^{p-n} + q^{p-n} \tag{8} 
+\end{gather}
+$$
+then by the principle of Archimedes, there's a unique number $\alpha_{p-n-1} \in \{0, 1, \dots, q -1 \}$ such that 
+$$
+\begin{gather}
+\alpha_{p}q^{p} + \dots + \alpha_{p-n}q^{p-n} + \alpha_{p-n-1}q^{p-n-1} \le \\
+x < \alpha_{p}q^{p} + \dots + \alpha_{p-n}q^{p-n} +  \alpha_{p-n-1}q^{p-n-1} +  q^{p-n-1} \tag{9}
+\end{gather}
+$$
+These steps have led to the formation of an algorithm of which a sequence of numbers $\alpha_{p}, \alpha_{p-1}, \dots, \alpha_{p-n}, \dots$ from the set $\{ 0,1, \dots, q - 1\}$ is placed in correspondence with the positive number $x$. In other words, a sequence of numbers of the special form
+$$
+r_{n} = \alpha_{p}q^p + \dots + \alpha_{p-n}q^{p-n} \tag{10}
+$$
+has been constructed such that
+$$
+r_{n} \le x < r_{n} + \frac{1}{q^{n-p}} \tag{11}
+$$
+(see [[Proof of Step 11|proof]])
 
-(see [proof](Proof%20of%20the%20Properties%20of%20Natural%20Numbers.md "null"))
+In other words, better approximations from below and above are constructed to the number $x$ using the special sequence seen in step 10. The symbol $\alpha_{p}\dots \alpha_{p-n}\dots$  is a code for the entire sequence $\{r_{n}\}$. To recover the sequence $\{r_{n}\}$ from this symbol, it's necessary to indicate the value of $p$ and order of $x$. For $p \ge 0$, it's customary to place a period or comma after $a_{0}$; for $p < 0$, the convention is to place $|p|$ zeros left of $\alpha_{p}$ and a period or comma right of the leftmost zero (recall that $\alpha_{p} \neq 0$). 
 
-This allows the construction of the positional $q$-ary system, where a positive number $x$ corresponds to a unique sequence of digits $a_p \dots a_{p-n} \dots$ representing rational approximations $r_n = \sum_{k=0}^n a_{p-k}q^{p-k}$ converging to $x$.
+>[!example]- Example: Decimal Versus Binary
+>The most common numbering system is decimal, which in the case of the system specified earlier would make $q = 10$. By definition, the decimal number $123.45$ would be
+>$$
+>\begin{gather}
+>123.45 := 1 \cdot 10^2 + 2 \cdot 10^1 + 3 \cdot 10^0 + 4 \cdot 10^{-1} + 5 \cdot 10^{-2} \tag{12}
+\end{gather}
+>$$
+>Meanwhile, the number $0.00123$ in decimal can be expanded to
+>$$
+>0.00123 := 1 \cdot 10^{-3} + 2 \cdot 10^{-4} + 3 \cdot 10^{-5} \tag{13}
+>$$
+>Meanwhile, representing a number in binary would mean that $q = 2$. For example, the binary digit 
+>$$
+>1000.001 := 1 \cdot 2^3 + 1 \cdot 2^{-3} \tag{14}
+>$$
+
+Thus, the value of a digit in the symbol $\alpha_{p}\dots \alpha_{p-n}\dots$ depends on the position it occupies relative to the period or comma. With this convention, the symbol $\alpha_{p}\dots \alpha_{0}\dots$ makes it possible to recover the whole sequence of operations. It can be seen in step 11 that different sequences $\{r_{n}\}$ and $\{r'_{n}\}$, and therefore different symbols $\alpha_{p}\dots a_{0},\dots$ and $\alpha'_{p}\dots a'_{0},\dots$ correspond to different numbers $x$ and $x'$. Therefore, there's no real number $x$ that corresponds to every symbol $\alpha_{p}\dots a_{0},\dots$. 
+
+>[!info]- Remark
+>By virtue of the algorithm just described for obtaining the numbers $\alpha_{p-1} \in \{1, \dots, q - 1 \}$ successively, it cannot happen that all these numbers from some point are equal to $q-1$. Indeed, if 
+>$$
+>r_{n} = \alpha_{p}q^{p} + \dots + \alpha_{p-k}q^{p-k} + (q-1)q^{p-k-1} + \dots + (q-1)q^{p-n} \tag{15}
+>$$ 
+>for all $n > k$, that is, 
+>$$
+>r_{n} = r_{k} + \frac{1}{q^{k-p}} - \frac{1}{q^{n-p}}, \tag{16}
+>$$
+>then by step 11, the result is 
+>$$
+>r_{k} + \frac{1}{q^{k-p}} - \frac{1}{q^{n-p}} \le x < r_{k} + \frac{1}{q^{k-p}}. \tag{17}
+>$$
+>Then for any $n > k$, 
+>$$
+>0 < r_{k} + \frac{1}{q^{k-p}} - x < \frac{1}{q^{n-p}}, \tag{18}
+>$$
+>which, as stipulated by step 11, is impossible. 
+>
+>It's also useful to note that if at least one of the numbers $\alpha_{p-k-1}, \dots, \alpha_{p-n}$ is less than $q - 1$, then instead of writing it as seen in step 18, it can be presented as 
+>$$
+>r_{n} < r_{n} + \frac{1}{q^{k-p}} - \frac{1}{q^{n-p}} \tag{19}
+>$$
+>or, what is the same
+>$$
+>r_{n} + \frac{1}{q^{n-p}} < r_{k} + \frac{1}{q^{k-p}} \tag{20}
+>$$
+>It's now possible to prove that any symbol $\alpha_{n}\dots a_{0},\dots$ composed of the numbers $\alpha_{k} \in \{1, \dots, q - 1 \}$, and in which there're numbers from different $q-1$ with arbitrarily large indices, corresponds to some number $x \ge 0$. Indeed, from the symbol $\alpha_{p}\dots a_{p-n},\dots$, the sequence $\{r_{n}  \}$ of the form in step 10 can be constructed. By virtue of the relations $r_{0} \le r_{1} \le r_{n} \le \dots$, taking account of step 10 and 11, the result is
+>$$
+>r_{0} \le r_{1} \le \dots \le \dots \le \dots \le r_{n} + \frac{1}{q^{n-p}} \le \dots \le r_{1} + \frac{1}{q^{1-p}} \le r_{0} + \frac{1}{q^{-p}} \tag{21}
+>$$
+>The strict inequalities from in this last relation should be understood as follows: every element of the left-hand sequence is less than every element of the right-hand sequence. This follows from step 20. 
+>Taking $x = \text{sup}_{n \in \mathbb{N}}r_{n}(=\text{inf}_{n \in \mathbb{N}}(r_{n}) + q^{-(n-p)})$, then the sequence $\{r_{n}\}$ will satisfy steps 11 and 12, that is, the symbol $\alpha_{p}\dots \alpha_{p-n}\dots$ corresponds to the number $x \in \mathbb{R}$. 
+
+Thus, a one-to-one correspondence between the positive numbers $x \in \mathbb{R}$ and the symbols of the form $\alpha_{p}\dots, \alpha_{0},\dots$ if $p \le 0$ or $0,0\dots 0 \alpha_{p}$ ($|p|$ zeros) if $p < 0$. The symbol assigned to $x$ is the $q$-ary representation of $x$; the numbers that occur in the symbol are called its *digits*, and the position of a digit relative to the period is called its *rank*. It's been established that to assign to a number $x <0$ the symbol for the positive number $-x$, prefixed by a negative sign. Finally, the symbol $0.0\dots0\dots0$ to the number $0$. Therefore, the positional $q$-*ary system* of writing real numbers has been constructed. 
+
+>[!question]+ Application: Digital Computer Systems
+>Digital computers make use of binary, which has the digits $0$ and $1$. Additionally, some advanced computer systems make use of *ternary* and *octal systems.* 
+
+---
+# Additional Useful Facts
+$$
+\begin{gather}
+\textbf{Theorem: Isomorphism and Categoricity in } \mathbb{R} \\[5mm]
+\text{Any two complete linearly ordered fields are isomorphic because of a unique} \\
+\text{ order-preserving field isomorphism}
+\end{gather}
+$$
+(see [[Proof of Isomorphism and Categoricity in the Real Numbers|proof]])
+This is the categorical closure of the axiomatic definition of $\mathbb{R}$. It guarantees that the axiomatic model that was constructed in this chapter is unique up to isomorphism, validating that all analytical derivations describe a universal mathematical structure rather than an arbitrary realization. 
+
+$$
+\begin{gather}
+\textbf{Theorem: Dedekind's Cut Principle and Completeness Equivalence} \\[5mm]
+\text{Any two complete linearly ordered fields are isomorphic via } \\
+\text{a unique order-preserving field isomorphism.}
+\end{gather}
+$$
+(see [[Proof of Dedekind's Cut Theorem and Complete Equivalence|proof]])
+This can be considered the categorical closure of the axiomatic definition of $\mathbb{R}$. It guarantees that the axiomatic model constructed in the previous chapter is unique up to isomorphism, validating that all analytical derivations describe a universal mathematical structure rather than an arbitrary realization. 
+
+
+$$
+\begin{gather}
+\textbf{Proposition: Monotonicity and Ordering of Extrema } \\[5mm]
+\text{If } A \subset B \subset \mathbb{R}, \text{ then the sup}(A) \le \text{sup(B)}  \text{ and inf}(A) \ge \text{inf(B)}. \\
+\text{If } X,Y \subset \mathbb{R} \text{ are non-empty sets such that } x \le y \text{ for all } x \in X, y \in Y, \text{ then } \\
+\text{sup}(X) \le \text{inf}(Y).  \\[2.5mm]
+\text{In other words, } X \cup Y = \mathbb{R}, then \text{sup}(X) = \text{sup(Y)}
+\end{gather}
+$$
+(see [[Proof of Monotonicity and Ordering of Extrema|proof]])
+This is useful for handling bounds across subsets, approximations, and partitions. 
+
+$$
+\begin{gather}
+\textbf{Proposition: Algebraic Operations on Bounded Sets} \\[5mm]
+\text{Let } A+B \text{ be the set of the numbers of the form } a + b \text{ and }  \\
+A \cdot B \text{ the set of numbers of the form } a \cdot b, \text{ where } a \in A \subset \mathbb{R} \\
+\text{ and } b \in B \subset \mathbb{R}. \text{The following would then hold true: } \\[2.5mm]
+\text{sup}(A + B) = \text{sup}(A) \\
+\text{sup}(A \cdot B) = \text{sup}(A) \cdot \text{sup}(B)
+\end{gather}
+$$
+This provides the foundational methods for bounding *Minkowski* set sums and products, which are used throughout variational formulations and *functional analysis*. 
+
+$$
+\begin{gather}
+\textbf{Proposition: Bernouilli's Inequality} \\[5mm]
+\text{For all } x > -1 \text{ and } n \in \mathbb{N}, (1 + x)^n \le 1 + nx, \text{ with equality if and only if } \\
+n = 1 \text{ or } x = 0.  
+\end{gather}
+$$
+(see [[Proof of Bernoulli's Inequality|proof]])
+
+$$
+\begin{gather}
+\textbf{Proposition: Existence of Unique } n\text{-th Roots and Rational Exponentiation} \\[5mm]
+\text{If } n \in \mathbb{N} \text{ and } a > 0 \text{ the equation } x^{n} = a \text{ has a positive root, which is denoted by } \sqrt[n]{a} \text{ or } a^{1/n} \\[2.5mm]
+\text{For } a > 0, b > 0, \text{ and } n,m \in \mathbb{N}, \text{ the following hold true: } \\
+\text{1. } \sqrt[n]{ab} = \sqrt[n]{a} \cdot \sqrt{b} \text{ and } \sqrt[n]{\sqrt[m]{a}} = \sqrt{n \cdot m}.  \\
+\text{2. } (a^{1/n})^m = (a^m)^{1/n} =: a^{m/n} \text{ and } a^{1/n} \cdot a^{1/m} = a^{1/n + 1/m}. \\
+\text{3. For all } r_{1},r_{2} \in \mathbb{Q}, \ a^{r_{1}} \cdot a^{r_{2}} = a^{r_{1} + r_{2}} \text{ and } (a^{r_{1}})^{r_{2}} = a^{r_{1}r_{2}} 
+\end{gather}
+$$
+(see [[Proof of the Rules of Rational Expressions|proof]])
+These operations for roots and rational expressions are very useful in equations with radical expressions. 
+
+$$
+\begin{gather}\textbf{Proposition: Non-Archimedean Ordering Fields} \\[5mm]
+\text{The field of rational functions } \mathbb{Q}(x) \text{ equipped with lexicographic ordering by highest-degree } \\
+\text{forms an ordered field that is non-Archimedean.}
+\end{gather}
+$$
+(see [[Proof of Non-Archimedean Ordering Fields|proof]])
+
+$$
+\begin{gather}
+\textbf{Lemma: Von-Neumann Ordinal Embeddings} \\[5mm]
+\text{The successor operation } x^+ = x \cup \{ x \} \text{ on Von Neumann} \\
+\text{ordinals satisfy strict injectivity and the minimal element principal for } \\
+\text{ subsets under inclusion.}
+\end{gather}
+$$
+(see [[Proof of Von-Neumann Ordinal Embeddings]])
+
+$$
+\begin{gather}
+\textbf{Lemma: Euclidean Algorithm}  \\[5mm]
+\text{Let } m,n \in \mathbb{N} \text{ and } m > n. \text{Their greatest common divisor, gcd}(m,n) = d \in \mathbb{N} \text{ can be found } \\
+\text{in a finite number of steps using the following algorithm of Euclid involving} \\
+\text{successive divisions with remainder: } \\[2.5mm]
+m = q_{1}n + r_{1} (r_{1} < n), \\
+n = q_{2}r_{1} + r_{2} (r_{2} < r_{1}), \\
+r_{1} = q_{3}r_{2} + r_{3} (r_{3} < r_{2}),  \\
+\vdots \\
+r_{k-1} = q_{k+1}r_{k} + 0.  \\[2.5mm]
+\text{Then } d = r_{k}. \\[2.5mm]
+\text{If } d = \text{gcd}(m,n), \text{ prime numbers } p,q \in \mathbb{Z} \text{ can be chosen such that } pm + qn = d;  \\
+\text{in particular, if } m \text{ and } n \text{ are relatively prime, then } pm + qn = 1. 
+\end{gather}
+$$
+(see [[Proof that Euclid's Algorithm Works]])
+
+$$
+\begin{gather}
+\textbf{Lemma: Properties of Order-Preserving Homomorphisms} \\[5mm]
+\text{Any non-trivial ring homomorphism } f:\mathbb{R} \rightarrow \mathbb{R}' \text{ maps }  \\
+0 \mapsto 0', 1 \mapsto 1', \text{ preserves positive rationals, and restricts to an order isomorphism on } \mathbb{Q}.
+\end{gather}
+$$
+(see [[Proof of Properties of Order-Preserving Homomorphisms|proof]])
