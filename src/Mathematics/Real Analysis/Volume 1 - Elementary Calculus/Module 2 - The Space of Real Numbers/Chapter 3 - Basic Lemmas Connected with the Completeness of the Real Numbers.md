@@ -1,5 +1,5 @@
 ---
-dg-home: true
+dg-publish: true
 ---
 # Basic Lemmas Connected with Completeness
 In the study of real analysis, the axiom of completeness separates the set of real numbers $\mathbb{R}$ from the set of rational numbers $\mathbb{Q}$. It is the foundational principle that guarantees the real number line has no "gaps" or "holes." While the supremum and infimum principles establish this continuity algebraically, this underlying reality can be formulated in several geometrically and topologically intuitive ways.
