@@ -110,7 +110,12 @@ $$
 
 ---
 # Arithmetic Operations Involving Limits
-Given that existent limits are real numbers, 
+Given that existent limits are real numbers, it's only natural that the standard arithmetic operations defined as axioms of addition and multiplication apply to limits: 
+$$
+\begin{gather}
+
+\end{gather}
+$$
 
 
 

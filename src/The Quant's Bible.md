@@ -2,18 +2,19 @@
 dg-publish: true
 dg-home: true
 ---
-# Home
-Welcome to the *Quant's Bible*! This is a personal project that Zachary Ong originally created for his friends who needed help with their mathematics classes and skills. He had trouble with his mathematics classes during the first half of his undergraduate degree in computer science, bombing and barely passing many of them. 
+Welcome to the *Quant's Bible*! This is an open-access repository of notes related to quantitative finance, with these notes aiming to offer a bottom-up and self-contained approach that uses pure mathematics as the language of discourse. These notes are ever-expanding and are expected to see changes as time goes by. The four fundamental topics of focuses within this intellectual repository are 
+- *Pure and Applied Mathematics*
+- *Mathematical Statistics*
+- *Computer Science*
+- *Finance and Econometrics*
 
-However, his desire to be a quantitative finance researcher required him to relearn all the necessary mathematical and computer science skills that he struggled to during his first two years of undergrad. At the same time, much of the knowledge required were scattered throughout various textbooks, websites, forums, and videos all over the internet. This made constantly referring back and forth between references much harder than it had to be. Alas, he realized that no single reference would provide a unified "second brain" that could house everything he needed to know. 
-
-Therefore, this collection of notes was formed as a public and ever-expanding knowledgebase dedicated to quantitative finance. The fundamental topics of focus within this knowledgebase are *pure and applied mathematics, mathematical statistics, computer science and Julia programming, as well as finance and econometrics*. This knowledgebase aims to present quantitative finance as a dynamic social science and an independent field of study. Rather than being a disparate collection of facts and tricks, this knowledgebase aims to construct quantitative finance from the ground-up by viewing it through the language of pure mathematics. Nearly all the notes here are interconnected, allowing readers to go back and forth between different sections as if they were in one universe. 
+Rather than treating quantitative finance as a collection of disparate facts, these notes aim to offer an interdisciplinary experience where the four disciplines are connected with one another. The author hopes that this may reduce the need for the reader to search disparate sources just to find a single fact they're interested in. 
 
 ---
 # Who is this For?
 
 ### Quants, Economists, and Actuarial Scientists
-First and foremost, this collection of notes was designed for those looking to become researchers in quantitative finance. While much of modern quantitative finance has become abstracted by new discoveries in mathematics, economics, and finance, as well as more powerful software packages capable of performing very complex tasks that would've taken quants of yesteryear ages to do manually, quant researchers still demand mathematical maturity. This offers quants, actuarial scientists, and economists an uncompromised approach to topics in finance that were traditionally considered to be  qualitative.
+First and foremost, this collection of notes was designed for those looking to become researchers in quantitative finance. While much of modern quantitative finance has become abstracted by new discoveries in mathematics, economics, and finance, as well as more powerful software packages capable of performing very complex tasks that would've taken quants of yesteryear ages to do manually, quant researchers still demand mathematical maturity. This offers quants, actuarial scientists, and economists an uncompromised approach to topics in finance that were traditionally considered to be qualitative.
 ### Business Majors, MBAs, and PhDs specializing in Business
 Business majors with an interest in using principles of quantitative finance to better understand corporate structures will appreciate what this has to offer. While finance here is approached using the language of pure mathematics, more intuitive explanations are also provided for those who may lack the necessary quantitative skills to utilize them. MBAs and PhDs in business who're specializing in analytics or data science would also majorly appreciate this somewhat unique approach to finance in business. This reference is especially suited for those in operations management and other rigorous managerial sciences.  
 
@@ -24,23 +25,7 @@ Third, this provides students of the engineering and sciences an alternative way
 Fourth, students in the mathematical sciences would be a natural audience for this type of information. The mathematical sciences is an incredibly diverse and dynamic field, with it requiring strong mathematical maturity to truly appreciate. Those who are solely interested in the pure and applied mathematics topics may disregard the other non-math sections. The examples presented in the math sections go beyond finance. Quantitative finance has strong roots in the engineering and natural sciences, which is why examples in applied mathematics that have nothing to do with finance (at least on the surface) are provided. At the same time, this may provide those who struggle with abstract concepts a look into how mathematics works in the modern world. 
 
 ### Quant Devs and Fintech
-Members of the fintech community, quant devs, and other software developers with a strong interest in quantitative computing will be glad to see the amount of programming knowledge offered. These notes are mainly written for the *Julia, C++,* and *Rust* programming languages (Note: Rust and C++ haven't been added yet). 
-
-Software developers may also be interested in the theoretical computer science section, which focuses on the various data structures and algorithms used in developing programs. Furthermore, this knowledge base introduces functional programming, which may be considered niche for many developers. However, the author hopes to extol the virtues of this approach with the examples provided. Once again, the topics in theoretical computer science are grounded in heavy mathematical theory. 
-### A Passing Interest in Quantitative Skills
-Fifth, anyone who's simply interested in learning math and finance can hop into these collection of notes. This collection is designed to be a self-contained manual that even novices can pick up easily. While this is geared towards those pursuing graduate work in quantitative fields, this also works for those interested in simply learning quantitative finance as a hobby. In terms of prerequisites, readers are recommended to have the following: 
-
-##### Mathematics Skills
-- *Mathematical Maturity:* Mathematical maturity isn't only a skill, but also a mindset. This is a form of insight that can't naturally be taught, and is instead gained through experience and practice. It consists of *intuition*, which is the ability to make meaningful connections between certain ideas even if the connections don't seem obvious, and *rigor*, which refers to the exact and un-ambiguous explanation of why certain facts hold true. 
-- *Proof:* To ensure a certain mathematical fact hold true, it must be **proven**. Without proofs, one cannot be sure that a mathematical fact holds true. Proving theorems has its roots in applied philosophy, which makes heavy use of deductive logic to come to a conclusion. Unlike the natural or social sciences, mathematics is primarily studied using deductive logic to show something is true. 
-- *Highschool Mathematics:* A strong and intuitive grasp of highschool-level algebra and trigonometry. Furthermore, one should have a strong and intuitive grasp of counting and pattern-matching. 
-While the mathematical notes are best parsed through by individuals with a background in some form of natural or formal science, whether they be an advanced undergraduate or beginning graduate student, those not coming from these rigorous backgrounds may still benefit from these notes. The mathematics portions are designed to be self-contained from the ground-up, ensuring that those who mayn't have had the opportunity to take rigorous mathematics be given a fair start without needing to go too far to find a rigorous source. 
-##### Finance Skills
-- *Markets:* A Basic Understanding of Markets is critical to appreciating the finance sections. 
-- *Financial Instruments:* Basic knowledge of various investment vehicles can help the reader better understand the role that each one plays. 
-##### Programming Skills
-- Programming experience in a modern object-oriented programming language. 
-- *Theory of Computer Science:* The theoretical computer science sections are derived from pure and applied mathematics. Anyone who's taken a data structures and algorithms class, or discrete mathematics course may find these easier. For readers who've no experience in computer science nor don't come from a computer science background, the more rigorous foundation provided by these notes may come in handy. 
+These notes provides those who're interested in quantitative development with the theoretical grounding needed to understand the inner workings of data structures and algorithms. The increasing abstraction of software has led to many treating software like it's a black box. These notes aim to provide a strong mathematical grounding for selected topics in theoretical computer science. This provides those with backgrounds in software design a better look into how data structures and algorithms can be analyzed without looking into the concrete implementations of these theoretical concepts. 
 
 ---
 # Pure and Applied Mathematics
@@ -86,7 +71,7 @@ Overtime, more information will be added to this collection. It's likely that wh
 ### On Generative Artificial Intelligence
 This knowledgebase makes heavy use of generative artificial intelligence, more specifically autonomous AI agents who are tasked with various roles in regulating this repository of knowledge. The agents perform the following tasks:
 - **Initial Note Generation:** The original note drafts are first generated by a designated high-level agent who possesses top-level reasoning. Additionally, the agent's *temperature* setting is toned down to a very low level so as to get it to produce more predictable and deterministic results. 
-- **Proofs and Derivations:** Proofs and derivations for known lemmas, propositions, and theorems are done by the same high-level agents. To ensure the proofs are correct, these agents verify the accuracy of their proofs with [Lean 4](https://lean-lang.org/). Given that the lemmas, propositions, and theorems presented here are already known to be true and have proofs scattered all over the internet, the author believes that rederiving everything from scratch is not a fruitful use of his time. 
+- **Proofs and Derivations:** Proofs and derivations for known lemmas, propositions, and theorems are done by the same high-level agents. To ensure the proofs are correct, these agents verify the accuracy of their proofs with [Lean 4](https://lean-lang.org/). Given that the lemmas, propositions, and theorems presented here are already known to be true and have proofs scattered all over the internet, the author believes that rederiving everything from scratch is not a fruitful use of one's time.  
 - **Grammar Checks:** Inspecting for grammatical errors and other minor mistakes is done by lower-level agents who require less computing power. 
 
 ##### When Not to Use AI?
@@ -98,6 +83,13 @@ This knowledge base is intended solely for learning, conceptual development, and
 Secondly, this knowledge base may or may not be suited for career assistance. While this provides the conceptual and practical framework for many skills and roles in quantitative finance, it lacks personalized features like exercise problems, one-on-one meetings with an instructor, interview questions, and other creature comforts that usually come with career assistance. Should a reader desire career assistance or learning how to break in to a specific niche in quantitative finance, they should seek said career assistance from someone who explicitly provides those courses. Nevertheless, this is a useful resource as the theoretical backbone and practical knowledge one may need. 
 
 Lastly, this may provide financial literacy for those who mayn't be very literate to begin with. Financial literacy is one of the most underrated skills that one may possess today. It's not only about knowing the complexities of financial markets, but how to use the lessons gained from these notes in one's financial life. 
+
+### Not a Coding Camp
+The computer science segments here don't focus on programming assistance for a specific language. Instead, the focus is placed on learning the theoretical data structures and algorithms used by modern computing systems. Therefore, the reader may be disappointed to know that they won't find a tutorial on how to code in a specific language/framework. 
+
+Much of mathematics, computer science, and econometrics has remained virtually the same for decades. By contrast, the concrete implementations involving the use of different languages and frameworks differs from software tool to software tool. Furthermore, tools can be updated, become outdated, or be replaced by newer tools, making keeping up with changing standards difficult. 
+
+Indeed, these notes focus on timeless principle that can be applied even far into the future. While frameworks and tools may become outdated, updated, or even replaced, these tools are based on these fundamental timeless principles these notes focus on. 
 ### Forever Free
 This knowledge base was curated with explicit commitment to universal accessibility. It operates under an "open science" philosophy, meaning its contents are designed for communal learning and critical inquiry—from personal self-study modules to advanced university coursework. The synthesized material here is intended as a foundational resource for discussion. While the author encourages all forms of academic utilization, it's not intended as proprietary intellectual property for commercial or for-profit exploitation. The author believes that the advancement of knowledge in quantitative finance must remain freely accessible to the global research community. 
 
