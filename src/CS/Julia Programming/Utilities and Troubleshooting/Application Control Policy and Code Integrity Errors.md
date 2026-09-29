@@ -1,6 +1,3 @@
----
-dg-publish:
----
 During package loading or precompilation, Julia emits native dynamic link libraries (`.dll`) to optimize startup times and runtime execution. On Windows systems with strict security baselines—such as **SmartAppControl**, **Windows Defender Application Control (WDAC)**, or **AppLocker**—the operating system kernel may intercept and block the dynamic loading of these compiled libraries from user-writable directories. This typically manifests with the following fatal load error: 
 ```text 
 ERROR: LoadError: Error opening package file C:\Users\<Username>\.julia\compiled\v1.1x\<Package>\<hash>.dll: An Application Control policy has blocked this file.

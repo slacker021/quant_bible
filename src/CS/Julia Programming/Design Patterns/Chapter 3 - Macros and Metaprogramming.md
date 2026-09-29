@@ -1,6 +1,3 @@
----
-dg-publish: true
----
 Metaprogramming is a sophisticated technique for writing code that generates other code. While it may initially appear esoteric, it is a foundational pillar of the Julia language, allowing for the creation of highly expressive, efficient, and flexible software systems. In practice, metaprogramming is not a daily requirement for the vast majority of applications—often comprising less than 1% of a language’s core implementation—but it is indispensable for designing high-performance libraries and domain-specific languages.
 
 # The Need for Metaprogramming

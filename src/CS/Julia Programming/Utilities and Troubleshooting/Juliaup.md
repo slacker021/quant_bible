@@ -1,6 +1,3 @@
----
-dg-publish:
----
 # Julia Version Management and Runtime Orchestration with `Juliaup`
 The rapid cadence of minor and patch releases across modern programming ecosystems requires robust tooling for runtime orchestration. *Juliaup* serves as the official cross-platform multiplexer and version manager for the Julia programming language, streamlining the installation, channel tracking, and execution of concurrent toolchains. Unlike traditional manual binary extraction workflows, Juliaup isolates runtime channels, manages system path bindings automatically, and prevents environment drift across projects. This utility enables local environments to maintain exact version reproducibility across stable, release, and long-term support (LTS) builds.
 

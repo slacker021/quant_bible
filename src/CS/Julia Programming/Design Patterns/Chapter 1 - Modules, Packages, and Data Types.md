@@ -1,6 +1,3 @@
----
-dg-publish: true
----
 # Namespaces
 Julia's design patterns are fundamentally built upon its _type system_ and _multiple dispatch_ paradigm. The language makes extensive use of _namespaces_ to isolate fragments of code, allowing independent components to be developed and maintained without causing symbol collisions.
 

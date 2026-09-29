@@ -1,6 +1,3 @@
----
-dg-publish: true
----
 Users can pull the latest changes from the remote git repository using `git pull`. This is simply a `git fetch` followed by a `git merge`. 
 
 ---

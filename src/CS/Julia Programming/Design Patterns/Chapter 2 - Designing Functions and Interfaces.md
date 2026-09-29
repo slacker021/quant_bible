@@ -1,6 +1,3 @@
----
-dg-publish: true
----
 In the *functional programming* paradigm of the Julia language, functions and interfaces represent the core architectural constructs that define application behavior. Unlike traditional object-oriented paradigms that encapsulate both state and behavior within classes, Julia separates data definitions from functional operations. Behavior is defined by writing *generic functions* that act upon decoupled, external composite types, using a dynamic multiple dispatch mechanism to determine execution paths at runtime.
 
 ---

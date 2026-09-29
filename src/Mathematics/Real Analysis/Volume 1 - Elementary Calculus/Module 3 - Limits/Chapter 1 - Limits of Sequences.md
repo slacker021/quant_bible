@@ -39,11 +39,11 @@ $$
 $$
 
 >[!info]+ Remark: What the Definition of a Sequence Limit Actually Does
->The definition of the limit of a sequence doesn't actually provide the value of the limit itself. Instead, it's there to help prove that the limit for the sequence indeed exists (or doesn't exists). Should one claim to have found the limit of a sequence—whether by hypothesis, brute force through expanding the sequence, or some other method—the definition can be used to prove that the claim is true. 
+>The definition of the limit of a sequence doesn't actually provide the value of the limit itself. Instead, it's there to help prove that the limit for the sequence indeed exists (or doesn't exists). Should one claim to have found the limit of a sequence—whether by hypothesis, brute force through expanding the sequence, or some other method—the definition can be used to prove that the claim is true. Otherwise, one must try to find the value of the limit first before proving that it exists. 
 >
 >Furthermore, the value of $\varepsilon$ is entirely arbitrary. It can be chosen to be as small as desired as long as it's greater than zero. 
 
->[!example]+ Example: Some Examples of Limits
+>[!example]- Example: Some Examples of Limits
 >1. $\lim_{ n \to \infty } \frac{1}{n} = 0$
 >Proof:
 >Let $f: \mathbb{N} \rightarrow \mathbb{R}$, where $f(n) = \frac{1}{n} = \left\{  \frac{1}{1}, \frac{1}{2}, \frac{1}{3} \dots \frac{1}{n}  \right\}$.  Suppose that the candidate limit value of the sequence is $A = 0$. It follows that
@@ -93,8 +93,24 @@ $$
 > \left[ \frac{(-1)^{n}}{n} \right]  < \varepsilon \tag{11}
 > $$
 
+With these definitions provided, basic properties of limits can be deduced:
+$$
+\begin{gather}
+\textbf{Theorem: Basic Properties of Limits} \\[5mm]
+\text{1. An ultimately constant sequence converges. } \\
+\text{2. Any neighborhood of the limit of a sequence contains all but a finite number } \\
+\text{of terms of the sequence. } \\
+\text{3. A sequence can't have multiple distinct limit values. In other words, a convergent } \\
+\text{has a unique limit. } \\
+\text{4. A convergent sequence is bounded. }
+\end{gather}
+$$
 
+(see [[Proof of the Basic Properties of Limits|proof]])
 
+---
+# Arithmetic Operations Involving Limits
+Given that existent limits are real numbers, 
 
 
 

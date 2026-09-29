@@ -1,6 +1,3 @@
----
-dg-publish: true
----
 PowerShell is a CLI offered by Windows that enables users to navigate their computer without the need for a GUI. This can help save time and resources, especially on machines that lack the necessary power to help run many Windows Explorer tabs at once. Furthermore, certain functionality may be easier via PowerShell. This is a quick reference that contains the essentials of PowerShell. 
 
 # Key Components of PowerShell Commands 
