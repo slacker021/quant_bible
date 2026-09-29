@@ -43,15 +43,64 @@ $$
 >
 >Furthermore, the value of $\varepsilon$ is entirely arbitrary. It can be chosen to be as small as desired as long as it's greater than zero. 
 
->[!example]+ Some Examples of Limits
+>[!example]+ Example: Some Examples of Limits
 >1. $\lim_{ n \to \infty } \frac{1}{n} = 0$
 >Proof:
->Let $f: \mathbb{N} \rightarrow \mathbb{R}$, where $f(n) = \frac{1}{x_{n}} = \left\{  \frac{1}{1}, \frac{1}{2}, \frac{1}{3} \dots \frac{1}{n}  \right\}$.  Since $|\frac{1}{n} - 0| < \varepsilon = \frac{1}{n} < \varepsilon$ when $n > N = [\frac{1}{\varepsilon}]$. As an example, if the value of $n = 100$ and $\varepsilon = 0.000001$, then it would be shown that
->$$x_{100} = \frac{1}{100} \implies |x_{n} - 0| < \frac{1}{100} \text{ when } n > 100 \tag{1}$$
->2. $\lim_{ n \to \infty } \frac{n + 1}{n} = 1$ 
->Proof:
->Let $f:\mathbb{N} \rightarrow \mathbb{R}$, where $f(n) = \frac{n + 1}{n} = \left\{2, \frac{3}{2}, \frac{4}{3}\dots \frac{n+1}{n}\right\}$. The aforementioned expression can be rewritten as
+>Let $f: \mathbb{N} \rightarrow \mathbb{R}$, where $f(n) = \frac{1}{n} = \left\{  \frac{1}{1}, \frac{1}{2}, \frac{1}{3} \dots \frac{1}{n}  \right\}$.  Suppose that the candidate limit value of the sequence is $A = 0$. It follows that
 >$$
->\frac{n+1}{n} = 1 + \frac{1}{n} \tag{2}
+>|f(n) - A| < \varepsilon \implies \left|\frac{1}{n} - 0\right| < \varepsilon \tag{1}
 >$$
->Which would imply 
+>Since $n$ is a natural number, $\frac{1}{n}$ must be positive. This makes the absolute value signs redundant, resulting in $\frac{1}{n} < \varepsilon$. The goal is now to isolate $n$, which involves multiplying both sides by $n$ and dividing by $\varepsilon$:
+>$$
+\frac{1}{n} < \varepsilon \implies 1 < n\varepsilon \implies \frac{1}{\varepsilon} < n \tag{2}
+>$$
+>This inequality shows that for the distance between $x_{n}$ and $0$ to be less than $\varepsilon$, the index $n$ must be greater than $\frac{1}{\varepsilon}$. Now, since $n$ must be a natural number, a number $N$ must be chosen such that any natural number larger than it satisfies the condition. This is to be denoted as
+>$$
+>N = \left\lceil \frac{1}{\varepsilon} \right\rceil \tag{4}
+>$$
+>Now, assume that for any given $\varepsilon > 0$, a specific $N$ must be chosen. It must be checked if this choice of $N$ guarantees the inequality for all $n > N$. If $n > N$, and since $N \ge \frac{1}{\varepsilon}$, it follows that 
+>$$
+>n > \frac{1}{\varepsilon} \implies n\varepsilon > 1 \implies \varepsilon > \frac{1}{n} \implies \left| \frac{1}{n} - 0 \right| < \varepsilon \tag{5}
+>$$
+>Since a number $N$ for an arbitrarily given $\varepsilon > 0$ was found, the limit condition is met. 
+>2. $\lim_{ n \to \infty } \frac{n+1}{n} = 1$
+>   Proof:
+>   Let $f: \mathbb{N} \rightarrow \mathbb{R}$, where $f(n) = \frac{n+1}{n} = \left\{ 2, \frac{3}{2}, \frac{4}{3}\dots \frac{n+1}{n}\right\}$. Suppose that the candidate value for the limit is $1$. By definition of the sequence limit, 
+>$$
+> | f(n) - A | < \varepsilon \implies \left| \frac{n+1}{n} - 1 \right| < \varepsilon \tag{6}   
+>$$
+>Since $n$ is a natural number, it's a positive integer. Additionally, the value of $n$ must now be isolated:
+>$$
+>\left|\frac{n+1}{n} - 1 \right| < \varepsilon \implies \frac{n+1}{n} - 1 < \varepsilon \implies \frac{n}{n} + \frac{1}{n} - 1 < \varepsilon \implies 1 + \frac{1}{n} - 1 < \varepsilon \tag{7}
+>$$
+>The expression can then be simplified into 
+>$$
+\frac{1}{n} < \varepsilon \implies 1 < n\varepsilon \implies \frac{1}{\varepsilon} < n \tag{8}
+>$$ 
+>Since $n$ is a natural number, there must a number $N$ that is chosen such that any $n > N$ satisfies the condition of $N = l\left\lceil  \frac{1}{\varepsilon}  \right\rceil$. It would then follow that 
+>$$
+\frac{1}{\varepsilon} < n \implies 1 < n\varepsilon \implies \frac{1}{n} < \varepsilon \implies \left| \frac{1}{n} + 1 \right| < \varepsilon + 1 \tag{9}
+>$$
+>Since a number $N$ for an arbitrarily given $\varepsilon > 0$ was found, the limit condition is met. 
+>3. $\lim_{ n \to \infty } \left[1 + \frac{(-1)^{n}}{n} \right] = 1$. 
+> Proof:
+> Let $f: \mathbb{N} \rightarrow \mathbb{R}$, where $f(n) = \left[1 + \frac{(-1)^{n}}{n} \right]$. Suppose that the candidate limit value is $1$. By definition, 
+> $$
+> \left| \left[1 + \frac{(-1)^{n}}{n} \right] - 1 \right| < \varepsilon \tag{10}
+> $$
+> The number $n$ must be isolated:
+> $$
+> \left[ \frac{(-1)^{n}}{n} \right]  < \varepsilon \tag{11}
+> $$
+
+
+
+
+
+
+
+
+
+
+
+
