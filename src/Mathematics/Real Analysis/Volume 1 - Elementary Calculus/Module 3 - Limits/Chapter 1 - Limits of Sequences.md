@@ -93,6 +93,20 @@ $$
 > \left[ \frac{(-1)^{n}}{n} \right]  < \varepsilon \tag{11}
 > $$
 
+
+### Unique Sequence Types
+Broadly speaking, there're two type of sequences: 
+$$
+\begin{gather}
+\textbf{Definition: Constant Sequences } \\[5mm]
+\text{If there's a number } A \text{ and an index } N \text{ such that } x_{n} = A \text{ for all } n > N,  \\
+\text{the sequence } \{x_{n}  \} \text{ is ultimately constant. } \\[5mm]
+\textbf{Definition: Bounded Sequence } \\[5mm]
+\text{A sequence } \{ x_{n} \} \text{ is bounded if there's a } M \text{ such that } |x_{n}| < M \text{ for all } n \in \mathbb{N}. 
+\end{gather}
+$$
+
+### Basic Properties of Limits
 With these definitions provided, basic properties of limits can be deduced:
 $$
 \begin{gather}
@@ -108,20 +122,121 @@ $$
 
 (see [[Proof of the Basic Properties of Limits|proof]])
 
----
-# Arithmetic Operations Involving Limits
+##### Arithmetic Operations Involving Limits
 Given that existent limits are real numbers, it's only natural that the standard arithmetic operations defined as axioms of addition and multiplication apply to limits: 
 $$
 \begin{gather}
+\textbf{Theorem: Arithmetic Properties of Limits} \\[5mm]
+\text{If } \lim_{ n \to \infty } x_{n} = A \text{ and } \lim_{ n \to \infty } y_{n} = B, \text{ then } \\[2.5mm]
+\text{1. } \lim_{ n \to \infty }(x_{n} + y_{n}) = A + B \\
+\text{2. } \lim_{ n \to \infty }(x_{n} \cdot y_{n}) A \cdot B \\
+\text{3. } \lim_{ n \to \infty } \frac{A}{B} \text{ if } B \neq 0 \text{ and } y_{n} \neq 0 \text{ for all } n. 
+\end{gather}
+$$
+(see [[Proof of Arithmetic Operations Involving Limits|proof]])
+These operations allow for the decomposition and analysis of complex sequences constructed from simpler components. 
 
+>[!danger]+ Intuition: Convergence vs. Boundedness 
+>It is crucial to note that while convergence strictly implies boundedness, the converse is decisively false. A sequence can oscillate within strict bounds (like $x_n = (-1)^n$) without ever settling toward a single point. To guarantee convergence in a bounded sequence, an additional structural condition must be introduced, such as *monotonicity*.
+
+##### Inequalities Involving Limits of Sequences
+Another consequence of the limits of sequences being real numbers is that the axioms of ordering apply to them:
+$$
+\begin{gather}
+\textbf{Theorem: Inequalities Involving Limits} \\[5mm]
+\text{1. If } \{x_{n}  \} \text{ and } \{y_{n}  \} \text{ are two convergence sequences with } \lim_{ n \to \infty } x_{n} = A \text{ and } \lim_{ n \to \infty } y_{n} = B,  \\
+\text{ where } A < B, \text{ then there's an index } N \in \mathbb{N} \text{ such that } x_{n} < y_{n} \text{ for all } n > N.  \\[2.5mm]
+\text{2. Suppose the sequences } \{x_{n}  \}, y_{n}, \text{ and } z_{n} \text{ are such that } x_{n} \le y_{n} \le z_{n} \text{ for all } n > N \in \mathbb{N}. \text{If } \\
+\text{the sequences } \{x_{n}  \} \text{ and } \{z_{n} \} \text{ converge to the same limit, then the sequence } \\
+\{ y_{n} \} \text{ also converges to that limit. } 
+\end{gather}
+$$
+(see [[Proof of Inequalities Involving Limits|proof]])
+
+It then easily follows that
+$$
+\begin{gather}
+\textbf{Corollary: } \\[5mm]
+\text{Suppose } \lim_{ n \to \infty } x_{n} = A \text{ and } \lim_{ n \to \infty } y_{n} = B. \text{ If there's a } N \text{ such that for all } n > N, \text{ then } \\[2.5mm]
+\text{1. } x_{n} \ge y_{n} \implies A \ge B \\
+\text{2. } x_{n} \ge y_{n} \implies A \ge B \\
+\text{3. } x_{n} > B \implies A \ge B \\
+\text{4. } x_{n} \ge B \implies A \ge B
+\end{gather}
+$$
+(see [[Proof of the Corollary for Limit Inequalities|proof]])
+
+>[!info]+ Remark: 
+>It's worth noting that strict inequality may become equality in the limit. As an example, $\frac{1}{n} > 0$ for all $n \in \mathbb{N}$ yet $\lim_{ n \to \infty } \frac{1}{n} = 0$.
+>
+
+### Questions Involving the Existence of Sequence Limits
+
+Relying on an external candidate $A$ to verify convergence is frequently impractical. A purely internal criterion for convergence is necessary, one that examines how elements of the sequence behave relative to one another rather than comparing them to a predefined limit:
+$$
+\begin{gather}
+\textbf{Definition: Cauchy Sequence } \\[5mm]
+\text{A sequence } \{x_{n}\} \text{ is a fundamental or Cauchy sequence if for any } \varepsilon > 0, \text{ there's an index } N \in \mathbb{N}  \\
+\text{such that } |x_{m} - x_{n}| < \varepsilon \text{ whenever } n > N \text{ and } m > N. 
 \end{gather}
 $$
 
+The definition above is useful because it can be used to demonstrate whether or not a sequence is convergence. The completeness of the real numbers ensures that this internal stabilization perfectly aligns with standard convergence: 
+$$\begin{gather} \textbf{Theorem: Cauchy Criterion for Convergence} \\[5mm] \text{A sequence of real numbers converges if and only if it is a Cauchy sequence.} \end{gather}$$
+(see [[Proof of the Cauchy Criterion for Sequences|proof]])
 
 
+### A Criterion for the Existence of the Limit of a Monotonic Sequence
+A unique type of sequence can be constructed depending on the size of the terms increasing or decreasing as the sequence goes on:
+$$
+\begin{gather}
+\textbf{Definition: Monotonic Sequences} \\[5mm]
+\text{1. A sequence } \{x_{n}  \} \text{ is increasing if } x_{n} < x_{n+1} \text{ for all } n \in \mathbb{N}.  \\
+\text{2. A sequence }  \{x_{n}\} \text{ is nondecreasing if } x_{n} \ge x_{n+1} \text{ for all } n \in \mathbb{N}. \\
+\text{3. A sequence is descreasing if } x_{n} > x_{n+1} \text{ for all } n \in \mathbb{N}.  \\[5mm]
+\textbf{Definition: Sequence Bounded Above} \\[5mm]
+\text{A sequence } \{ x_{n} \} \text{ is bounded above if there is a number } M \text{ such that } x_{n} < M  \\
+\text{for all } n \in \mathbb{N}. 
+\end{gather}
+$$
 
+With these two definitions being used to deduce and construct an important fact:
+$$
+\begin{gather}
+\textbf{Theorem: Weierstrass} \\[5mm]
+\text{For a nondescreasing sequence to have a limit, it's necessary and sufficient that it be bounded above. }
+\end{gather}
+$$
+(see [[Proof of Weierstrass Theorem|proof]])
 
+Which can then be used to demonstrate that 
+$$
+\begin{gather}
+\textbf{Corollary: } \\[5mm]
+\text{1. } \lim_{ n \to \infty } \sqrt[n]{n} = 1 \\
+\text{2. } \lim_{ n \to \infty } \sqrt[n]{a} = 1 \text{ for any } a > 0
+\end{gather}
+$$
 
+### Euler's Constant
+A unique type of number can be discovered using the limits of sequences. Unlike other numbers, which have their origins from geometry, this number has its origin from calculus: 
+$$
+\begin{gather}
+\textbf{Theorem: Euler's Number} \\[5mm]
+\text{The number } \lim_{ n \to \infty } \left(1 + \frac{1}{n} \right)^n \text{ exists and is denoted as } e.  \\
+\end{gather}
+$$
+(see [[Derivation of Euler's Constant|derivation]])
 
+>[!question]+ Application: Euler's Number and Interest Rates
+>Euler's Number is frequently used to calculate the decay or growth of a particular factor overtime. A good example of this is in compound interest:
+>$$
+>\begin{align}
+>V_{F} = V_{P}e^{rt}, \text{ where } & V_{F} \text{ is the future value. } \\
+>& V_{P} \text{ is the present value.} \\
+>& r \text{ is the interest rate being compounded.} \\
+>& t \text{ is the time in years.} 
+>\end{align}
+>$$
 
 
