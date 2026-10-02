@@ -27,6 +27,8 @@ Fourth, students in the mathematical sciences would be a natural audience for th
 ### Quant Devs and Fintech
 These notes provides those who're interested in quantitative development with the theoretical grounding needed to understand the inner workings of data structures and algorithms. The increasing abstraction of software has led to many treating software like it's a black box. These notes aim to provide a strong mathematical grounding for selected topics in theoretical computer science. This provides those with backgrounds in software design a better look into how data structures and algorithms can be analyzed without looking into the concrete implementations of these theoretical concepts. 
 
+Additionally, these notes also provide programming principles in C++ and Julia, two languages that're especially suited to the the ever-expanding field. Julia provides an easy-to-understand Syntax coupled with high performance, while C++ provides absolute software control on the hardware level without forcing the user to program in *Assembly*. 
+
 ---
 # Pure and Applied Mathematics
 The quantitative heart of quantitative finance has its roots in the formal and hard sciences. This knowledgebase provides a rigorous and unambiguous treatment of pure and applied mathematics, showcasing full proofs and derivations so as to provide a more rigorous and step-by-step approach. 
@@ -34,32 +36,10 @@ The quantitative heart of quantitative finance has its roots in the formal and h
 In providing a unified approach to pure mathematics, this knowledgebase attempts to construct its own mathematical universe. All the mathematics topics are interconnected, with backlinks in one note leading to another. This applies for the proofs and derivations for various facts, as well as topics that in different branches of mathematics that have overlap. 
 
 As for applied mathematics, the various mathematics notes have real-world examples that provide context and examples of where these abstract notions may be applied to. Unlike pure mathematics textbooks, which are often rigorous but lacking context, and applied mathematics textbooks, which provide dynamic examples but are criticized for a lack of rigor, this collection aims to be a unified approach.
-### Real Analysis
-This is the most foundational of all the mathematics topics within this knowledgebase. Most of the other topics are built from real analysis.
-##### Volume 1: Elementary Calculus:
-
-Module 1: Preliminary Knowledge
-[[Chapter 1 - Basic Rules of Logic]]
-[[Chapter 2 - Elementary Set Theory]]
-[[Chapter 3 - Cartesian Products and Relations]]
-[[Chapter 4 - Functions and Cardinality]]
-
-Module 2: The Real Numbers
-[[Chapter 1 - Basic Properties of Real Numbers]]
-[[Chapter 2 - Elementary Set Theory]]
-[[Chapter 3 - Basic Lemmas Connected with the Completeness of the Real Numbers]]
-[[Chapter 4 - The Cardinality of the Continuum]]
 
 ---
 # Finance
 Finance has evolved greatly, from a qualitative artform that was merely considered a subfield of economics or a tool in corporate studies. These notes provide a rigorous and math-based foundation for contemporary neoclassical finance. 
-
-### Portfolio Theory
-
-##### Volume 1: Modern Portfolio Theory and Basic Investment Analysis
-[[Chapter 1 - The Theory of Choices]] 
-[[Chapter 2 - Financial Instruments and Securities]]
-[[Chapter 3 - Financial Markets]]
 
 ---
 # Disclaimers and Notices
@@ -83,13 +63,6 @@ This knowledge base is intended solely for learning, conceptual development, and
 Secondly, this knowledge base may or may not be suited for career assistance. While this provides the conceptual and practical framework for many skills and roles in quantitative finance, it lacks personalized features like exercise problems, one-on-one meetings with an instructor, interview questions, and other creature comforts that usually come with career assistance. Should a reader desire career assistance or learning how to break in to a specific niche in quantitative finance, they should seek said career assistance from someone who explicitly provides those courses. Nevertheless, this is a useful resource as the theoretical backbone and practical knowledge one may need. 
 
 Lastly, this may provide financial literacy for those who mayn't be very literate to begin with. Financial literacy is one of the most underrated skills that one may possess today. It's not only about knowing the complexities of financial markets, but how to use the lessons gained from these notes in one's financial life. 
-
-### Not a Coding Camp
-The computer science segments here don't focus on programming assistance for a specific language. Instead, the focus is placed on learning the theoretical data structures and algorithms used by modern computing systems. Therefore, the reader may be disappointed to know that they won't find a tutorial on how to code in a specific language/framework. 
-
-Much of mathematics, computer science, and econometrics has remained virtually the same for decades. By contrast, the concrete implementations involving the use of different languages and frameworks differs from software tool to software tool. Furthermore, tools can be updated, become outdated, or be replaced by newer tools, making keeping up with changing standards difficult. 
-
-Indeed, these notes focus on timeless principle that can be applied even far into the future. While frameworks and tools may become outdated, updated, or even replaced, these tools are based on these fundamental timeless principles these notes focus on. 
 ### Forever Free
 This knowledge base was curated with explicit commitment to universal accessibility. It operates under an "open science" philosophy, meaning its contents are designed for communal learning and critical inquiry—from personal self-study modules to advanced university coursework. The synthesized material here is intended as a foundational resource for discussion. While the author encourages all forms of academic utilization, it's not intended as proprietary intellectual property for commercial or for-profit exploitation. The author believes that the advancement of knowledge in quantitative finance must remain freely accessible to the global research community. 
 
