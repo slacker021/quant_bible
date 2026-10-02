@@ -1,24 +1,6 @@
 ---
 dg-publish: true
 ---
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # The Axiom System and Some General Properties of the Set of Real Numbers
 
 Mathematical theories find application because they allow the transformation of one set of numbers—the initial data or collection of inputs—into another set, representing the intermediate or final objective of computations—which are usually seen as outputs. Thus, numerical-valued functions hold a distinguished position in mathematics and its applications. These functions, specifically differentiable ones, form the core subject of classical real analysis. However, a complete description of these functions' properties necessitates a precise definition of the set of real numbers on which they operate.

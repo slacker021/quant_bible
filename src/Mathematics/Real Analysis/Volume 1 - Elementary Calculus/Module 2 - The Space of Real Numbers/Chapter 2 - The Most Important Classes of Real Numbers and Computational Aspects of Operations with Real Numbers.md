@@ -1,8 +1,6 @@
 ---
 dg-publish: true
 ---
-
-
 Having established the axiomatic foundation of the real numbers, it's time to turn to identifying several fundamental subsets within $\mathbb{R}$. While there's many real numbers that one could think of, these subsets form the most critical classes of real numbers that formulate the theoretical and fundamental foundations of computation-based mathematics. Furthermore, these subsets provide useful tools that enable the discovery of interesting properties that can be used to prove important statements. 
 
 ---
