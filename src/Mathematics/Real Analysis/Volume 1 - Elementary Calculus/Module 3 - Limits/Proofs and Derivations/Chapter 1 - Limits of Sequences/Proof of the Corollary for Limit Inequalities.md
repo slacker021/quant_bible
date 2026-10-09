@@ -1,5 +1,5 @@
 ---
-dg-publish:
+dg-publish: true
 ---
 Suppose $\lim_{n \to \infty} x_n = A$ and $\lim_{n \to \infty} y_n = B$.
 
