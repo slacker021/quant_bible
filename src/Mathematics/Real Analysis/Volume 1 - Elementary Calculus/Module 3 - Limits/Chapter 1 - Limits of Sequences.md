@@ -155,12 +155,32 @@ $$\begin{gather} \textbf{Theorem: Cauchy Convergence Criterion for a Series} \\[
 While the necessary condition is straightforward, analyzing series containing a mix of positive and negative terms can be difficult. Thus, a stricter form of convergence is defined to simplify stability tests: 
 $$\begin{gather} \textbf{Definition: Absolute Convergence} \\[5mm] \text{The series } \sum_{n=1}^\infty a_n \text{ is absolutely convergent if the corresponding series} \\ \text{of absolute values } \sum_{n=1}^\infty \vert{}a_n\vert{} \text{ converges.} \end{gather}$$
 
-Because of the triangle inequality $\left\vert{} \sum_{k=n}^m a_k \right\vert{} \le \sum_{k=n}^m \vert{}a_k\vert{}$, any absolutely convergent series is mathematically guaranteed to be convergent in the ordinary sense. Therefore, to test for absolute convergence, analysts only need to study series constructed with non-negative terms: 
+Because of the triangle inequality $\left\vert{} \sum_{k=n}^m a_k \right\vert{} \le \sum_{k=n}^m \vert{}a_k\vert{}$, any absolutely convergent series is mathematically guaranteed to be convergent in the ordinary sense: 
+$$
+\begin{gather}
+\textbf{Theorem of Absolute Convergence: } \\[5mm]
+\text{If } \sum x_{n} \text{ is absolutely convergent, then it's also convergent.}
+\end{gather}
+$$
+(see [[Proof of Theorem of Absolute Convergence|proof]])
+This serves as a bridge between the behavior of magnitudes of terms in a series and the behavior of the magnitudes of terms in a series and the behavior of the series itself. 
+
+Therefore, to test for absolute convergence, analysts only need to study series constructed with non-negative terms: 
 $$\begin{gather} \textbf{Theorem: Convergence Criterion for Series with Non-negative Terms} \\[5mm] \text{A series } \sum_{n=1}^\infty a_n \text{ with } a_n \ge 0 \text{ converges if and only if } \\ \text{its sequence of partial sums is bounded above.} \end{gather}$$
 
 This bounding logic leads to a highly practical evaluation method where unknown series are compared against known baseline series: 
-$$\begin{gather} \textbf{Theorem: Comparison} \\[5mm] \text{Let } \sum_{n=1}^\infty a_n \text{ and } \sum_{n=1}^\infty b_n \text{ be two series with non-negative terms. } \\ \text{If there exists an index } N \in \mathbb{N} \text{ such that } a_n \le b_n \text{ for all } n > N, \text{ then:} \\ \text{1. The convergence of } \sum_{n=1}^\infty b_n \text{ strictly implies the convergence of } \sum_{n=1}^\infty a_n. \\ \text{2. The divergence of } \sum_{n=1}^\infty a_n \text{ strictly implies the divergence of } \sum_{n=1}^\infty b_n. \end{gather}$$
-(see [[Proof of the Comparison Theorem|proof]])
+$$\begin{gather} \textbf{Theorem: Standard Comparison Test} \\[5mm] \text{Let } \sum_{n=1}^\infty a_n \text{ and } \sum_{n=1}^\infty b_n \text{ be two series with non-negative terms. } \\ \text{If there exists an index } N \in \mathbb{N} \text{ such that } a_n \le b_n \text{ for all } n > N, \text{ then:} \\ \text{1. The convergence of } \sum_{n=1}^\infty b_n \text{ strictly implies the convergence of } \sum_{n=1}^\infty a_n. \\ \text{2. The divergence of } \sum_{n=1}^\infty a_n \text{ strictly implies the divergence of } \sum_{n=1}^\infty b_n. \end{gather}$$
+(see [[Proof of the Standard Comparison Test|proof]])
+
+An alternative means of testing by comparison involves using the limits of the underlying sequence:
+$$
+\begin{gather}
+\textbf{Theorem: Limit Comparison Test} \\[5mm]
+\text{Let } \sum x_{n} \text{ and } \sum y_{n} \text{ with } x_{n} \ge 0, b_{n} \ge 0 \text{ for all } n. \text{ Additionally, let }  \\
+c = \lim_{ n \to \infty } \frac{x_{n}}{y_{n}}. \text{ If } c \text{ is positive and finite, then either both series } \\
+\text{ converge or both series diverge. }
+\end{gather}
+$$
 
 The Comparison Theorem directly yields several robust algebraic tests used to rapidly determine series convergence:  
 $$\begin{gather} \textbf{Corollary: Standard Convergence Tests} \\[5mm] \text{1. \textbf{Weierstrass M-Test}: If } \vert{}x_n\vert{} \le y_n \text{ for all } n > N \text{ and } \sum_{n=1}^\infty y_n \text{ converges, } \\ \text{then the original series } \sum_{n=1}^\infty x_n \text{ converges absolutely.} \\ \text{2. \textbf{Cauchy's Root Test}: Let } \alpha = \limsup_{n \to \infty} \sqrt[n]{\vert{}x_n\vert{}}. \text{ If } \alpha < 1, \text{ the series } \\ \text{converges absolutely; if } \alpha > 1, \text{ the series diverges.} \\ \text{3. \textbf{d'Alembert's Ratio Test}: Let } \alpha = \lim_{n \to \infty} \left\vert{} \frac{x_{n+1}}{x_n} \right\vert{}. \text{ If } \alpha < 1, \text{ the series } \\ \text{converges absolutely; if } \alpha > 1, \text{ the series diverges.}  \\  4. \textbf{ Guaranteed Divergence: } \text{ If } \lim_{ n \to \infty } x_{n} \neq 0, \text{ then } \sum x_{n} \text{ will diverge.} \end{gather}$$
@@ -194,6 +214,17 @@ $$
 \end{gather}
 $$
 (see [[Proof of the Series Rearrangement Proposition|proof]])
+
+### Alternating Series Test
+In some cases, the sequence of the series may display alternating terms—which involves the signs of the terms switching back and forth between positive and negative. It may be difficult to test as to what the series even converges to. Before trying to discover what the convergent term even is, it's prudent to determine if the series is even convergent in the first place: 
+$$
+\begin{gather}
+\textbf{Theorem: Alternating Series Test} \\[5mm]
+\text{Let } \sum x_{n} \text{ be a series, and either } x_{n} = (-1)^n y_{n} \text{ or } x_{n} = (-1)^{n+1}y_{n} \text{ where } y_{n} \ge 0  \\
+\text{ for all } n. \text{ If } \lim_{ n \to \infty }  y_{n} = 0 \text{ and } \{y_{n}  \} \text{ is a decreasing sequence, then } \sum x_{n} \text{ is convergent.}
+\end{gather}
+$$
+(see [[Proof of Alternating Series Test|proof]])
 
 ---
 # Additional Useful Facts

@@ -13,7 +13,7 @@ Since $Y_{N}$ converges to $Y$, and $X_{N}$ is bounded above by $Y_{N}$, the seq
 Let $\alpha = \lim_{ n \to \infty } \sqrt[n]{|x_{n}|}$. If $\alpha < 1$, then the series $\sum_{n = 1}^\infty$ converges absolutely. If $\alpha > 1$, the series diverges. 
 
 ### Case 1
-Let $\alpha < 1$. Since $\lim \text{sup}_{{ n \to \infty }} \sqrt[n]{|x_{n}|} = \alpha < 1$, then there's a constant $r$ such that $\alpha < r < 1$. For all $n$ sufficiently large $\sqrt[n]{|x_{n}|} < r$, which implies $|x_{n}| < r^n$. The series $\sum_{n=1}^\infty r^n$ is a geometric sequence with ratio $r < 1$, so it converges. By the [[Proof of the Comparison Theorem|comparison test]], since $|x_{n}| < r^n$ for all $n$ sufficiently large, $\sum_{n=1}^\infty |x_{n}|$ also converges. Ergo, the original series converges absolutely. 
+Let $\alpha < 1$. Since $\lim \text{sup}_{{ n \to \infty }} \sqrt[n]{|x_{n}|} = \alpha < 1$, then there's a constant $r$ such that $\alpha < r < 1$. For all $n$ sufficiently large $\sqrt[n]{|x_{n}|} < r$, which implies $|x_{n}| < r^n$. The series $\sum_{n=1}^\infty r^n$ is a geometric sequence with ratio $r < 1$, so it converges. By the [[Proof of the Standard Comparison Test|comparison test]], since $|x_{n}| < r^n$ for all $n$ sufficiently large, $\sum_{n=1}^\infty |x_{n}|$ also converges. Ergo, the original series converges absolutely. 
 
 ### Case 2
 Let $\alpha > 1$. Since $\lim \text{sup}_{{ n \to \infty }} \sqrt[n]{|x_{n}|} = \alpha > 1$, there's a subsequence $\{n_{k}  \}$ such that $\sqrt[n_{k}]{|x_{n_{k}}|} > 1$ for all $k$. This implies that $|x_{n_{k}}| > 1$ for all $k$, so the terms of the series don't tend toward zero. By the divergence test of corollary 4, the terms of the series not tending to zero implies series divergence. 
